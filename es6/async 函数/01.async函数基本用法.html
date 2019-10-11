@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script>
+  //箭头函数
+  // const foo = async ()=>{
+  //
+  // }
+
+    //async + await 用同步方式实现异步代码。
+    async function foo(){
+      //await 后面必须跟一个promise对象
+      let data1 = await $.ajax({url:'www/1.txt'}).then(data=>JSON.parse(data));//异步加载数据,直接返会数据
+      let data2 = await $.ajax({url:'www/2.txt'}).then(data=>JSON.parse(data));
+      console.log(data1,data2);
+    }
+    foo().then();
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+
+  <form id="form1" action="http://localhost:8080" method="post" enctype="multipart/form-data">
+    用户名:<input type="text" name="username"><br>
+    密码:<input type="password" name="password"><br>
+    文件：<input type="file" name="f1"><br>
+    <input type="submit" value="提交">
+  </form>
+</body>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+
+<script>
+
+const form1 = document.getElementById("form1");
+form1.onsubmit = function() {
+  let formdata = new FormData(form1);
+  $.ajax({
+    method: form1.mehtod,
+    url: form1.action,
+    data: formdata,
+    contentType: false, //UnsupportedMediaTypeError: missing content-type header 待解决...
+    processData: false,
+    success(data){
+      alert('成功');
+      console.log(data);
+    },
+    error(err){
+      alert('失败');
+      console.log(err);
+    }
+  });
+
+  return false;
+}
+</script>
+</html>

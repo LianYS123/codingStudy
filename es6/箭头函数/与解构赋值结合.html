@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script>
+
+	
+	// let {a,b} = {a:3,b:5};  //对象通过结构赋值方式接收。
+	// alert(a);
+	// alert(b);
+
+	
+	
+	function foo({a = 0, b = 0}){
+		alert(a + " " + b);
+		console.log(a + " " + b);
+	}
+	foo({a : 10})
+	foo({a : 10, b : 5});
+
+</script>
+</html>

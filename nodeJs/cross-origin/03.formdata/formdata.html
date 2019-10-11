@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <form id="form1" action="http://localhost:8080" method="post" enctype="multipart/form-data">
+    <input type="text" name="username"><br>
+    <input type="password" name="password"><br>
+    <input type="file" name="f1"><br>
+    <input type="submit" value="提交">
+  </form>
+</body>
+<script>
+  const form1 = document.getElementById("form1");
+  form1.onsubmit = function() {
+    let formdata = new FormData(form1);
+
+    let xhr = new XMLHttpRequest();
+    xhr.open(form1.method,form1.action,true);
+    xhr.send(formdata);
+
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState == 4){
+        if(xhr.status == 200){
+          alert('成功');
+        } else{
+          alert('失败');
+        }
+      }
+    };
+    return false;
+  }
+</script>
+</html>

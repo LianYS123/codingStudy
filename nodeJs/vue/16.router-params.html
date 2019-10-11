@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        router-link-active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <router-link to="/a/1">go to a:1</router-link>
+        <router-link to="/a/2">go to a:2</router-link>
+        <router-link to="/a/3">go to a:3</router-link>
+        <router-view></router-view>
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+    let router = new VueRouter({
+        routes:[
+            {
+                path:'/a/:id',
+                name:'news',
+                component:{
+                    template:'<div>header param:{{$route.params.id}}</div>'
+                }
+            }
+        ]
+    })
+    let vm = new Vue({
+        el:'#root',
+        router
+    })
+</script>
+</html>

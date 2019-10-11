@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root">
+        <!-- 在input元素上加v-model属性表示数据双向绑定 -->
+        <!-- 通过input标签进入的数据都是字符串 -->
+        <input type="text" v-model='a'> + <input type="text" v-model='b'> = {{ a + b }} <br>
+        <input type="text" v-model='c'> + <input type="text" v-model='d'> = {{ parseInt(c)  + parseInt(d) }}
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+let vm = new Vue({
+    el:'#root',
+    data:{
+        a: 1,
+        b: 2,
+        c: 1,
+        d: 2  
+    }
+})
+</script>
+</html>

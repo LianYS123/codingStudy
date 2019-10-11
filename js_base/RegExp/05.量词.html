@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    //量词
+    //1. {n} 匹配 n个字符
+    let re1 = /a{6}/; //匹配六个a，多了少了都不行
+    //2.{n,m} 匹配 n到 m个字符
+    let re2 = /\d{5,12}/;//匹配5-12个数字
+    //3.{n,} 匹配最少 n个字符
+    let re3 = /\w{6,}/;//六个以上的合法字符
+    //4.{,m} 匹配最多m个字符
+
+    //5. + 相当于 {1,} 最少一个
+
+    //6. ? 相当于 {0,1} 可以 有一个或者没有
+    let re4 = /\.jsx?/;//x可以有也可以没有，.jx和.jsx都可以匹配,当然 \.是 .的转义
+  </script>
+</body>
+</html>

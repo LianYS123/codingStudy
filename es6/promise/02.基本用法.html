@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    const p = new Promise((resolve,reject) => { //Promise 新建后就会立即执行。
+      if(/* 如果加载成功执行resolve方法 */){
+        resolve(value);
+      } else{
+        reject(error);
+      }
+    })
+
+    //传入两个函数，第一个是resolve方法，第二个是reject方法。
+    p.then(function(value){
+
+    },function(error){
+
+    });
+
+
+  </script>
+</body>
+</html>

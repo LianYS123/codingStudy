@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>let和const</title>
+</head>
+<body>
+	<button class="btn">btn1</button>
+	<button class="btn">btn2</button>
+	<button class="btn">btn3</button>
+	<hr>
+
+	<input type="button" value="1">
+	<input type="button" value="2">
+	<input type="button" value="3">
+	<hr>
+</body>
+<script type="text/javascript">
+	
+/*
+var 可以重复声明 无法限制修改 函数级作用域。
+
+
+let:    不能重复声明，变量-可以修改，块级作用域
+const:  不能重复声明，常量-不能修改，块级作用域
+*/
+
+//块级作用域
+window.onload = function(){
+	let btns = document.getElementsByTagName("button");
+	for(let i = 0; i < btns.length; i++){
+		btns[i].onclick = function(){
+			alert(i);
+		}
+	}
+
+	let btns2 = document.getElementsByTagName("input");
+	for(var i = 0; i < btns2.length; i++){
+		(function(i){
+			btns2[i].onclick = function(){
+				alert(i);
+			}
+		})(i);
+	}
+}
+
+
+</script>
+</html>

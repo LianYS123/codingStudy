@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+function TreeNode(val) {
+ this.val = val;
+ this.left = this.right = null;
+}
+
+const isCousins = function(root, x, y) {
+    
+};
+
+let root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+root.left.left = new TreeNode(4);
+
+let val = 4;
+let helper = (root, count) => {
+	if(!root) return -1;
+	console.log(root.val);
+
+	if(root.val == val){
+		return count + 1;
+	} 
+	helper(root.left, count + 1);
+	helper(root.right, count + 1);
+	
+}
+console.log(helper(root,0));
+
+</script>
+</body>
+</html>

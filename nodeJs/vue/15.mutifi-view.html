@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        router-link-active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <router-link to="/a">go to a</router-link>
+        <router-link to="/b">go to b</router-link>
+        <router-view name='headerComp'></router-view>
+        <router-view name='footerComp'></router-view>   
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+    let headerCompA = {template:'<div>headerAAA</div>'}
+    let footerCompA = {template:'<div>footerAAA</div>'}
+    let headerCompB = {template:'<div>headerBBB</div>'}
+    let footerCompB = {template:'<div>footerBBB</div>'}
+    let router = new VueRouter({
+        routes:[
+            {
+                path:'/a',
+                name:'news',
+                components:{
+                    headerComp:headerCompA,
+                    footerComp:footerCompA
+                }
+            },
+            {
+                path:'/b',
+                name:'sports',
+                components:{
+                    headerComp:headerCompB,
+                    footerComp:footerCompB
+                }
+            },
+        ]
+    })
+    let vm = new Vue({
+        el:'#root',
+        router
+    })
+</script>
+</html>

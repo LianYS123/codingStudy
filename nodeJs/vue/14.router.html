@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        router-link-active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <router-link to="/a">go to a</router-link>
+        <router-link to="/b">go to b</router-link>
+        <button @click='toA()'>to A</button>
+        <button @click='toB()'>to B</button>
+        <router-view></router-view>
+        
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/vue-router.js"></script>
+<script>
+    let router = new VueRouter({
+        routes:[
+            {
+                path:'/a',
+                name:'news',
+                components:{
+                    template:'<div>aaa</div>'
+                }
+            },
+            {
+                path:'/b',
+                name:'sports',
+                component:{
+                    template:'<div>bbb</div>'
+                }
+            }
+        ]
+    })
+    let vm = new Vue({
+        el:'#root',
+        methods:{
+            toA(){
+                this.$router.push('a')//不要写成'/a'
+            },
+            toB(){
+                this.$router.push('b')
+            }
+        },
+        router
+    })
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    //元字符[]
+    //1.代表任意一个：
+    let re = /a[123]c/;//表示1,2,3中的任意一个(不加量词都表示一个)比如 'a1c','a2c'
+    //2.范围
+    let re2 = /[0-9]/;//表示处于0~9之间的一个数字,注意 -两边只能连接一个字符
+    let re3 = /[0-99]/;//表示第一位是0~9之间的数字，第二位必须是9 如'09','19'等
+    let re4 = /[0-9a-z]/i;//可以连着写,第一位0~9，第二位a~z忽略大小写
+    //3.排除
+    let re5 = /[^0-9]/;//表示除了0~9,其他的字符都可以匹配成功。
+
+    //转义
+    // \d 代表数字              [0-9]
+    // \w 代表字母数字下划线     [a-z0-9_]
+    // \s 代表空白
+    // . 匹配任意字符 最好不要用。
+
+    // \D 代表[^0-9]
+    // \W代表[^a-z0-9_]
+    // \S代表 非空白
+  </script>
+</body>
+</html>

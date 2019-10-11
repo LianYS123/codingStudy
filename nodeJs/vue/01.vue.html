@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root">
+        {{a}} + {{b}} = {{a + b}} <br>
+        {{a}} + {{b}} = {{sum()}} <br>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script>
+let vm = new Vue({
+    el:'#root',
+    data:{//数据
+        a : 100,
+        b : 200
+    },
+    methods : {
+        sum(){
+            return this.a + this.b //这里的记得要加this
+        }
+    }
+})
+</script>
+</html>

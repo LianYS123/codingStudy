@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <button id="btn">读取</button>
+  <img alt="图片">
+</body>
+<script>
+  let btn = document.getElementById('btn');
+  let img = document.getElementsByTagName('img')[0];
+  btn.onclick = async () => {
+    //请求
+    let res = await fetch('http://localhost:8080/1.png');
+    //解析
+    let data = await res.blob();
+
+    //通过URL对象的createObjectURL方法将一个二进制数据转换成一个链接(实际上是浏览器临时存储了数据)
+    let url = URL.createObjectURL(data);
+    img.src = url;
+
+    console.log(data);
+
+  }
+</script>
+</html>

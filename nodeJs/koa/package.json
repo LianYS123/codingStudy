@@ -1,0 +1,21 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "1. 创建服务：\r let Koa = require('koa');\r let server = new Koa();\r server.listen(8080);",
+  "main": "01.koa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "co-mysql": "^1.0.0",
+    "koa": "^2.8.2",
+    "koa-better-body": "^3.1.2",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "koa-static": "^5.0.0",
+    "mysql": "^2.17.1"
+  }
+}

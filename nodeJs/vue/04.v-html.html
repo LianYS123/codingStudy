@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root">
+        <!-- v-pre表示预处理,标签里面的内容原样输出 -->
+        <p v-pre>使用vue表达式{{}}</p>
+        <div>
+            {{myHtml}} 
+            <!-- 效果为将内容作为字符串输出 -->
+        </div>
+        <hr>
+
+        <p>使用v-text</p>
+        <!-- 效果与{{}}一样 -->
+        <div v-text="myHtml"></div>
+        <hr>
+
+        <p>用了v-html</p>
+        <div v-html = 'myHtml'></div>
+        <!-- 将内容作为表单元素输出 -->
+    </div>
+    
+</body>
+<script src="./js/vue.js"></script>
+<script>
+let vm = new Vue({
+    el:'#root',
+    data:{
+        myHtml: `
+        <form action="">
+            username:<input type="text"><br>
+            password:<input type="text"><br>
+        </form>
+        `
+    }
+})
+</script>
+</html>

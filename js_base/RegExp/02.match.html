@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    const str = 'dsai234saetsafdj4535fds4ahofi435dj243532432lds2a43iep3qgetwn';
+    //找出所有数字：
+
+    let re = /\d/;// \d是转义，意思是所有数字都可以匹配。
+    console.log(str.match(re));// 指出来一个 2，因为\d只代表一个数字(如果不写量词，默认)
+
+    let re2 = /\d+/;//给\d加一个量词 加号代表量词，表示若干个。如果是特定数量的，可以用{n} ：n是数字
+    console.log(str.match(re2));//出来"234" 正则默认匹配模式是贪婪匹配，如果都符合要求，出来尽量长的符合条件的字符串(越长越好，越多越好)
+
+    let re3 = /\d+/g;//增加一个选项 g 代表全局匹配
+    console.log(str.match(re3));// ["234", "4535", "4", "435", "243532432", "2", "43", "3"] 出来一个数组
+  </script>
+</body>
+</html>

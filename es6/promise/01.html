@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    let p = new Promise((resolve,reject) => { //传入一个函数作为参数，这个函数会执行两个自定义的回调函数。
+      console.log('test');
+      resolve();
+    });
+    p.then(() => {
+      console.log('resolved!')
+    });
+
+  </script>
+</body>
+</html>

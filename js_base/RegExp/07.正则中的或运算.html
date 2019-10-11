@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    //正则中的或运算符 |
+    let reg = /\.(png|jpg|gif)$/;//匹配图片：以.png或.jpg或.gif结尾的都可以匹配
+    console.log(reg.test('1.jpg'));//true
+    console.log(reg.test('jpg'));//false
+
+    //注意：原先正则中的或运算符优先级非常低，使用的时候一般要加括号
+    let reg2 = /\.png|jpg|gif$/;
+    console.log(reg.test('.jpggif'))//false
+    let reg3 = /m|food/;
+    console.log(reg3.test('mood'));//true
+    //经过测试，|运算符的优先级似乎提高了。
+  </script>
+</body>
+</html>

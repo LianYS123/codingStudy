@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root">
+        {{a}} + {{b}} = {{sum}}
+    
+        <p>姓名分解</p>
+        姓：<input type="text" v-model='familyName'>
+        名：<input type="text" v-model='givenName'>
+        姓名: <input type="text" v-model="nameCalc">
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#root',
+        data:{
+            a: 1,
+            b: 2,
+            familyName:'张',
+            givenName:'三'
+        },
+        computed:{
+            sum(){
+                return this.a + this.b;
+            },
+            nameCalc:{
+                set(value){//设置data
+                    this.familyName=value.substring(0,1);
+                    this.givenName=value.substring(1);
+                },
+                get(){
+                    return this.familyName + this.givenName;
+                }
+            }
+        }
+    })
+</script>
+</html>

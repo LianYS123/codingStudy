@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script>
+
+    const p1 = new Promise((resolve,reject) => {
+      $.ajax({
+        url : './www/1.txt',
+        dataType : 'json',//如果需要将读取的数据转换成json对象，加上这个属性,如果请求的资源不是一个标准json，请求不成功，会执行error()函数
+        success(data){
+          resolve(data);
+        },
+        error(){
+          throw new Error('1.txt错了');
+        }
+      })
+    }).then(data => 1);
+
+    const p2 = new Promise((resolve,reject) => {
+      $.ajax({
+        url : './www/2.txt',
+        dataType : 'json',//如果需要将读取的数据转换成json对象，加上这个属性,如果请求的资源不是一个标准json，请求不成功，会执行error()函数
+        success(data){
+          resolve(data);
+        },
+        error(error){
+          throw new Error('2.txt错了');
+        }
+      })
+    });
+
+    Promise.all([p1,p2]).then((posts) => { //posts 将每一个promise实例.then返回的数据封装成一个数组，如果没有.then，默认返回请求到的数据
+      console.log(posts);
+    });
+
+  </script>
+</body>
+</html>

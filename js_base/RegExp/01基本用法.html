@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    //RegExp 对象用于规定在文本中检索的内容。
+    //RegExp 是正则表达式的缩写。
+    let re = new RegExp('a');
+    let re2 = /a/;//使用字面量定义一个正则，perl风格，与上面的方法效果一样。//是定界符
+    console.log(re.test('abc'));//使用正则的test方法,返回true 或 false
+    console.log('abc'.search(re));//使用字符串的search来查找正则 返回查找到的位置
+
+    let re3 = /a/i;//增加一个选项，忽略大小写 i 是ignore的意思
+    console.log(re3.test('ABC'));
+  </script>
+</body>
+</html>

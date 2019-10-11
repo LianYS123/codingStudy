@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script src="./jquery-3.4.1.min.js" charset="utf-8"></script>
+  <script>
+
+  //jquery $.ajax()的返回值本身就是一个Promise对象
+    Promise.all([
+      $.ajax({url:'www/1.txt'}).then(data=>JSON.parse(data)),//这种不用自己调用resolve和reject(不能自己在success里面调用，jQuery内部会调用)
+      $.ajax({url:'www/2.txt'}).then( data=>JSON.parse(data) )
+    ]).then(posts => {
+      console.log(posts);
+    },error => {
+      console.log('错了');//只要有一个失败，就会失败。
+    });
+  </script>
+</body>
+</html>

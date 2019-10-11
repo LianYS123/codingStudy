@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="<%=url %>/css/bootstrap.css">
+    <style>
+      *{
+      	margin: 0;
+      	padding: 0;
+      }
+      body{
+      	/*文字不可被选中*/
+      	-webkit-user-select: none;
+      	-moz-user-select: none;
+      }
+      ul{
+      	list-style: none;
+      }
+      input{
+      	outline: none;
+      	border: none;
+      }
+      button,input[type=submit],input[type=reset]{
+      	outline: none;
+      	border: none;
+      	cursor: pointer;
+      }
+      a{
+      	text-decoration: none;
+      }
+      body{
+      	background-image: url(<%=url%>/images/background.jpg);
+      }
+      .wrap{
+      	display: flex;
+      	justify-content: space-between;
+      	width: 800px;
+      	position: relative;
+      	left: 50%;
+      	transform: translateX(-50%);
+      	margin-top: 200px;
+      }
+      .title{
+      	overflow: hidden;
+      	text-align: center;
+      	width: 200px;
+      	color: white;
+      }
+      .title span:first-child{
+      	font-size: 40px;
+      	font-family: "华文新魏";
+      	line-height: 40px;
+      }
+      .title span:nth-child(3){
+      	font-size: 20px;
+      	font-family: "华文新魏";
+      }
+      .login{
+      	width: 300px;
+      	height: 200px;
+      	text-align: center;
+      	background-color: white;
+      	/*float: right; 注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。*/
+      }
+      .login span:first-child{
+      	font-size: 20px;
+      }
+      .login ul{
+
+      	display: flex;
+      	flex-direction: column;
+      	align-items: center;
+      	justify-content: space-around;
+      	height: 180px;
+      }
+      .login li.text{
+      	width: 220px;
+      	border: 1px solid;
+      	height: 35px;
+      	line-height: 35px;
+      }
+      .login li.text input{
+      	width: 195px;
+        height: 30px;
+      }
+      .submit_login{
+      	width: 220px;
+      	height: 30px;
+      	font-size: 16px;
+      	background: skyblue;
+      }
+      .submit_login:hover{
+      	background: deepskyblue;
+      	cursor: pointer;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title">
+        <span>管理员登录</span>
+        <div style="height: 15px;"></div>
+        <span>
+          分享生活&nbsp;&nbsp;留住感动
+        </span>
+      </div>
+      <div class="login">
+        <form action="<%=url%>/admin/login" method="post">
+          <ul>
+            <li>
+              <span>登录</span>
+            </li>
+
+            <li class="text">
+              <input type="text" name="username" placeholder="用户名"/>
+            </li>
+
+            <li class="text">
+              <input type="password" name="password" placeholder="密码"/>
+            </li>
+
+            <li class="submit">
+              <input type="submit" class="submit_login" value="登 录"/>
+            </li>
+          </ul>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

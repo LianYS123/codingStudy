@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  QQ:<input type="text" id="text"><br>
+  <button id="btn">检测</button>
+  <script>
+  window.onload = function(){
+    //正则的匹配有一个问题
+    //比如正则的test方法，只要要匹配的字符串有一部分符合要求，就会返回true
+
+    //下面这个测试，如果输入的QQ号是13424345sdf 这样的一段以字母结尾（或开头）的也会通过
+    let btn = document.getElementById("btn");
+    btn.onclick = function(){
+      let str = document.getElementById("text").value;
+      let reg = /[1-9]\d{4,11}/;//假设qq号最少5位，对多12位，0不能开头 注意：元字符[]中用-表示范围，量词{}中用逗号表示范围，
+      if(reg.test(str)){
+        alert("通过");
+      } else{
+        alert("错了");
+      }
+    }
+  }
+
+  //可以使用修饰符来解决这个问题
+  // ^表示行首
+  // $表示行尾
+
+  let reg2 = /^[1-9]\d{4,11}$/;//将上面那个正则写成这样就表示：字符串必须从行首开始检测，检测到行尾结束
+  //也就相当于检测整个字符串了。
+
+  </script>
+</body>
+</html>

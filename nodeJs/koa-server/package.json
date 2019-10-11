@@ -1,0 +1,23 @@
+{
+  "name": "koa-server",
+  "version": "1.0.0",
+  "description": "- 渲染：\r 服务器渲染：安全性高，利于SEO\r   库\r   node： pug/ejs\r   pug: 侵入式     不常用\r   ejs: 非侵入式\r   类似jsp：<%=name%>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "co-mysql": "^1.0.0",
+    "koa": "^2.8.2",
+    "koa-better-body": "^3.1.2",
+    "koa-ejs": "^4.2.0",
+    "koa-mysql": "^1.0.3",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "koa-static": "^5.0.0",
+    "mysql": "^2.17.1"
+  }
+}

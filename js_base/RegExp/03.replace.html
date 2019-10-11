@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+</head>
+<body>
+  <script>
+    const str = 'dsai234saetsafdj4535fads4ahofi435aadj24353a2432alds2a43iep3qgetwn';
+    //将所有的 a 忽略大小写替换成 *：
+    let str2 = str.replace(/a/ig,'*');//选项可以混合使用，正则是第一个参数，表示把什么替换成 *
+    console.log(str2);//ds*i234s*ets*fdj4535f*ds4*hofi435**dj24353*2432*lds2*43iep3qgetwn
+  </script>
+</body>
+</html>

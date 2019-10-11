@@ -1,0 +1,557 @@
+#
+##三大框架：
+vue
+react
+angular
+
+
+现代开发模式： 20%表现层
+vue、react
+创通开发模式   80%表现层
+jquery
+
+mvc
+数据、表现、行为分离
+
+视图层 <---> 数据层
+
+MVC,MVP,MVVM
+M:数据层
+V:视图层
+C:控制层
+
+前端渲染：降低服务器负担。带宽压力小，用户体验好
+后端渲染：SEO，兼容，安全性
+
+## vue核心是数据
+
+```javascript
+let vm = new Vue({
+  el:''//根元素，挂载点
+});
+```
+将script加到下面等待div加载完执行
+
+vue表达式：写一些简单的表达式
+输出到标签里面，只能用到innerHTML里面
+{{}}
+{{new Date()}}
+
+data:{
+  数据
+}
+
+只要数据变了，视图都会变：数据自动同步到视图
+
+## 指令(direction)--补充了html的属性
+### v-bind:     向html属性里面输出东西
+v-bind:title、v-bind:src
+简写v-bind:相当于直接写‘:’
+
+class:可以用数组
+v-bind:[数组]
+style：可以用json
+:{width,height,...}
+
+问题：
+箭头函数，绑定this为所处环境
+
+### v-model:数据双向绑定
+
+```html
+<input type="text" v-model="name">
+
+data{
+  name:111
+}
+```
+数据和input之间双向绑定
+view:html
+controller:vm
+model:data
+
+v-model:跳过vm,vue自动完成
+
+通过input进来的数据都是字符串
+
+### v-text:没什么用
+```html
+<div v-text='aaa'></div>
+相当于：
+<div class="">
+  {{aaa}}
+</div>
+
+data{
+  aaa:111
+}
+```
+### v-html:直接输出html:innerHTML，
+
+## vue事件
+### v-on
+```javascript
+v-on:click="fn()"//括号可以不加，只要没参数
+简称@click
+```
+v-show:是否显示，input隐藏也会起作用
+v-if:是否有这个东西:会删除元素
+
+v-show:true/false/函数
+v-if:true/false/函数
+
+
+### v-for:
+```html
+<ul>
+  <li v-for="user,index in users">
+    {{user.name}}:{{user.password}}
+  </li>
+</ul>
+data{
+  users
+}
+```
+循环json
+value,key in json
+循环字符串
+char in str
+循环数字:从1开始
+i in 50
+
+:key属性,提高性能
+唯一的，不变的
+
+虚拟DOM：大JSON
+{
+  tag:'ul',
+  child:{
+    {
+      tag:'',
+      ...
+    }
+  }
+}
+
+<ul v-for='...' :key></ul>
+
+### v-pre:预编译，禁用vue表达式
+提高性能,防止意外
+<div v-pre></div>
+
+### v-cloak:防止vue代码意外显示
+
+```html
+<script src="卡住">
+
+</script>
+<script>
+
+</script>
+```
+v-cloak:编译完成后去掉这个属性
+
+
+## 内部原理
+
+```html
+<script type="text/javascript">
+let el = document.getElementBy..
+let template = el.innerHTML;
+真实数据
+let _data={
+  name:'lian',
+  age:10
+}
+let data = new Proxy(_data,{//数据代理, 给_data设置set方法
+  set(obj,name,value){//obj == _data
+    obj[name] = value;
+    console.log('数据变了');
+    render();
+  }
+})
+render();
+function render(){
+  el.innerHTML = template.replace(/\{\w+\}/g,str=>{
+    str = str.substring(2,str.length-2);
+    return _data[str];
+  })
+  Array.from(el.getele...input)
+  .filter(ele => ele.getattr..v-model)
+  .forEach(input=>{
+    let name = input.getAttribute('v-mode;')//得到要绑定到哪个数据？
+    input.value = _data[name];//
+    input.oninput = function() {
+      data[name] = input.value;//
+    }
+  })
+}
+</script>
+
+```
+
+虚拟DOM:
+合并请求
+快速查询
+局部刷新
+
+
+## 事件修饰符
+@click='fn()'
+@click.stop = 'fn()'//禁止冒泡
+@click.once  单次事件
+@click.prevent 阻止默认事件(阻止表单提交)
+vue事件中的this是window对象
+可以多个@click.stop.once
+@click.native 原生事件，跟组件配合
+
+@keydown.数字|ctrl     .keycode|名字
+self:     冒泡的不要
+capture   捕获阶段的事件
+可以按组合键
+
+
+## computed-计算属性
+computed:
+带缓存：性能
+方便：即可以读，又可以写
+```javascript
+computed{
+  sum(){
+    return this.a + this.b
+  }
+}
+```
+
+```html
+姓：<input type="text" name="" value="">
+名：
+<script>
+data{
+  familyName:'',
+  givenName:''
+}
+computed{
+  name:{
+    get(){
+      return ''
+    },
+    set(value){
+      this.familyName=...
+      this.givenName=...
+    }
+  }
+}
+</script>
+```
+
+watch--监听：
+data:{
+  name
+}
+watch:{
+  name(){监听name
+
+  },
+  'user_info.name':function(){//监听userinfo里面的name
+
+  }
+}
+
+## vue-router
+需要vue-router库
+
+1. 容器
+2. 路由表
+let router = new VueRouter({
+  routes:[
+  {path,component}
+  ]
+  })
+3.
+new Vue({
+  router
+})
+```html
+<div>
+  <router-view></>
+</div>
+
+<script>
+let router = new VueRouter({
+  routes: [
+    {
+      path: '/a',
+      component:{
+        template:'<div>aaa<div>'
+      }
+    },
+    {
+      path: '/b',
+      component:{
+        template:'<div>aaa<div>'
+      }
+    }
+  ]
+})
+
+</script>
+用 a 切地址
+用<router-link to'#'></router-link>切地址
+#:锚点，不会导致页面刷新，history不会失效
+可以加class
+.uer-link-active:激活的时候显示
+<router-link class='' to'#'></router-link>
+
+可以有名字,可以传参$route
+$route路由信息
+{
+  path:'/a/:id',
+  name:'news',
+  component:{
+    template:`
+      <div class="">
+        {{$route.params.id}}
+      </div>
+    `
+  }
+}
+<router-link class='' :to'{name:news,params:}'></router-link>
+
+
+路由可以重叠：
+匹配两个路由，走前面那个
+
+
+js控制路由跳转：
+获取路由信息：$route
+操作路由：$router
+this.$router.push('/news/19')
+this.$router.push({name:'news',params:{}})
+history是一个栈
+
+push()入栈
+replace()替换当前历史记录，不希望用户回来
+go(int)
+  go(-1)
+  go(1)
+
+watch:{
+  监视路由，不能操作
+  $route(value,old_value){
+
+  }
+}
+
+路由守卫 ?
+  beforeRouteUpdate(value,old_value,next){
+    next()//放行
+  }
+
+
+多视图
+可以有一个不给名
+router-view name="header"
+router-view name="footer"
+
+{
+  path,name,
+  components:{
+    default:indexCmp,
+    header:headerCmp,
+  }
+}
+
+路由嵌套：
+src
+  vm.js
+  router.js
+  components
+    header.js
+    home.js
+    news1.js
+    news2.js
+
+import vue from 'vue/dist/vue.esm'
+import VueRouter from 'vue-router'
+import router from './router.js'
+Vue.use(VueRouter)
+
+let vm = new Vue({
+  el:''
+  router
+})
+
+header.js
+export default {
+  template:  `
+    <div class="nav">
+      <router-link class='nav-item' to='/'>首页</router-link>
+
+    </div>
+  `
+}
+
+childern:
+子路由
+路径是相对路径，不要加/
+
+在news组件里面暴露路由表
+
+引入：
+import news,{router as news_router} from 
+
+路由里面套路由，视图里面套视图
+
+
+数据通信：
+1.用库
+axios
+  data
+    user.json
+  src
+    vm.js
+
+  index.html
+
+
+import Axios from 'axios'
+
+created()   钩子函数，创建完成了，
+async created(){
+  let res = await Axios.get('./data/user.json')  //异步读取，try来处理 get方式
+  console.log(res.data)
+}
+
+
+await Axios({ 
+  url:
+  method:post   post方式
+  data,
+  transformRequest:[
+    function(data){
+      return stringify(data) //将json转成 a=1&b=2的querystring的形式提交 
+    }
+  ]
+
+})
+
+
+let axios = Axios.create({创建实例的方法
+
+})
+Axios 默认json方式传数据
+webpack可以引用后台模块
+import：es6定的webpack语法
+
+
+
+2.原生
+fetch
+
+let res = await fecth(')
+let data = await res.json();解析也可能是异步操作
+
+
+post:
+let formdata = new FormData();
+formdata.append('a',80);
+formdata.append('b',90);
+let res = await fecth(url,{
+  method:
+  body:formdata
+})
+
+
+methods：{
+  fn_submit(){
+    let formdata = new FormData(this.$refs.form1);
+
+  }
+}
+
+ref:给组件内部的标签起个名字，存在vm的$refs里面
+<form ref='form1'>
+  <input name> input必须有name
+
+
+
+
+
+component 
+  src
+  index.html
+
+
+new Vue({
+  //局部组件
+  components:{
+    cmp1:{
+      template:
+    }
+  }，
+  template:`<div>
+    <cmp1/>
+  </div>`
+})
+
+组件其实也是vm对象，data必须是函数
+为什么用函数？跟全局变量隔开
+全局组件：
+cmp1.js
+Vue.component('cmp1',{
+  props:['name','age']传参
+  data(){
+    return 
+  },
+  template
+})
+
+vm.js
+import './cmp1'
+
+传参方法:
+<cmp1 name='lian' :list='json'/>
+
+动态组件：
+data{
+  type:'cmp1'
+}
+<component is="cmp1"/>  //component标签名确定，通过cmp1指明真实标签名
+<component :is="type"/>
+
+
+
+//暴露组件
+Cmp1.js
+export default Vue.component('Cmp1',{
+})
+
+
+import Cmp1 from './cmp1'
+new Cmp1({ //相当于<Cmp1 name='lian' :age='18'/>
+  propsData:{
+    name:lian,
+    age:18
+  }
+})
+
+let vm = cmp.$mount();创建一个虚拟的组件，可以用来做测试
+
+
+插槽：slot,(<slot/>)，占位符，将来会被组件里面的内容替代掉
+<slot name="title"/>有名字的插槽，去找template里面的slot='title'的同名内容插入
+<slot/>没名字的slot，其他的插入
+
+dialog.js
+
+具名插槽：
+<template slot='title'></template>
+
+
+
+
+
+
+
+

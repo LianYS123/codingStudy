@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	let {a,b} = {a : 10, b : 100};//是{a : a, b : b} = ...的简写
+	console.log(a,b);//10,100
+
+	//应用
+	let {sin,cos,log,PI} = Math;
+	console.log(sin(PI/6));
+
+	//变量名不一样：
+	let obj = {a:"hello",b:"world"};
+	let {a : a1, b : b1} = obj;
+	console.log(a1,b1);//hello world
+
+	//将一个已经声明的变量用于解构赋值
+	let x;
+	({x} = {x:1});//必修加括号，不然会报错
+	console.log(x);
+
+	//由于数组本质是特殊的对象，因此可以对数组进行对象属性的解构
+	let arr = [1,2,3,4,5];
+	let {0 : first, [arr.length - 1] : last} = arr;
+	console.log(first,last);
+
+	//字符串的解构赋值
+	const [x1,x2,x3,x4,x5] = "hello";
+	console.log(x1,x2,x3,x4,x5);
+
+</script>
+</html>

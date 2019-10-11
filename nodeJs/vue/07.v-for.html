@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="root">
+        <p>遍历数组</p>
+        <ul>
+            <li v-for="user,index in users">
+                <p>
+                    username:{{user.username}} <br>
+                    age:{{user.age}} <br>
+                    index: {{index}}
+                </p>
+            </li>
+        </ul>
+        <p>遍历json</p>
+        <ul>
+            <li v-for="value,key in json">
+                <p>
+                    {{key}}:{{value}}
+                </p>
+            </li>
+        </ul>
+        <p>遍历字符串</p>
+        <ul>
+            <li v-for="char,index in str">
+                {{index}} : {{char}}
+            </li>
+        </ul>
+        <p>遍历数字</p>
+        <ul>
+            <li v-for="i,index in 10">
+                index:{{index}}  value:{{i}}
+            </li>
+        </ul>
+    </div>
+    
+</body>
+<script src="./js/vue.js"></script>
+<script>
+let vm = new Vue({
+    el:'#root',
+    data:{
+        users:[
+            {username:'zhangsan',age:'18'},
+            {username:'lisi',age:'19'},
+            {username:'wangwu',age:'20'}
+        ],
+        json:{
+            a:'aaa',
+            b:'bbb',
+            c:'ccc'
+        },
+        str:'abcdefg'
+    }
+})
+</script>
+</html>

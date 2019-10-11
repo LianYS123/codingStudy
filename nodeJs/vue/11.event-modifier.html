@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root">
+        <hr>
+        <h3>事件冒泡修饰符：.stop</h3>
+        <p>不阻止事件冒泡</p>
+        <div @click='divClick()'>
+            <button @click='btnClick()'>事件冒泡</button>
+        </div>
+        <p>阻止事件冒泡</p>
+        <div @click='divClick()'>
+            <button @click.stop='btnClick()'>事件冒泡</button>
+        </div>
+        <hr>
+
+        <h3>单次事件: .once</h3>
+        <p>只执行一次</p>
+        <button @click.once='btnClick()'>单次事件</button>
+        <hr>
+
+        <h3>阻止默认事件</h3>
+        <form action="http://aaa.com">
+            <input type="submit" @click.prevent='submitClick()'>
+        </form>
+        <hr>
+        <h3>键盘事件</h3>
+        <!-- 只有获得焦点的元素才能触发 -->
+        <button @keydown.ctrl='keydown()'>键盘事件：ctrl</button>
+        <button @keydown.ctrl.shift='keydown()'>组合键:ctrl + shift</button>
+
+    </div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:'#root',
+        methods:{
+            divClick(){
+                alert('div Clicked')
+            },
+            btnClick(){
+                alert('btn Clicked')
+            },
+            submitClick(){
+                alert('表单不会提交');
+            },
+            keydown(){
+                alert('keydown')
+            }
+        }
+    })
+</script>
+</html>
