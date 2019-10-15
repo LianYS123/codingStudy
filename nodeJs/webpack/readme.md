@@ -99,6 +99,7 @@ dev-server:会读配置文件，不会编译到文件，编译到内存
 需要mode:development
 webpack本地 webpack-cli webpack-dev-server
 不能直接启动，必须放在script里面
+不需要再web.config.js里面配置
 
 注意路径:生成的虚拟文件在./bundle.js，或者指定publicPath:路径
 
