@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <p>
      a: {{a}} <button @click="addA()">+1</button> <br>
      b: {{b}} <button @click="addB()">+1</button> <br>
@@ -12,12 +12,18 @@
     <p>
       <Comp2/>
     </p>
+    <hr>
+    <p>
+      moduleTest
+    </p>
+    <comp3/>
   </div>
 </template>
 
 <script>
 import Comp1 from './components/Comp1'
 import Comp2 from './components/Comp2'
+import Comp3 from './components/Comp3'
 export default {
   methods:{
     addA(){
@@ -37,11 +43,14 @@ export default {
   },
   components:{
     Comp1,
-    Comp2
+    Comp2,
+    Comp3
   },
 }
 </script>
 
 <style>
-
+#app{
+  margin: 10px;
+}
 </style>

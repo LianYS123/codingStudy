@@ -24,7 +24,7 @@ C:控制层
 后端渲染：SEO，兼容，安全性
 
 ## vue核心是数据
-
+vue的核心是数据，对于所有挂载到页面上的内容，数据变了，视图会跟着变。
 ```javascript
 let vm = new Vue({
   el:''//根元素，挂载点
@@ -33,7 +33,7 @@ let vm = new Vue({
 将script加到下面等待div加载完执行
 
 vue表达式：写一些简单的表达式
-输出到标签里面，只能用到innerHTML里面
+不能输出到标签里面，只能用到innerHTML里面
 {{}}
 {{new Date()}}
 
@@ -245,7 +245,7 @@ computed{
 </script>
 ```
 
-watch--监听：
+## watch--监听：
 data:{
   name
 }
@@ -274,7 +274,7 @@ new Vue({
 })
 ```html
 <div>
-  <router-view></>
+  <router-view></router-view>
 </div>
 
 <script>
@@ -303,8 +303,8 @@ let router = new VueRouter({
 .uer-link-active:激活的时候显示
 <router-link class='' to'#'></router-link>
 
-可以有名字,可以传参$route
-$route路由信息
+routes中的一项可以有名字,可以传参-->通过':'传参
+$route:路由信息
 {
   path:'/a/:id',
   name:'news',
@@ -320,7 +320,7 @@ $route路由信息
 
 
 路由可以重叠：
-匹配两个路由，走前面那个
+匹配多个路由，走前面那个 比如path:'/'和path:'/index'会挂载path:'/'下的组件
 
 
 js控制路由跳转：
@@ -507,6 +507,10 @@ Vue.component('cmp1',{
   template
 })
 
+局部组件和全局组件的区别？  
+- 局部组件在当前实例中声明，只能在当前Vue实例(组件)中能用
+- 全局组件直接用，不用在组件的components中声明
+
 vm.js
 import './cmp1'
 
@@ -664,7 +668,7 @@ cnpm i vue-loader vue-style-loader vue-html-loader vue-template-compiler
 vue-style-loader：将外面的css文件样式融到vue中
 vue-template-compliler:解析器(将js,css,html分开)
 vue-html-loader：解析html
-plugin:vue-loader/lib/plugin：不需要下载？
+plugin:vue-loader/lib/plugin：不需要下载
 
 plugins:[
   new 
@@ -737,7 +741,7 @@ assets：会被打包
 static：不会被打包，名字也不会变
 
 组件中的<img src='...'> ：隐藏的require
-output里面的publicPath：打包后的文件在哪
+options{outputPath:}：打包后的文件在哪
 
 如果直接引，引的是js
 引bootstrap bootstrap/dist/css/bootstrap.min.js
@@ -823,7 +827,7 @@ getters:{
     return state.a+state.b
   }
 }
-用 当一个变量用
+当一个变量用
 $store.getters.count
 配合computed用
 count(){
@@ -903,6 +907,10 @@ import 'vue2-animate/dist/...
 </transtiton>
 animation-duration
 
+<transition-group name='fade' tag='p'>  //使用p标签代替当前transition标签(默认是span)
+</transition-group>
+
+name可以是animate.css动画的名字，也可以是自定义的，使用钩子函数
 del(index){
   this.arr=this.arr.splice(index,1)
 }

@@ -81,23 +81,43 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/8.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/5.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/8.js":
-/*!*********************!*\
-  !*** ./src/js/8.js ***!
-  \*********************/
+/***/ "./src/imgs/girl.jpg":
+/*!***************************!*\
+  !*** ./src/imgs/girl.jpg ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log(window.a);
-console.log('webpack-dev-server test');
+eval("module.exports = \"asserts/24199bc2c5b81bc8e4106fcef1dbd456.jpg\";\n\n//# sourceURL=webpack:///./src/imgs/girl.jpg?");
 
+/***/ }),
+
+/***/ "./src/imgs/ms.jpg":
+/*!*************************!*\
+  !*** ./src/imgs/ms.jpg ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"asserts/aa5403d58cb07784425f5b02a9d57e73.jpg\";\n\n//# sourceURL=webpack:///./src/imgs/ms.jpg?");
+
+/***/ }),
+
+/***/ "./src/js/5.js":
+/*!*********************!*\
+  !*** ./src/js/5.js ***!
+  \*********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _imgs_girl_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../imgs/girl.jpg */ \"./src/imgs/girl.jpg\");\n/* harmony import */ var _imgs_girl_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_imgs_girl_jpg__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _imgs_ms_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../imgs/ms.jpg */ \"./src/imgs/ms.jpg\");\n/* harmony import */ var _imgs_ms_jpg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_imgs_ms_jpg__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n//导入文件出现webpack卡死，无法打包问题，尚未解决\r\nconsole.log('img test');\r\n\n\n//# sourceURL=webpack:///./src/js/5.js?");
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map

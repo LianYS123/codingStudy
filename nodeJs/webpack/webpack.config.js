@@ -17,7 +17,8 @@ module.exports = {
         use:{
           loader:'file-loader',
           options:{
-            outputPath:path.resolve(__dirname,'build/imgs/')
+            // publicPath:'asserts/',
+            outputPath:'imgs/'//指定输出目录，会在build下面创建一个imgs文件夹
           }
         }
       }
