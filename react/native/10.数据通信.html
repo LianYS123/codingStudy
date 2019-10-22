@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="../bower_components/babel/browser.min.js"></script>
+<script src="../bower_components/react/react.development.js"></script> 
+<script src="../bower_components/react/react-dom.development.js"></script>
+
+<script type="text/babel">
+    class Parent extends React.Component{
+        constructor(...args){
+            super(...args)
+            this.state = {
+                username:'',
+                password:''
+            }
+        }
+        //目前在直接导入script这种方式下不能用async componentDidMount()，必须在webpack环境下使用
+        /*async */ componentDidMount(){
+            try{
+                // let res = await fetch('./data/1.json')
+                // let {username,password} = await res.json();
+                // this.setState({
+                //     username,
+                //     password
+                // })
+                throw new Error()
+            } catch(e){
+                alert('读取数据失败')
+            }
+        }
+        render(){
+            return (
+                <div>
+                    username:{this.state.username} <br/>
+                    password:{this.state.password} <br/>
+                    <br/>
+                </div>
+            )
+        }
+    }
+    let root = document.getElementById('root')
+    ReactDOM.render(
+        <div>
+            <Parent/>
+        </div>,
+        root
+    )
+    
+</script>
+</html>

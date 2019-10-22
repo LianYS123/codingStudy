@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="../bower_components/babel/browser.min.js"></script>
+<script src="../bower_components/react/react.development.js"></script> 
+<script src="../bower_components/react/react-dom.development.js"></script>
+
+<script type="text/babel">
+    class Comp1 extends React.Component{
+        constructor(...args){
+            super(...args)
+            this.name = 'lian'
+            this.a = 1;
+            this.state = {
+                a : 1
+            }
+        }
+        fn(){
+           this.setState({
+               a : this.state.a + 1  //触发视图重新渲染
+           })
+        }
+        fn2(){
+            this.a ++;  //不会触发视图重新渲染
+            console.log(this.a);
+        }
+        render(){
+            return (
+                <div>
+                    <button onClick={this.fn.bind(this)}>+1</button> <br/>
+                    <input type="button" value='btn2' onClick={this.fn2.bind(this)}/>
+                    <br/>
+                    {this.state.a}
+                    <br/>
+                    {this.a}
+                </div>
+            )
+        }
+    }
+
+    let root = document.getElementById('root')
+    ReactDOM.render(
+        <div>
+            <Comp1/>
+        </div>,
+        root
+    )
+    
+</script>
+</html>

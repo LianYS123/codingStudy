@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="../bower_components/babel/browser.min.js"></script>
+<script src="../bower_components/react/react.development.js"></script> 
+<script src="../bower_components/react/react-dom.development.js"></script>
+
+<script type="text/babel">
+    class Parent extends React.Component{
+        constructor(...args){
+            super(...args)
+            this.state = {
+                a : 1
+            }
+        }
+        componentDidMount(){
+            console.log('父组件已挂载');
+        }
+        componentDidUpdate(){
+            console.log('父组件已更新');
+        }
+        fn(){
+            this.setState({
+                a : this.state.a + 1
+            })
+        }
+        render(){
+            return (
+                <div>
+                    parent  <button onClick={this.fn.bind(this)}>+1</button> <br/>
+                    a : {this.state.a}
+                    <br/>
+                    <Child/>
+                </div>
+            )
+        }
+    }
+    class Child extends React.Component{
+        constructor(...args){
+            super(...args)
+            this.state = {
+                a : 1
+            }
+        }
+        componentDidMount(){
+            console.log('子组件已挂载');
+        }
+        componentDidUpdate(){
+            console.log('子组件已更新');
+        }
+        fn(){
+            this.setState({
+                a : this.state.a + 1
+            })
+        }
+        render(){
+            return (
+                <div>
+                    child  <button onClick={this.fn.bind(this)}>+1</button> <br/>
+                    a : {this.state.a}
+                </div>
+            )
+        }
+    }
+    let root = document.getElementById('root')
+    ReactDOM.render(
+        <div>
+            <Parent/>
+        </div>,
+        root
+    )
+    
+</script>
+</html>

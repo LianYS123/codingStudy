@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="../bower_components/babel/browser.min.js"></script>
+<script src="../bower_components/react/react.development.js"></script> <!--react必须在react-dom之前引-->
+<script src="../bower_components/react/react-dom.development.js"></script>
+
+<script type="text/babel">
+    class Comp1 extends React.Component{
+        constructor(...args){
+            super(...args)
+        }
+        render(){
+            return (
+                <div>
+                    comp1    
+                </div>
+            )
+        }
+    }
+
+    let root = document.getElementById('root')
+    ReactDOM.render(
+        <div>
+            <Comp1/>
+        </div>,
+        root
+    )
+    
+</script>
+</html>
