@@ -15,7 +15,7 @@ export default new VueRouter({
            children: news_router
         },
        {
-           path:'/home',
+           path:'/',
            name:'home',
            components:{
                default:header,

@@ -8,30 +8,31 @@
 </head>
 <body>
     <div id="app">
-
+        
     </div>
 
 <script src="./js/vue.js"></script>
+<script src="./js/vue-router.js"></script>
 <script>
-    let comp1 = {
-        template:`<div>comp1</div>`
-    },
-    comp2 = Vue.component('comp2',{
-        template:`
-            <div>comp2</div>
-        `
+    let router = new VueRouter({
+        routes : [
+            {
+                name : 'news',
+                path : '/a',
+                component : {
+                    template : `<div>a组件</div>`
+                }
+            }
+        ]
     })
     new Vue({
         el:'#app',
-        components:{
-            comp1,
-            // comp2
-        },
-        template:`
+        router,
+        template : 
+        `
         <div>
-            <comp1/>
-            <hr>
-            <comp2/>
+            <router-link to='/a'>news</router-link>
+            <router-view path='/a'></router-view>
         </div>
         `
     })

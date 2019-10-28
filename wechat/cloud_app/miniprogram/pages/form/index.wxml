@@ -1,0 +1,26 @@
+<text>
+{{a}}
+</text>
+
+<form>
+    <label >input</label>
+    <input type="text" placeholder="请输入些什么"/>
+
+    <label>编程语言：</label>
+    <radio-group bindchange="radioChange">
+        <label wx:for="{{lan}}" wx:for-item="item" wx:key="{{item.id}}">
+            <radio value="{{item.value}}" /> {{item.name}}
+        </label>
+    </radio-group>
+
+    <checkbox-group bindchange="checkChange">
+        <label wx:for="{{sports}}" wx:for-item="item" wx:key="{{item.id}}">
+            <checkbox value="{{item.value}}" /> {{item.name}}
+        </label>
+    </checkbox-group>
+    <switch />
+    <slider bindchange="sliderChange" /> {{rate}}
+    <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view>当前选择: {{date}}</view>
+    </picker>
+</form>

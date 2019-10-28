@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>span1</span>
+        <ul>
+            <li>li1</li>
+            <li>li2</li>
+            <li>li3</li>
+        </ul>
+        <strong>strong1</strong>
+    </div>
+</body>
+<script>
+    //遍历元素节点树：ie9以下只有children能用
+    let ul = document.getElementsByTagName('ul')[0]
+    
+    console.log(ul.parentElement);
+    console.log(ul.firstElementChild);
+    console.log(ul.lastElementChild);
+    console.log(ul.childElementCount);
+    console.log(ul.nextElementSibling);
+    console.log(ul.previousElementSibling);
+    
+</script>
+</html>

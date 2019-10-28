@@ -1,5 +1,6 @@
 let Koa = require('koa')
 let body = require('koa-better-body')
+let static = require('koa-static')
 
 let server = new Koa();
 
@@ -19,5 +20,5 @@ server.use(body({
 
 server.use(require('./routers'))
 
-
+server.use(static('./public'))
 

@@ -1,0 +1,18 @@
+<view>
+<button type="primary" size="mini" bindtap="showLoading">
+    showloading
+</button>
+<button bindtap="showToast" type="primary">showToast</button>
+<button bindtap="showActionSheet" type="warn">showActionSheet</button>
+<button bindtap="showShareMenu" type="primary">showShareMenu</button>
+<button bindtap="getUserInfo" type="warn">getUserInfo</button>
+<button bindtap="login" type="primary">login</button>
+<button bindtap="scanCode" type="warn">scanCode</button>
+<button bindtap="setKeepScreenOn" type="primary">setKeepScreenOn</button>
+<button bindtap="getBatteryInfoSync" type="warn">getBatteryInfoSync</button>
+<button bindtap="getFileSystemManager" type="primary">getFileSystemManager</button>
+<button bindtap="downloadFile" type="warn">downloadFile</button>
+<button bindtap="request" type="warn">request</button>
+
+
+</view>

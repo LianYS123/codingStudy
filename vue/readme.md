@@ -399,7 +399,7 @@ childern:
 在news组件里面暴露路由表
 
 引入：
-import news,{router as news_router} from 
+import news,{router as news_router} from
 
 路由里面套路由，视图里面套视图
 
@@ -424,13 +424,13 @@ async created(){
 }
 
 
-await Axios({ 
+await Axios({
   url:
   method:post   post方式
   data,
   transformRequest:[
     function(data){
-      return stringify(data) //将json转成 a=1&b=2的querystring的形式提交 
+      return stringify(data) //将json转成 a=1&b=2的querystring的形式提交
     }
   ]
 
@@ -478,7 +478,7 @@ ref:给组件内部的标签起个名字，存在vm的$refs里面
 
 
 
-component 
+component
   src
   index.html
 
@@ -502,7 +502,7 @@ cmp1.js
 Vue.component('cmp1',{
   props:['name','age']传参
   data(){
-    return 
+    return
   },
   template
 })
@@ -557,7 +557,7 @@ dialog.js
 组件的生存周期
 ![组件生命周期](./component-lifecycle.png)
 有el：new Vue({}) 挂到挂载点
-没有el：Vue.component({}) 
+没有el：Vue.component({})
 有template
 
 事件，生命周期函数，钩子(hook?)
@@ -600,7 +600,8 @@ config/webpack.prodction.js
 
 html-webpack-plugin:模板，自动生成html，根据模板多加一个script,test不需要
 1. 挂载点必须自己写上
-2. 挂载点id不见了？js文件的问题？配置的问题？别名的问题？
+2. 挂载点id不见了？ 挂载点会被整个替换掉，id一定会不见，主要可能是主文件的问题
+js文件的问题？配置的问题？别名的问题？
 
 
 resolve:{
@@ -671,7 +672,7 @@ vue-html-loader：解析html
 plugin:vue-loader/lib/plugin：不需要下载
 
 plugins:[
-  new 
+  new
 ]
 
 一般有一个主组件App.vue
@@ -779,7 +780,7 @@ component：调用actions
 
 cnpm i -S vuex
 
-引入 
+引入
 use：添加到vue身上
 声明 store
 const store = new Vuex.Store({
@@ -836,10 +837,10 @@ count(){
 
 vuex辅助方法（helper）
 mapState   state   ->   computed
-mapActions action  ->   methods 
+mapActions action  ->   methods
 mapGetters getters ->   computed
 
-mapState 是vuex里面的 
+mapState 是vuex里面的
 import {mapState} from vuex
 computed:{
   ...mapState(['a','b'])

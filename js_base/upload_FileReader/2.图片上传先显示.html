@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #drag{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 200px;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            float: left;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+        li>img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul id="imgList"></ul>
+    <button id="btn">点击上传</button>
+    <div id="drag">请把文件拖到这儿</div>
+</body>
+<script>
+    let drag = document.getElementById('drag')
+    let ul = document.getElementById('imgList')
+    let btn = document.getElementById('btn')
+    
+    document.addEventListener('drop',function(e){   //document也要阻止默认事件，不然会默认打开文件
+        e.preventDefault()
+    })
+    drag.addEventListener('dragenter',function(){
+        this.innerHTML = '松手'
+    })
+    drag.addEventListener('dragleave',function(){
+        this.innerHTML = '请把文件拖到这儿'
+    })
+    drag.addEventListener('dragover',function(ev){
+        ev.preventDefault();
+    })
+    drag.addEventListener('drop',function(ev){
+        this.innerHTML = '请把文件拖到这儿'
+
+        //获取图片
+        let files = ev.dataTransfer.files;
+        //预览图片,保存文件
+        Array.from(files).forEach((file,index) => {
+            let reader = new FileReader()  //一个reader只能处理一个文件，所以放入循环里
+            reader.onload = function(){
+                let src = reader.result;  //base64
+                let li = document.createElement('li')
+                let img = new Image()
+                img.src = src
+                li.appendChild(img)
+                li.file=file  //保存file
+                ul.appendChild(li)
+            }
+            reader.readAsDataURL(file)
+        })
+
+        //阻止默认事件
+        ev.preventDefault();
+    })
+    //点击上传
+    btn.onclick = function(){
+        let formData = new FormData()
+        Array.from(ul.children).forEach((li,index) => {
+            let file = li.file
+            console.log(file)
+            formData.append(`file${index}`,file)
+        })
+        upload(formData)
+    }
+    function upload(formData){
+        let xhr = new XMLHttpRequest()
+        xhr.open('post','http://localhost:8080/upload',true)
+        xhr.send(formData)
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){
+                    alert('成功')
+                }
+                else{
+                    alert('失败')
+                }
+            }
+        }
+    }
+
+</script>
+</html>

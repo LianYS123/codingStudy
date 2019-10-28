@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">box</div>
+    <div id="rm">ready for remove</div>
+    <button id="btn1">append</button>
+    <button id="btn2">remove</button>
+</body>
+<script>
+    let box = document.getElementById('box')
+    let btn1 = document.getElementById('btn1')
+    let btn2 = document.getElementById('btn2')
+    let rm = document.getElementById('rm')
+    //创建
+    let div1 = document.createElement('div')//创建元素节点
+    let text = document.createTextNode('text.....')//创建文本节点
+    let comment = document.createComment('comment...')//创建注释节点
+
+
+    //插入
+    btn1.onclick = function() {
+        div1.appendChild(text)         //在div中插入文本节点
+        box.appendChild(div1)          //将div1插入页面
+        box.insertBefore(comment,div1) //插入注释，将注释插入到div1之前
+    }
+
+    //删除
+    btn2.onclick = function() {
+        let ele = box.removeChild(div1)
+        rm.remove();
+        console.log(ele);
+    }
+
+
+</script>
+
+</html>

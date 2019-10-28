@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <input type="text" id="txt1"> <br>
+    <label for="txt2">Alt + Enter 提交留言：</label> <br>
+    <textarea name="txt2" id="txt2" cols="30" rows="10"></textarea>
+</body>
+<script>
+    let txt1 = document.getElementById('txt1')
+    let txt2 = document.getElementById('txt2')
+    txt1.onkeydown = function(e) {
+        if(e.key == 'Enter' && e.altKey) {
+            txt2.value += txt1.value + '\n'
+            txt1.value = ''
+            
+        }
+    }
+</script>
+</html>

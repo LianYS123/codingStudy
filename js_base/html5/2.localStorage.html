@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <input type="button" id="btn" value="发送">  <br>
+    <textarea id="txt" cols="80" rows="40"></textarea>
+    <button id="btn2">遍历localStorage</button>
+</body>
+
+<script>
+    let btn = document.getElementById('btn')
+    let btn2 = document.getElementById('btn2')
+    let txt = document.getElementById('txt')
+    txt.value = localStorage.txt || ''
+    txt.oninput = function(){
+        console.log(this.value);
+        
+        localStorage.txt = this.value
+    }
+    btn.onclick = function(){
+        txt.value = ''
+        delete localStorage.txt
+    }
+    btn2.onclick = function(){
+        for(let i = 0; i < localStorage.length; i++){
+            console.log(localStorage.key(i));
+        }
+    }
+</script>
+</html>

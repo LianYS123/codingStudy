@@ -20,8 +20,8 @@ class Table extends Component{
 
     return (
       <div>
+        {arr && arr.length !== 0 ?
         <table className="table">
-
         <thead>
           <tr>
             {arr.map(key => <th scope='col' key={key}>{key}</th>)}
@@ -54,6 +54,9 @@ class Table extends Component{
         </tbody>
 
       </table>
+      : <div className="alert alert-secondary" role="alert">
+          No any data here, click add to append one.
+         </div> }
       </div>
     )
   }

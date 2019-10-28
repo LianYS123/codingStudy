@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div a='1',b='2'>
+            这是一些文本
+        <!-- 这是一些注释 -->
+        <span></span>
+    </div>
+</body>
+<script>
+    //遍历元素节点树：ie9以下只有children能用
+    let div = document.getElementsByTagName('div')[0]  //NamedNodeMap {0: a, 1: ,b, a: a, ,b: ,b, length: 2}
+    console.log(div.attributes);
+    
+    let nodes = Array.from(div.childNodes)
+    for(let node of nodes){
+        // console.log(node);
+        console.log(node.nodeName);  //#text：文本，  #comment：注释，  SPAN：span
+        console.log(node.nodeValue); //  这是一些文本   这是一些注释 
+        console.log(node.nodeType);   //  3              8                1
+        console.log('------------------------------------------');
+    }
+</script>
+</html>

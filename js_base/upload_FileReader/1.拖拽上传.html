@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #drag{
+            margin: 200px auto;
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 200px;
+        }
+        meter{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <meter value="0"></meter>
+    <div id="drag">请把文件拖到这儿</div>
+</body>
+<script>
+    let drag = document.getElementById('drag')
+    let meter = document.getElementsByTagName('meter')[0]
+    
+    document.addEventListener('drop',function(e){   //document也要阻止默认事件，不然会默认打开文件
+        e.preventDefault()
+    })
+    drag.addEventListener('dragenter',function(){
+        this.innerHTML = '松手'
+    })
+    drag.addEventListener('dragleave',function(){
+        this.innerHTML = '请把文件拖到这儿'
+    })
+    drag.addEventListener('dragover',function(ev){
+        ev.preventDefault();
+    })
+    drag.addEventListener('drop',function(ev){
+        this.innerHTML = '请把文件拖到这儿'
+
+        //获取文件
+        let files = ev.dataTransfer.files;
+        let formData = new FormData()
+        Array.from(files).forEach((file,index) => {
+            formData.append(`file${index}`,file)
+        })
+        //文件上传
+        let xhr = new XMLHttpRequest()
+        xhr.open('post','http://localhost:8080/upload',true)
+
+
+        //监控文件上传进度：
+        xhr.upload.addEventListener('progress',function(ev){
+            let rate = ev.loaded / ev.total;
+
+            meter.value = rate * 100
+
+        })
+
+        xhr.send(formData)
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+                if(xhr.status == 200){
+                    alert('成功')
+                }
+                else{
+                    alert('失败')
+                }
+            }
+        }
+
+        //阻止默认事件
+        ev.preventDefault();
+    })
+
+</script>
+</html>

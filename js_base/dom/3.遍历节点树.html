@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <div>
+        <span>span1</span>
+        <ul>
+            <li>li1</li>
+            <li>li2</li>
+            <li>li3</li>
+        </ul>
+        <strong>strong1</strong>
+    </div>
+</body>
+<script>
+    let ul = document.getElementsByTagName('ul')[0]
+    //遍历节点数，会把所有节点都便利出来，包括文本节点、注释节点
+    console.log(ul.parentNode);  //div
+    console.log(ul.childNodes); //NodeList(7) [text, li, text, li, text, li, text]
+    console.log(ul.firstChild); //#text
+    console.log(ul.lastChild);  //#text
+    console.log(ul.nextSibling);  //#text
+    console.log(ul.previousSibling);  //#text
+</script>
+</html>

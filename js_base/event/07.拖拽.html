@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+<script>
+    let div1 = document.getElementById('div1')
+    div1.onmousedown = function(e) {
+        let disX = e.offsetX
+        let disY = e.offsetY
+        
+        document.onmousemove = function(e){
+            
+            if(e.clientX - disX < 20) {
+                div1.style.left = 0;
+            }
+            else if(e.clientY - disY < 20) {
+                div1.style.top = 0;
+            }
+            else {
+                div1.style.left = e.clientX - disX + 'px'
+                div1.style.top = e.clientY - disY + 'px'
+            }
+        }
+        document.onmouseup = function (){
+            document.onmousemove = null
+            document.onmouseup = null
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,23 @@
+<view>
+  <text wx:for='{{arr}}' wx:key='{{index}}'>
+    {{arr[index]}}
+  </text>
+  <progress percent="80" active />
+  <button bind:tap="fn" type="primary">click me</button>
+  <contact-button>呼叫客服</contact-button>
+  <scroll-view scroll-y='true' class="scroll">
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+    文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章文章
+  </scroll-view>
+  <icon type="success" size="100" />
+  <image src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" />
+  
+  <navigator url="/pages/form/index">To page1</navigator>
+</view>

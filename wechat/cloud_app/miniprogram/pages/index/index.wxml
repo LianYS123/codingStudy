@@ -1,0 +1,5 @@
+<view>
+<navigator url="/pages/basic/index">基础内容</navigator>
+<navigator url="/pages/form/index">form</navigator>
+<navigator url="/pages/wx/index">wx内置内容</navigator>
+</view>

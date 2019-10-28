@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+</body>
+<script>
+let arr2 = [1,2,2,3,2,,2,2,2,3,5,6,7,8,9]    
+Array.prototype.unduplicate = function () {
+    let obj = {},
+        arr = [],
+        len = this.length;
+    
+    for(let i = 0; i < len; i++){
+        
+        if(!obj[this[i]]) {
+            obj[this[i]] = 1;
+            arr.push(this[i])
+        }
+    }
+    return arr
+}
+console.log(arr2.unduplicate());
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <!-- input不能通过classname选中？ -->
+    <input id="txt" type="text">  
+</body>
+<script>
+    let input = document.getElementById('txt')
+    
+    input.onkeydown = function (e) {
+
+        //数字：48 - 57
+        //退格：8
+        //左右：37，39
+        if((e.keyCode < 48 || e.keyCode > 57) && e.keyCode != 8 && e.keyCode != 37 && e.keyCode != 39) {  //  ||的优先级比&&低
+            return false
+        }
+        
+    }
+</script>
+</html>

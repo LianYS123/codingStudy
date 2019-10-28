@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 500px;
+            height: 500px;
+            padding: 50px;
+            background-color: red;
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            padding: 50px;
+            background-color: green;
+        }
+        .div3{
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2">
+            <div class="div3"></div>
+        </div>
+    </div>
+</body>
+<script>
+    let div = document.getElementsByTagName('div');
+    div[0].onclick = function(){
+        alert('div1')
+    }
+    div[1].onclick = function(e){
+        alert('div2')
+        e.cancelBubble = true  //取消冒泡
+    }
+    div[2].onclick = function(e){
+        alert('div3')
+        e.cancelBubble = true //取消冒泡
+    }
+</script>
+</html>

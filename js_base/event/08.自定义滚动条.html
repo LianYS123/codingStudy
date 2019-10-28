@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #div1{
+            position: relative;
+            width: 500px;
+            height: 20px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        #div2{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: blue;
+        }
+        .wrapper{
+            position: relative;
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #000;
+            margin: 20px auto;
+        }
+        .content{
+            padding: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <div class="wrapper" id="wrapper">
+        <div class="content" id="content">
+                This upcoming winter may be warmer overall, but government forecasters are advising that there may be some "large swings" due to volatile weather patterns.
+
+                The National Oceanic and Atmospheric Administration said in its winter outlook that warmer-than-average temperatures are forecast for much of the U.S. this winter, with a wetter-than-normal season from December through February across the northern parts of the country.
+                
+                "No part of the U.S. is favored to have below-average temperatures this winter," according to the outlook.
+                
+                But forecasters admitted Thursday that global climate patterns that typically influence winter weather patterns are weak this year, leading to complicated forecasts.This upcoming winter may be warmer overall, but government forecasters are advising that there may be some "large swings" due to volatile weather patterns.
+
+                The National Oceanic and Atmospheric Administration said in its winter outlook that warmer-than-average temperatures are forecast for much of the U.S. this winter, with a wetter-than-normal season from December through February across the northern parts of the country.
+                
+                "No part of the U.S. is favored to have below-average temperatures this winter," according to the outlook.
+                
+                But forecasters admitted Thursday that global climate patterns that typically influence winter weather patterns are weak this year, leading to complicated forecasts.
+                This upcoming winter may be warmer overall, but government forecasters are advising that there may be some "large swings" due to volatile weather patterns.
+
+The National Oceanic and Atmospheric Administration said in its winter outlook that warmer-than-average temperatures are forecast for much of the U.S. this winter, with a wetter-than-normal season from December through February across the northern parts of the country.
+
+"No part of the U.S. is favored to have below-average temperatures this winter," according to the outlook.
+
+But forecasters admitted Thursday that global climate patterns that typically influence winter weather patterns are weak this year, leading to complicated forecasts.This upcoming winter may be warmer overall, but government forecasters are advising that there may be some "large swings" due to volatile weather patterns.
+
+The National Oceanic and Atmospheric Administration said in its winter outlook that warmer-than-average temperatures are forecast for much of the U.S. this winter, with a wetter-than-normal season from December through February across the northern parts of the country.
+
+"No part of the U.S. is favored to have below-average temperatures this winter," according to the outlook.
+
+But forecasters admitted Thursday that global climate patterns that typically influence winter weather patterns are weak this year, leading to complicated forecasts.
+        </div>
+    </div>
+</body>
+<script>
+    let div1 = document.getElementById('div1')
+    let div2 = document.getElementById('div2')
+    let wrapper = document.getElementById('wrapper')
+    let content = document.getElementById('content')
+    div2.onmousedown = function(e) {
+        let disX = e.offsetX
+        
+        document.onmousemove = function(e){
+            
+            if(e.clientX - div1.offsetLeft - disX < 0) {
+                div2.style.left = 0;
+            }
+            else if(e.clientX - div1.offsetLeft - disX > div1.offsetWidth - 20) {
+                div2.style.left = div1.offsetWidth - 20
+                console.log(div2.style.left);
+            }
+            else {
+                div2.style.left = e.clientX -div1.offsetLeft - disX + 'px'
+                let scale = div2.offsetLeft / (div1.offsetWidth - 20)
+                content.style.top = - scale * (content.offsetHeight - wrapper.offsetHeight) + 'px'
+            }
+            return false
+        }
+        document.onmouseup = function (){
+            document.onmousemove = null
+            document.onmouseup = null
+        }
+    }
+</script>
+</html>

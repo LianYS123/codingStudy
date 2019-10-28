@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1000" height="500"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+
+    ctx.moveTo(305,78)
+    ctx.lineTo(696,193)
+    ctx.lineTo(467,435)
+    ctx.lineTo(509,277)
+    ctx.closePath()
+
+    // ctx.lineWidth = 20
+    // ctx.strokeStyle = 'green'
+    // ctx.stroke()
+    ctx.fillStyle = 'red'
+    ctx.fill()
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 100px;
+            background-color: #CCC;
+            display: none;
+            position: absolute;
+        }
+        li{
+            list-style: none;
+            border: 1px solid #000;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li><a href="#">javascript</a></li>
+        <li><a href="#">java</a></li>
+        <li><a href="#">c++</a></li>
+        <li><a href="#">c#</a></li>
+        <li><a href="#">php</a></li>
+    </ul>
+</body>
+<script>
+    let menu = document.getElementsByTagName('ul')[0]
+    document.oncontextmenu = function(e){
+        menu.style.display = 'block'
+        menu.style.left = e.clientX +'px'
+        menu.style.top = e.clientY + 'px'
+        return false
+    }
+    document.onclick = function () {
+        menu.style.display = 'none'
+    }
+    menu.onclick = function(e){
+        e.cancelBubble = true;
+    }
+</script>
+</html>
