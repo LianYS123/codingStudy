@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .box{
+            margin: 100px auto;
+            width: 100px;
+            height: 100px;
+            background-color: #CCC;
+            /* transform: skew(30deg); */
+            transition: 1s all ease;
+
+        }
+        .box:active{
+            transform: rotate(30deg) scale(2,1);  /*先横向放大，再旋转30deg*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">这是一些字</div>
+</body>
+</html>

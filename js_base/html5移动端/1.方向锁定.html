@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    let box = document.getElementsByClassName('box')[0]
+    let x = 0, y = 0;  //用来记录盒子距离可视区的距离, 实际上是记录盒子初始的transform的x和y
+    box.addEventListener('touchstart',function(e){
+        let posX = e.targetTouches[0].clientX - x  //点击处距离盒子边框的距离 = 点击处x - 上次移动距离x
+        let posY = e.targetTouches[0].clientY - y
+        let startX = e.targetTouches[0].clientX  //记录点击的起始位置
+        let startY = e.targetTouches[0].clientY
+        let dir = ''
+        
+        function fnMove(e){
+            let moveX = Math.abs( e.targetTouches[0].clientX - startX )  //手指移动的横向距离
+            let moveY = Math.abs( e.targetTouches[0].clientY - startY )
+            if(dir == ''){  //如果方向没有确定，先确定方向
+                if(moveX > 5) {//如果横向先超过5px，将方向锁定为横向
+                    dir = 'x'
+                } else if(moveY > 5){
+                    dir = 'y'
+                }
+            } else {
+                if(dir == 'x'){
+                    //要的就是一个手指滑动后去起始点的差值，根据这个差值等比例移动div
+                    x = e.targetTouches[0].clientX - posX  //盒子距离可视区的距离
+                } else {
+                    y = e.targetTouches[0].clientY - posY
+                }
+            } 
+            box.style.transform = `translate(${x}px,${y}px)`
+        }
+        function fnEnd(e){
+            box.removeEventListener('touchmove',fnMove)
+            box.removeEventListener('touchend',fnEnd)
+        }
+        box.addEventListener('touchmove',fnMove)
+        box.addEventListener('touchend',fnEnd)
+    })
+
+</script>
+</html>

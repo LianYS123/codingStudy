@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #CCC;
+            margin:100px auto;
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script>
+    let box = document.getElementsByClassName('box')[0]
+    let original_degree = 0, degree = 0
+    let rotated_degree = 0
+    function calcDegree(disX,disY){
+        
+    }
+    document.addEventListener('touchstart',function(ev){
+        console.log(ev.targetTouches.length)
+        if(ev.targetTouches.length<2) return 
+        let disX = ev.targetTouches[0].clientX - ev.targetTouches[1].clientX
+        let disY = ev.targetTouches[0].clientY - ev.targetTouches[1].clientY
+        original_degree = Math.atan(disX/disY)
+    })
+    document.addEventListener('touchmove',function(ev){
+        if(ev.targetTouches.length<2) return 
+        let disX = ev.targetTouches[0].clientX - ev.targetTouches[1].clientX
+        let disY = ev.targetTouches[0].clientY - ev.targetTouches[1].clientY
+        degree = Math.atan(disX/disY)
+        rotated_degree += degree - original_degree
+        box.style.transform = `rotate(${-rotated_degree}deg)`
+    })
+    document.addEventListener('touchend',function(){
+
+    })
+
+</script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 100%;
+        }
+        li{
+            width: 100%;
+            position: relative;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+        }
+        li a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            width: 0px;
+            overflow: hidden;
+        }
+        li span {
+            display: block;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="info">
+    </ul>
+</body>
+<script src="./js/hammer.min.js"></script>
+<script>
+    let info = document.getElementsByClassName('info')[0]
+    let messages = [
+        'dsafdsafhsdfh',
+        'sdafds',
+        'sadfasdf',
+        'dasf',
+        'dasf',
+        'dsagfdgdsfgdsafhsdfh',
+        'dsafsadfdsfgdsafhsdfh'
+    ]
+    messages.forEach(msg => {
+        let li = document.createElement('li')
+        li.innerHTML = `
+            ${msg}
+            <a class="btn-del" href="javascript:"><span>删除</span></a>
+        `
+        info.appendChild(li)
+    })
+    let btns = document.getElementsByClassName('btn-del')
+    Array.from(info.children).forEach(li => {
+        let hammer = new Hammer(li)
+        let btn = li.getElementsByClassName('btn-del')[0]
+        hammer.on('swipeleft',ev => {
+            // console.log(ev);
+            Array.from(btns).forEach(btn => {
+                btn.style.width = '0px'
+            })
+            btn.style.transition = '1s width ease'
+            btn.style.width = '40px'
+        })
+        hammer.on('swiperight',ev => {
+            btn.style.transition = '1s width ease'
+            btn.style.width = '0px'
+        })
+        hammer.on('swipeend',ev=>{
+            li.style.transition = 'none'
+        })
+    })
+    Array.from(btns).forEach(btn => {
+        let hammer = new Hammer(btn)
+        hammer.on('tap',function(){
+            btn.parentElement.style.transition = '1s height ease'
+            btn.parentElement.style.height = '0'
+        })
+        hammer.on('tapend',function(){
+            btn.parentElement.style.transition = 'none'
+        })
+    })
+</script>
+</html>

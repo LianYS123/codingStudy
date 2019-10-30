@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>翻书</title>
+    <style>
+        .book{
+            width: 800px;
+            height: 500px;
+            background-color: #CCC;
+            transform: perspective(1200px) rotateX(30deg);
+            margin: 0 auto;
+            transform-style: preserve-3d;
+        }
+        .book .child{
+            width: 50%;
+            height: 100%;
+            border: 1px solid #000;
+            float: left;
+            box-sizing: border-box;
+            transform-style: preserve-3d;
+            position: relative;
+            transition: 1s all ease;
+        }
+        .book .child .page{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            
+        }
+        .book .child .page.front{
+            transform: translateZ(1px);
+        }
+        .book .child .page.back{
+            transform: translateZ(-1px) scaleX(-1);
+            
+        }
+        .book .page2{
+            transform: rotateY(0deg);
+            transform-origin: left;
+            
+        }
+        .book .page2:hover{
+            transform: rotateY(-120deg);
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="child page1">
+            <div class="page front">President Trump on Sunday announced that Abu Bakr al-Baghdadi, the elusive Islamic State commander, died during a U.S. military operation in Syria, an important breakthrough more than five years after the militant chief launched a self-proclaimed caliphate that inspired violence worldwide. 
+
+                    “Last night, the United States brought the world’s number one terrorist leader to justice,” Trump said in a televised announcement from the White House. “He was a sick and depraved man, and now he’s gone.” 
+                    
+                    In what the president called a “dangerous and daring” nighttime operation, helicopters inserted a team of American Special Operations troops into a volatile area of northwest Syria, where they began an assault on a militant compound culminating in a retreat by Baghdadi into an underground hideaway. There, in a “dead-end tunnel,” Trump said, the militant leader detonated an explosive vest, killing himself and three of what were believed to be his at least six children. 
+                </div>
+            <div class="page back">President Trump on Sunday announced that Abu Bakr al-Baghdadi, the elusive Islamic State commander, died during a U.S. military operation in Syria, an important breakthrough more than five years after the militant chief launched a self-proclaimed caliphate that inspired violence worldwide. 
+
+                    “Last night, the United States brought the world’s number one terrorist leader to justice,” Trump said in a televised announcement from the White House. “He was a sick and depraved man, and now he’s gone.” 
+                    
+                    In what the president called a “dangerous and daring” nighttime operation, helicopters inserted a team of American Special Operations troops into a volatile area of northwest Syria, where they began an assault on a militant compound culminating in a retreat by Baghdadi into an underground hideaway. There, in a “dead-end tunnel,” Trump said, the militant leader detonated an explosive vest, killing himself and three of what were believed to be his at least six children. 
+                </div>
+        </div>
+        <div class="child page2">
+            <div class="page front">President Trump on Sunday announced that Abu Bakr al-Baghdadi, the elusive Islamic State commander, died during a U.S. military operation in Syria, an important breakthrough more than five years after the militant chief launched a self-proclaimed caliphate that inspired violence worldwide. 
+
+                    “Last night, the United States brought the world’s number one terrorist leader to justice,” Trump said in a televised announcement from the White House. “He was a sick and depraved man, and now he’s gone.” 
+                    
+                    In what the president called a “dangerous and daring” nighttime operation, helicopters inserted a team of American Special Operations troops into a volatile area of northwest Syria, where they began an assault on a militant compound culminating in a retreat by Baghdadi into an underground hideaway. There, in a “dead-end tunnel,” Trump said, the militant leader detonated an explosive vest, killing himself and three of what were believed to be his at least six children. 
+                </div>
+            <div class="page back">President Trump on Sunday announced that Abu Bakr al-Baghdadi, the elusive Islamic State commander, died during a U.S. military operation in Syria, an important breakthrough more than five years after the militant chief launched a self-proclaimed caliphate that inspired violence worldwide. 
+
+                    “Last night, the United States brought the world’s number one terrorist leader to justice,” Trump said in a televised announcement from the White House. “He was a sick and depraved man, and now he’s gone.” 
+                    
+                    In what the president called a “dangerous and daring” nighttime operation, helicopters inserted a team of American Special Operations troops into a volatile area of northwest Syria, where they began an assault on a militant compound culminating in a retreat by Baghdadi into an underground hideaway. There, in a “dead-end tunnel,” Trump said, the militant leader detonated an explosive vest, killing himself and three of what were believed to be his at least six children. 
+                </div>
+        </div>
+    </div>
+</body>
+</html>

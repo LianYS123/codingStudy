@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 500px;
+            border: 1px solid #000;
+            overflow: hidden;
+            padding: 0 10px;
+            margin: 20px auto;
+            position: relative;
+        }
+        .text{
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            /* overflow: hidden; */
+        }
+        .refresh{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            text-align: center;
+        }
+        .loadmore{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="text">
+                "We've been eager to find an area that would be compelling enough to do wet chemistry," Paul Mahaffy, of NASA's Goddard Space Flight Center in Greenbelt, Maryland, said in a statement. "Now that we're in the clay-bearing unit, we've finally got it."
+                Mahaffy is principal investigator of Curiosity's Sample Analysis at Mars (SAM) instrument, which analyzes the dirt and drilled rock powder that the six-wheeled rover collects as it explores the 96-mile-wide (154 kilometers) Gale Crater. 
+                SAM has 74 cups to accept these samples, most of which are kept dry and then baked in a miniature oven to see what gases boil off. A mere nine cups are reserved for the special wet-chemistry work, so the mission team has been very parsimonious in their use to date.
+                Curiosity had previously used a wet cup just once, in December 2016, shortly after the rover's rock-boring drill malfunctioned. Mission team members weren't sure if they were going to be able to fix the drill and do wet chemistry in the future, so they conducted the experiment using some loose sand that Curiosity had scooped up, NASA officials said. (The team managed to fix Curiosity's drill in 2018.)
+                The results of last month's experiment won't be known until next year, mission team members said.
+                "SAM's data is extremely complex and takes time to interpret," Mahaffy said. "But we're all eager to see what we can learn from this new location, Glen Etive."
+                "We've been eager to find an area that would be compelling enough to do wet chemistry," Paul Mahaffy, of NASA's Goddard Space Flight Center in Greenbelt, Maryland, said in a statement. "Now that we're in the clay-bearing unit, we've finally got it."
+                Mahaffy is principal investigator of Curiosity's Sample Analysis at Mars (SAM) instrument, which analyzes the dirt and drilled rock powder that the six-wheeled rover collects as it explores the 96-mile-wide (154 kilometers) Gale Crater. 
+                SAM has 74 cups to accept these samples, most of which are kept dry and then baked in a miniature oven to see what gases boil off. A mere nine cups are reserved for the special wet-chemistry work, so the mission team has been very parsimonious in their use to date.
+                Curiosity had previously used a wet cup just once, in December 2016, shortly after the rover's rock-boring drill malfunctioned. Mission team members weren't sure if they were going to be able to fix the drill and do wet chemistry in the future, so they conducted the experiment using some loose sand that Curiosity had scooped up, NASA officials said. (The team managed to fix Curiosity's drill in 2018.)
+                The results of last month's experiment won't be known until next year, mission team members said.
+                "SAM's data is extremely complex and takes time to interpret," Mahaffy said. "But we're all eager to see what we can learn from this new location, Glen Etive."
+        </div>
+        <div class="refresh">
+            <span>下拉刷新</span>
+        </div>
+        <div class="loadmore">
+            <span>加载更多</span>
+        </div>
+    </div>
+</body>
+<script src="./js/iscroll-probe.js"></script>
+<script>
+    let oRefresh = document.getElementsByClassName('refresh')[0]
+    let oLoadmore = document.getElementsByClassName('loadmore')[0]
+    let oText = document.getElementsByClassName('text')[0]
+    let oBox = document.getElementsByClassName('box')[0]
+
+    let scroll = new IScroll('.box',{
+        // momentum:false
+        probeType:3
+    })
+
+    scroll.on('scroll',function(){
+        if(scroll.y>80){
+            oRefresh.children[0].innerHTML = '松手刷新'
+        } else{
+            oRefresh.children[0].innerHTML = '下拉刷新'
+        }
+        let overHeight = -scroll.y - ( oText.offsetHeight - oBox.offsetHeight )
+        if(overHeight>80){
+            oLoadmore.children[0].innerHTML = '松手加载'
+        } else if(overHeight > 0){
+            oLoadmore.children[0].innerHTML = '加载更多'
+        }
+        // console.log(overHeight);
+    })
+    
+</script>
+</html>

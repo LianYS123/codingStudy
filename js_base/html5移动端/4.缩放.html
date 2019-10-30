@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #CCC;
+            margin:100px auto;
+            transform: scale(1);
+        }
+        .show{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <div class="show"></div>
+</body>
+<script>
+    let box = document.getElementsByClassName('box')[0]
+    let original_distance = 0, distance = 0
+    let scale = 1
+    function show(str){
+        let oShow = document.getElementsByClassName('show')[0]
+        oShow.innerHTML += `<p>${str}</p>`
+    }
+    document.addEventListener('touchstart',function(ev){
+        if(ev.targetTouches.length<2) return 
+        let disX = ev.targetTouches[0].clientX - ev.targetTouches[1].clientX
+        let disY = ev.targetTouches[0].clientY - ev.targetTouches[1].clientY
+        let {pow,sqrt} = Math;
+        original_distance = sqrt(pow(disX,2),pow(disY,2))
+        
+    })
+    document.addEventListener('touchmove',function(ev){
+        if(ev.targetTouches.length<2) return 
+        let disX = ev.targetTouches[0].clientX - ev.targetTouches[1].clientX
+        let disY = ev.targetTouches[0].clientY - ev.targetTouches[1].clientY
+        let {pow,sqrt} = Math;
+        distance = sqrt(pow(disX,2),pow(disY,2))
+        scale *= distance/original_distance
+        show(scale)
+        box.style.transform = `scale(${scale})`
+    })
+</script>
+</html>

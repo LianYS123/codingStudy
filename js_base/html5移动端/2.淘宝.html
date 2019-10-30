@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 10px;
+        }
+        header{
+            width: 48rem;
+            background-color: #FF852A;
+            height: 4.2rem;
+        }
+        .page_content{
+            width: 48rem;
+            transform: translateY(0);
+        }  
+        section{
+            width: 100%;
+            height: 14.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        section ul{
+            width: 9999rem;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            transform: translateX(0);
+            list-style: none;
+        }
+       
+        section ul li{
+            width: 48rem;
+            height: 100%;
+            float: left;
+        }
+        section ol{
+            position: absolute;
+            bottom: 1.5rem;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            margin: auto;
+            text-align: center;
+        }
+        section ol li{
+            display: inline-block;
+            margin: 0 0.5rem;
+            background-color: #fff;
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+        }
+        section ol li.active{
+            background-color: #ff4e22;
+        }
+        section>ul>li>img{
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="page_content">
+        <section class="banner">
+            <ul id="imgUl">
+                <li><img src="img/3.jpg" alt=""></li>
+                <li><img src="img/1.jpg" alt=""></li>
+                <li><img src="img/2.jpg" alt=""></li>
+                <li><img src="img/3.jpg" alt=""></li>
+            </ul>
+            <ol>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </section>
+        <nav>
+        </nav>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+<script>
+    window.onresize = function(){
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 48 + 'px'
+    }
+    window.onresize();
+
+    let ul = document.getElementById('imgUl')
+    let content = document.getElementsByClassName('page_content')[0]
+    let ol = document.getElementsByTagName('ol')[0]
+    let wid = ul.children[0].clientWidth
+    let x = -wid, y = 0;//记录transfrom距离
+    ul.style.transform = `translateX(${x}px)`
+    ul.addEventListener('touchstart',function(e){
+        ul.style.transition = 'none'
+        content.style.transition = 'none'
+        let startX = e.touches[0].clientX  //点击开始位置
+        let startY = e.touches[0].clientY
+        let posX = startX - x  //点击处距离盒子宽度
+        let posY = startY - y
+        let dir = ''  //滑动方向
+        function fnMove(e) {
+            if(dir == ''){ //如果滑动方向未确定，先确定方向
+                if(Math.abs(e.touches[0].clientX - startX) > 5) dir = 'x'
+                else if(Math.abs(e.touches[0].clientX - startY) > 5) dir = 'y'
+            } else {
+                if(dir == 'x') {
+                    x = e.touches[0].clientX - posX
+                } else {
+                    y = (e.touches[0].clientY - posY)/4
+                }
+            }
+            
+            ul.style.transform = `translateX(${x}px)`
+            content.style.transform = `translateY(${y}px)`
+            
+        }
+        function fnEnd(e) {
+
+            ul.style.transition = '1s all ease'
+            let n = - Math.round(x/wid)
+            x = - n * wid
+            ul.style.transform = `translateX(${x}px)`
+            console.log(n);
+
+            Array.from(ol.children).forEach((ele,index) => {
+                ele.className = index == n - 1 ? "active" : ""
+            })
+            
+            content.style.transition = '1s all ease'
+            y  = 0
+            content.style.transform = `translateY(${y}px)`
+
+
+            ul.removeEventListener('touchmove',fnMove)
+            ul.removeEventListener('touchend',fnEnd)
+        }
+        ul.addEventListener('touchmove',fnMove)
+        ul.addEventListener('touchend',fnEnd)
+    })
+</script>
+</html>
