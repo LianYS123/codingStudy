@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+        }
+        canvas {
+            margin-top: 100px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1" width="800" height="500"></canvas>
+</body>
+<script>
+    let oc = document.getElementById('c1')
+    let gd = oc.getContext('2d')
+    let oImg = new Image()
+    oImg.src = './img/1.png'
+    oImg.onload = function(){
+        requestAnimationFrame(next)
+        let i = 0, frame = 0
+        function next(){
+            gd.clearRect(0,0,oc.width,oc.height)
+            if(frame % 4 == 0) i++
+            if(i>=8) i=0
+            gd.drawImage(//136,94
+                oImg,
+                136 * i, 0, 136, 94,
+                100, 100, 136, 94
+            )
+            frame ++
+            requestAnimationFrame(next)
+        }
+    }
+
+</script>
+</html>

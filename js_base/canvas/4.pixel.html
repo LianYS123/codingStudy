@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: black;
+        }
+        canvas{
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+<script>
+    let oc = document.getElementsByTagName('canvas')[0]
+    document.body.appendChild(oc)
+    window.onresize = function(){
+        oc.width = document.documentElement.clientWidth
+        oc.height = document.documentElement.clientHeight
+    }
+    window.onresize()
+    let gc = oc.getContext('2d')
+    let img = new Image()
+    img.src = './img/ms.jpg'
+    img.onload = function(){
+        gc.drawImage(img,0,0)
+        let imageData = gc.getImageData(0,0,oc.width,oc.height)
+        let data = imageData.data
+        for(let r = 0; r < oc.width; r++){
+            for(let c = 0; c < oc.height; c++){
+                // (oc.width * r + c) * 4 + 0   //r
+                // (oc.width * r + c) * 4 + 1   //g
+                // (oc.width * r + c) * 4 + 2   //b
+                // (oc.width * r + c) * 4 + 3   //a
+                // data[(oc.width * r + c) * 4 + 2] = 0  //变黄
+                data[(oc.width * r + c) * 4 + 0] 
+                = data[(oc.width * r + c) * 4 + 1] 
+                = data[(oc.width * r + c) * 4 + 2]
+                = (data[(oc.width * r + c) * 4 + 0] 
+                + data[(oc.width * r + c) * 4 + 1] 
+                + data[(oc.width * r + c) * 4 + 2]) / 3 * 1.5  //变灰变亮
+
+            }
+        }
+        gc.putImageData(imageData,0,0)
+    }
+</script>
+</html>

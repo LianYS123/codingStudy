@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+        }
+        canvas {
+            margin-top: 100px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="500"></canvas>
+</body>
+<script>
+    function r2a(radian){  //弧度转角度
+        return radian / Math.PI * 180
+    }
+    function a2r(degree){  //角度转弧度
+        return degree / 180 * Math.PI
+    }
+    function pie(cx,cy,r,beginAgl,endAgl) {  //画饼：路径
+        beginAgl = a2r(beginAgl)
+        endAgl = a2r(endAgl)
+        let x = cx + r * Math.cos(beginAgl)
+        let y = cy + r * Math.sin(beginAgl)
+        gc.moveTo(cx,cy)
+        gc.lineTo(x,y)
+        gc.arc(cx,cy,r,beginAgl,endAgl)
+        gc.closePath()
+    }
+    function drawPie(cx,cy,r,datas){// 画饼图
+        let ang = 0, sum = 0
+        datas.forEach(data=>{
+            sum += data.num
+        })
+        datas.forEach(data=>{
+            gc.save()
+            gc.beginPath()
+            gc.closePath()
+            let beginAgl = ang, endAgl = ang + data.num / sum * 360
+            pie(cx,cy,r,beginAgl,endAgl)
+            gc.fillStyle = data.color
+            gc.fill()
+            gc.restore()
+            ang = endAgl
+        })
+    }
+    let oc = document.getElementsByTagName('canvas')[0]
+    let gc = oc.getContext('2d')
+
+    let datas = [
+        {num:132,color:'#ccc'},
+        {num:33, color:'#f2f'},
+        {num:253,color:'#3fc'},
+        {num:234,color:'#dd3'},
+        {num:394,color:'red'},
+        {num:112,color:'blue'},
+    ]
+    drawPie(200,200,100,datas)
+
+</script>
+</html>

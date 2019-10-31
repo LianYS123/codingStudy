@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+        }
+        canvas {
+            margin-top: 100px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="800" height="500"></canvas>
+</body>
+<script>
+    function r2a(radian){  //弧度转角度
+        return radian / Math.PI * 180
+    }
+    function a2r(degree){  //角度转弧度
+        return degree / 180 * Math.PI
+    }
+    function rotatedRect(x,y,w,h,degree){ //画一个旋转了degree度的矩形
+        gc.save()
+        gc.beginPath()
+        gc.translate(x + x/2, y + y/2)
+        gc.rotate(a2r(degree))
+        gc.strokeRect(-w/2,-h/2,w,h)
+        gc.restore()
+    }
+    let oc = document.getElementsByTagName('canvas')[0]
+    let gc = oc.getContext('2d')
+    requestAnimationFrame(next) //申请一个动画帧
+    let ang1 = 0, ang2 = 0
+    function next(){
+        gc.clearRect(0,0,oc.width,oc.height)  //清空屏幕
+        rotatedRect(300,200,200,150,ang1)
+        ang1 += 1
+        rotatedRect(200,200,100,50,ang2)
+        ang2 += 3
+        requestAnimationFrame(next) //用完再申请一个
+    }
+
+</script>
+</html>
