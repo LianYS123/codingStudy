@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        line{
+            stroke:black;
+        }
+    </style>
+</head>
+<body>
+    <svg width="800" height="500">
+        <line x1="100" y1="100" x2="200" y2="200"></line>
+    </svg>
+</body>
+<script>
+    let oSvg = document.getElementsByTagName('svg')[0]
+    let line = document.getElementsByTagName('line')[0]
+    line.style["stroke-width"] = "20" 
+    line.addEventListener('mouseover',function(){
+        // line.setAttribute('stroke','red')  //优先级太低，不起作用:行内属性优先级极低
+        line.style.stroke = 'red'
+    })
+    line.addEventListener('mouseleave',function(){
+        line.style.stroke = 'black'
+    })
+</script>
+</html>

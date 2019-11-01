@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+</body>
+<script>
+    function a2r(angle){
+        return angle / 180 * Math.PI
+    }
+    function pie(cx,cy,r,startAgl,endAgl){
+        let x1 = cx + r * Math.cos(a2r(startAgl))
+        let y1 = cy + r * Math.sin(a2r(startAgl))
+        let x2 = cx + r * Math.cos(a2r(endAgl))
+        let y2 = cy + r * Math.sin(a2r(endAgl))
+        let d = `M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${Math.abs(endAgl - startAgl > 180 ? 1 : 0)} 1 ${x2} ${y2} Z`
+        return d
+    }
+    function drawPie(cx,cy,r,datas){
+        let sum = 0, startAgl = 0
+        let randomColor = () => `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+        datas.forEach(data => sum += data)
+        datas.forEach(data => {
+            let oPath = document.createElementNS("http://www.w3.org/2000/svg","path")
+            let endAgl = data / sum * 360 + startAgl
+            oPath.setAttribute('d',pie(cx,cy,r,startAgl,endAgl))
+            oPath.setAttribute('startAgl',startAgl)
+            oPath.setAttribute('endAgl',endAgl)
+            oPath.setAttribute('r',r)
+            oPath.style['fill'] = randomColor()
+            function move(isOver){
+                let sa = parseInt( this.getAttribute('startAgl') )
+                let ea = parseInt( this.getAttribute('endAgl') )
+                let frame = 0, curr = parseInt( this.getAttribute('r') )
+                let next = () => {
+                    if(isOver && curr > 1.25 * r) return
+                    if(!isOver && curr < r) {
+                        this.setAttribute('d',pie(cx,cy,r,sa,ea))
+                        return
+                    }
+                    if(frame % 5 == 0) {
+                        curr *= (isOver ? 1.1 : 1/1.1)  
+                        this.setAttribute('d',pie(cx,cy,curr,sa,ea))
+                        this.setAttribute('r',curr)
+                    }
+                    frame ++
+                    requestAnimationFrame(next)
+                }
+                next()
+            }
+            oPath.addEventListener('mouseover',function(){
+                move.call(this,true)
+            })
+            oPath.addEventListener('mouseout',function(){
+                move.call(this,false)
+            })
+            oSvg.appendChild(oPath)
+            startAgl = endAgl
+        })
+    }
+    let oSvg = document.createElementNS("http://www.w3.org/2000/svg","svg")
+    oSvg.setAttribute('width',800)
+    oSvg.setAttribute('height',600)
+    document.body.appendChild(oSvg)
+    let datas = [1,2,3,4,5,6]
+    let cx = 200, cy = 200, r = 100
+    drawPie(cx,cy,r,datas)
+
+</script>
+</html>
