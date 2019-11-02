@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+      .box{
+            width: 800px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            box-sizing: border-box;
+        }
+        .left,.right {
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+      <div class="box">
+          <div class="left"></div>
+          <div class="right"></div>
+      </div>
+</body>
+<script src="echarts.min.js"></script>
+<script>
+    let $ = document.querySelector.bind(document)
+    let oLeft = $('.left')
+    let oRight = $('.right')
+    let chart1 = echarts.init(oLeft)
+    let chart2 = echarts.init(oRight)
+    chart1.setOption({
+        title:{
+            text:'性别比例',
+            x:'center'
+        },
+        series:[
+            {
+                type:'pie',
+                data:[
+                    {
+                        name:'男',
+                        value:300
+                    },
+                    {
+                        name:'女',
+                        value:400
+                    },
+                ]
+            }
+        ]
+    })
+    let option_m = {
+        title:{
+            text:'男性年龄比例',
+            x:'center'
+        },
+        series:[
+            {
+                type:'pie',
+                data:[
+                    {
+                        name:'<10',
+                        value:300
+                    },
+                    {
+                        name:'10~20',
+                        value:500
+                    },
+                    {
+                        name:'20~30',
+                        value:700
+                    },
+                    {
+                        name:'30~40',
+                        value:600
+                    },
+                    {
+                        name:'40~50',
+                        value:200
+                    },
+                    {
+                        name:'50~60',
+                        value:100
+                    },
+                    {
+                        name:'60+',
+                        value:30
+                    },
+                ]
+            }
+        ]
+    }
+    let option_f = {
+        title:{
+            text:'女性年龄比例',
+            x:'center'
+        },
+        series:[
+            {
+                type:'pie',
+                data:[
+                    {
+                        name:'<10',
+                        value:100
+                    },
+                    {
+                        name:'10~20',
+                        value:500
+                    },
+                    {
+                        name:'20~30',
+                        value:1000
+                    },
+                    {
+                        name:'30~40',
+                        value:400
+                    },
+                    {
+                        name:'40~50',
+                        value:200
+                    },
+                    {
+                        name:'50~60',
+                        value:100
+                    },
+                    {
+                        name:'60+',
+                        value:50
+                    }
+                ]
+            }
+        ]
+    }
+    chart2.setOption(option_m)
+    chart1.on('mouseover',function(ev){
+        if(ev.name == "男") chart2.setOption(option_m)
+        else if(ev.name == '女') chart2.setOption(option_f)
+    })
+</script>
+</html>

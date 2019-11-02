@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+      .box{
+            width: 800px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+      <div class="box">
+      </div>
+</body>
+<script src="echarts.min.js"></script>
+<script>
+    let $ = document.querySelector.bind(document)
+    let box = $('.box')
+    echarts.init(box).setOption({
+        title:{
+            name:'饼图'
+        },
+        legend:{
+            // data:['男','女',...],
+            // data:['性别比例','年龄比例']   x
+        },
+        series:[
+            {
+                name:'性别比例',
+                type:'pie',
+                center:['30%','40%'],
+                data:[
+                    {
+                        name:'男',
+                        value:300
+                    },
+                    {
+                        name:'女',
+                        value:400
+                    },
+                ],
+                radius:'30%'
+            },
+            {
+                name:'年龄比例',
+                type:'pie',
+                center:['70%','40%'],
+                data:[
+                    {
+                        name:'<10',
+                        value:300
+                    },
+                    {
+                        name:'10~20',
+                        value:500
+                    },
+                    {
+                        name:'20~30',
+                        value:700
+                    },
+                    {
+                        name:'30~40',
+                        value:600
+                    },
+                    {
+                        name:'40~50',
+                        value:200
+                    },
+                    {
+                        name:'50~60',
+                        value:100
+                    },
+                    {
+                        name:'60+',
+                        value:30
+                    },
+                ],
+                radius:'30%'
+            }
+        ]
+    })
+    
+</script>
+</html>

@@ -59,10 +59,13 @@
             }
             oPath.addEventListener('mouseover',function(){
                 move.call(this,true)
+                let fnOut = () => {
+                    move.call(this,false)
+                    this.removeEventListener('mouseout',fnOut)
+                }
+                this.addEventListener('mouseout', fnOut)
             })
-            oPath.addEventListener('mouseout',function(){
-                move.call(this,false)
-            })
+            
             oSvg.appendChild(oPath)
             startAgl = endAgl
         })

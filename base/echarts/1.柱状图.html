@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        .box{
+            width: 800px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script src="echarts.min.js"></script>
+<script>
+    let $ = document.querySelector.bind(document)
+    let box = $('.box')
+    let chart = echarts.init(box)
+    chart.setOption({
+        title:{
+            text:'主标题',
+            subtext:'副标题'
+        },
+        legend:{  //柱子说明：什么颜色代表什么种类
+            // data:['男','女'], //根系列对应,可以是系列名或系列中的数据名
+            // right:'20%'
+        },
+        xAxis:[
+            {
+                type:'category',  //这条轴用来放类型
+                data:['一月','二月','三月','四月','五月'] //哪些类型
+            }
+        ],
+        yAxis:[
+            {
+                type:'value'  //这条轴用来放数据的值
+            }
+        ],
+        series:[ //一系列数据
+            {
+                name:'男', //跟legend配合,系列名
+                type:'bar', //类型为bar：柱状
+                data:[100,200,300,400,500] //这个系列有哪些数据
+            },
+            {
+                name:'女',
+                type:'bar',
+                data:[500,400,300,200,100]
+            },
+        ]
+    })
+</script>
+</html>

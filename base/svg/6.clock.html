@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #box{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+<script src="./raphael-2.3.0/raphael.js"></script>
+<script>
+    let paper = Raphael('box',800,500)
+    
+    let arr = []
+    let tick = () => {
+        let time = new Date()  //这个要放到里面
+        if(arr.length == 0){
+            arr = [
+                createPath(100,(time.getHours() % 12) / 12 * Math.PI * 2,'red'),
+                createPath(80,time.getMinutes() / 60 * Math.PI * 2,'green'),
+                createPath(60,time.getSeconds() / 60 * Math.PI * 2,'blue') 
+            ]
+        } else {
+            arr[0].calc((time.getHours() % 12) / 12 * Math.PI * 2)
+            arr[1].calc(time.getMinutes() / 60 * Math.PI * 2)
+            arr[2].calc(time.getSeconds() / 60 * Math.PI * 2)
+        }
+    }
+    tick()
+    setInterval(tick, 1000);
+    function createPath(r,degree,color){
+        let cx = 200, cy = 200
+        let path = paper.path().attr({//
+            'fill':'none',
+            'stroke':color,
+            'stroke-width':'10'
+        })
+        path.calc = calc
+        calc(degree)
+        function calc(degree){
+            let dx = cx + r * Math.sin(degree), dy = cy - r * Math.cos(degree)
+            path.attr('path',`M ${cx} ${cy - r} A ${r} ${r} 0 ${degree > Math.PI ? 1 : 0} 1 ${dx} ${dy}`) 
+        }
+        return path
+    }
+</script>
+</html>
