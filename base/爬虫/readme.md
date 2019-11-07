@@ -93,6 +93,7 @@ let document = jsdom.window.document
 html2$(){
 
 }
+
 detailSpider(url){
 
 }
