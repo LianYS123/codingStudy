@@ -169,11 +169,90 @@ server.js
                 ctx.body = {ok:false,err:'internal server error'}
                 console.error(e)
             }
-            
-
         }
     })
     server.context.db = require('./libs/database')
     router.use('/api',require(./router/api))
     server.use(router.routes())
     server.use(static(path_static))
+
+
+----------------------------------------
+    create react app 
+
+
+    let {title,price,description,images} = ctx.request.fields
+
+    function rename(source,dest){移动操作
+        fs.rename
+    }
+
+    async function moveUpload(file){//将上传的文件移动到
+        file.size == 0?  //上传失败,清除文件
+        else{
+            let ext = path.extname(file.name)
+            let base = path.basename(file.path)
+            await rename(file.path,path.resolve(path_upload,base+ext))
+        }
+    }
+    for(let i=0;i<images ; i++){
+        images[i] = await moveUpload()
+    }
+    router.get('/carpagecount',async ctx=>{
+        select count(*) as c from 
+        let count = Math.ceil(rows[0].c/size)
+        ctx
+    })
+yarn add bootstrap
+components:
+    Table.js
+        <thead>
+        <tr>
+            <td>ID<td>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    Dialog.js
+        panel
+        form
+        input name
+        好多个图片
+        btn 取消： onClick= this.props.onClose
+        getForm()
+App
+<Table fields={[
+    {name,text}
+]}>
+comonentdidmount(){
+    加载数据
+    this.setState
+}
+config
+submit(){//添加
+    let form = new FormData(form_)
+    fetch('api/book'{
+        method,
+        body:form
+    })
+    fetch method:'DELETE'
+}
+loadData(page){
+
+}
+
+Page.js
+Array.from(newArray(this.props.size)).map(index=>(<a href='javascript:'>))
+
+react里面不用value,改不了，用defaultVaule
+  
+npm run eject
+
+webpack.config.js
+    proxy:{
+        '/api':'http://localhost:8080/'
+    }
+
+    BASE为空
+
+
