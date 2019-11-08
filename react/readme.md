@@ -331,12 +331,12 @@ push不会引发子组件重新渲染
 
 不是路由中的组件不能用withrouter(不能用refs调用子组件中的push)
 
-备份this? 备份的this无法修改组件状态？
+备份this? 备份的this可以修改组件状态
 
 Cannot update during an existing state transition (such as within `render`). Render methods should be a pure function of props and state.
-组件外不能修改组件状态，包括通过回调函数修改状态。
+组件外不能修改组件状态
 
-通过回调函数传回去的this，可以改变子组件的状态,但是只能通过点击子组件触发，很多场合不适用。
+通过回调函数传回去的this(子组件的this)，可以改变子组件的状态,但是只能通过点击子组件触发，很多场合不适用。
 
 import 必须放在头部
 
@@ -352,6 +352,9 @@ get：查询，删除
 
 使用bind如何同时传事件对象和自己的参数？
 onChange={function(e){ this.onChange(e,index) }.bind(this)}
+onClick={e=>{
+    callback(index+1,e)  //同时传递事件函数和参数
+}}
 
 父组件渲染子组件不渲染:
 通过给子组件添加不同的key即可,每次父组件执行rend方法时,发现key不同就会重新加载子组件
@@ -361,4 +364,6 @@ onChange={function(e){ this.onChange(e,index) }.bind(this)}
 var timestamp = Date.parse(new  Date());//不推荐使用，因为毫秒级别的数值被转化为000 ，不准确！
 var timestamp = (new Date()).valueOf();//获取当前毫秒的时间戳，准确！
 var timestamp = new Date().getTime();//返回数值单位是毫秒；
+
+this.setState({}) 是一个异步函数，可以跟在await后面
 

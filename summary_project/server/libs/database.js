@@ -19,4 +19,8 @@ db.getById = async function(id,table,fields=['*']){
 db.delById = async function(id,table){
     await db.query(`delete from ${table} where id = ?`,[id])
 }
+db.getCount = async function(table){
+    let rows = await db.query(`select count(*) c from ${table}`)
+    return rows[0]['c']
+}
 module.exports = db

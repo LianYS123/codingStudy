@@ -5,17 +5,20 @@ const {unlink,exist} = require('../libs/fs')
 const notice = require('../libs/notice')
 
 let router = new Router()
+
+
 //分页查找
 router.get('/booklist/:page/:size', async ctx => {
     let {size,page} = ctx.params
     test(page,'page')
     page = parseInt(page)
     size = parseInt(size)
-    let data = await ctx.db.query(`select * from novel limit ?,?`,[(page-1) * size, page * size])
+    let data = await ctx.db.query(`select * from novels limit ?,?`,[(page-1) * size, size])
+    let count = await ctx.db.getCount('novels')
     if(data.length == 0)
         ctx.body = {ok:false,err:'no data'}
     else{
-        ctx.body = {ok:true, data}
+        ctx.body = {ok:true, data, pageCount:Math.ceil((count/size))}
     }
 
 })
@@ -47,7 +50,7 @@ router.del('/book/:id',async ctx=>{
 })
 //添加
 router.post('/book',async ctx => {
-    
+    let {title,author,description,icon,mark_score} = ctx.request.fields
 })
 //修改
 router.post('/book/:id',async ctx => {

@@ -2,6 +2,7 @@ const Crawler = require('crawler')
 const mysql = require('mysql')
 const fs = require('fs')
 const uuid = require('uuid/v4')
+const {path_static} = require('../config')
 
 let db = mysql.createPool({
     host:'localhost',
@@ -77,10 +78,13 @@ function dataProcessor({items,icons}){  //数据处理
 //图片操作
 function iconSpider(links,parser,processor){ //爬取图片
     let queues = link2queue(links,false,false,parser,processor)
+    // queues.forEach(queue => {
+    //     new Crawler().queue([queue])
+    // })
     new Crawler().queue(queues)
 }
 function iconProcessor(body,name){  //处理图片
-    fs.writeFile(`./imgs/${name}`,body,err=>{
+    fs.writeFile(`${path_static}/imgs/${name}`,body,err=>{
         if(err) console.error(err)
     })
 }

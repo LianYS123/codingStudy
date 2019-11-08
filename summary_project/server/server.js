@@ -9,6 +9,10 @@ let server = new Koa()
 
 server.context.db = require('./libs/database')
 
+server.use(async (ctx,next)=>{
+    ctx.set('Access-Control-Allow-Origin','*')
+    await next()
+})
 server.use(convert(body({
     uploadDir: path_upload
 })))
