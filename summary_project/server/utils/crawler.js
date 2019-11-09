@@ -17,6 +17,7 @@ function link2queue(links,encoding,jQuery=true,parser,processor){
         let queue = {
             uri,
             jQuery,
+            rateLimit:1000,
             callback(error,res,done){
                 if(error){
                     console.log(error)
@@ -40,7 +41,7 @@ function link2queue(links,encoding,jQuery=true,parser,processor){
 }
 //数据操作
 function dataSpider(parser,processor){  //爬取数据
-    links = [{uri:'https://api.xiaoshuo1-sm.com/sc/1/channel/channel/?format=json&page=1&size=100&q=%E5%A5%BD%E8%AF%84&_t=1573104659370&_=1573104659372&callback=jsonp2'}]
+    links = [{uri:'https://api.xiaoshuo1-sm.com/sc/1/channel/channel/?format=json&page=1&size=100&q=%E7%83%AD%E6%90%9C&_t=1573228590570&_=1573228590571&callback=jsonp1'}]
     let queues = link2queue(links,true,false,parser,processor)
     new Crawler().queue(queues)
 }

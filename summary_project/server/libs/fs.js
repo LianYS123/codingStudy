@@ -23,7 +23,7 @@ module.exports = {
             })
         })
     },
-    appendFile(path,data){
+    appendFile(path,data){ //文件添加内容
         return new Promise((resolve,reject)=>{
             fs.appendFile(path,data,err=>{
                 if(err){

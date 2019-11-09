@@ -1,0 +1,9 @@
+.dialog{
+    width: 250px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 100px auto;
+    top: 0;
+    background-color: #fff;
+}

@@ -1,0 +1,11 @@
+.panel{
+    width: 500px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 50px auto;
+    top: 0;
+    background-color: #fff;
+    padding: 25px 20px;
+    border-radius: 10px;
+}
