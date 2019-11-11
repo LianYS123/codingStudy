@@ -2,17 +2,19 @@ import React,{Component} from 'react'
 import datalib from '../libs/datalibs'
 import Panel from '../components/Panel'
 import {connect} from 'react-redux'
-import {SET_COUNT} from '../actions'
-
 import './Add.css'
 import {withRouter} from 'react-router-dom'
-class Add extends Component {
+class Modify extends Component {
     render(){
+        console.log('test')
         let self = this
+        let id = this.props.params.match.id
+        let item = this.props.data.find(item=>item.id === id)
         let fields = [
-            {name:'title',text:'名称',placeholder:'请输入名称'},
-            {name:'author',text:'作者',placeholder:'请输入作者'},
-            {name:'description',text:'描述',placeholder:'请输入描述'}
+            {name:'title',text:'ID',defaultValue:item.id,readOnly:true},
+            {name:'title',text:'名称',defaultValue:item.title},
+            {name:'author',text:'作者',defaultValue:item.author},
+            {name:'description',text:'描述',defaultValue:item.description}
         ]
         let files = [{name:'icon',text:'封面'}]
         let btns = [
@@ -21,10 +23,8 @@ class Add extends Component {
             async callback(){
                 try{
                     let form = this.getForm()
-                    await datalib.post('api/book',form)
+                    await datalib.post(`api/book/${id}`,form)
                     self.props.history.goBack()
-                    let count = await datalib.get('api/pagecount/10')
-                    self.props.setCount(count)
                 }
                 catch(e){
                     console.error(e)
@@ -43,7 +43,7 @@ class Add extends Component {
         return (
             <div className='add'>
                 <div>
-                    <Panel title="添加" fields={fields} btns={btns} files={files}></Panel>
+                    <Panel title="修改" fields={fields} btns={btns} files={files}></Panel>
                 </div>
             </div>
         )
@@ -55,12 +55,5 @@ export default connect(
       ...state,
       ...props
     }
-  },{
-    setCount(count){
-      return {
-        type: SET_COUNT,
-        count
-      }
-    }
   }
-)(withRouter(Add));
+)(withRouter(Modify));

@@ -20,3 +20,8 @@ return
 </div>
 
 所有的页面用路由跳转，组件可以用state控制
+
+事件传参方法 onClick = { e => callback(e,args...) }
+
+formData对象不能被console.log()输出
+formData输出为空 console.log(formData):  formData：是不能转换为字符串的,虽然输出为空，但实际上是有数据的

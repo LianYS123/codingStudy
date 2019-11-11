@@ -1,4 +1,5 @@
 module.exports = {
     page: /^\d+/,
-    id: /^\d+/
+    id: /^\d+/,
+    imageType:/^image\/(svg\+xml|jpeg|svg|png)$/i
 }

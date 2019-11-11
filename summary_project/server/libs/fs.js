@@ -25,7 +25,7 @@ module.exports = {
     },
     appendFile(path,data){ //文件添加内容
         return new Promise((resolve,reject)=>{
-            fs.appendFile(path,data,err=>{
+            fs.appendFile(path,data+'\n',err=>{
                 if(err){
                     reject(err)
                 } else{
@@ -33,5 +33,17 @@ module.exports = {
                 }
             })
         })
+    },
+    rename(source,dest){
+        return new Promise((resolve,reject) => {
+            fs.rename(source,dest,err=>{
+                if(err){
+                    reject(err)
+                } else {
+                    resolve()
+                }
+            })
+        })
     }
+
 }

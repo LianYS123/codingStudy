@@ -2,9 +2,6 @@ import React,{Component} from 'react'
 import './Table.css'
 
 class Table extends Component {
-    constructor(...args){
-        super(...args)
-    }
     convertURL(icon){
         return `http://localhost:8080/imgs/${icon}`
     }
@@ -24,7 +21,7 @@ class Table extends Component {
                 {datas.map(data=>(
                 <tr key={data.id}>
                     {fields.map((field,index)=>
-                        <td scope='row' key={index}>
+                        <td key={index}>
                             {field.icon?(
                                 <figure className="figure">
                                     <img src={this.convertURL(data[field.name])} className="figure-img img-fluid rounded" alt="..."/>

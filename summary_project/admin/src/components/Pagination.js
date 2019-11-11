@@ -1,11 +1,6 @@
 import React,{Component} from 'react';
 import "./Pagination.css"
 class Pagination extends Component {
-  constructor(...args){
-    super(...args)
-    this.state = {
-    }
-  }
   render(){
     let {count,callback,curr} = this.props.options || {}
     count = parseInt(count) || 0
