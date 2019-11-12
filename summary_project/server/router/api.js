@@ -90,10 +90,33 @@ router.post('/book',async ctx => {
 })
 //修改
 router.post('/book/:id',async ctx => {
-    
-})
-//test
-router.get('/a/b', ctx =>{
-    ctx.body='hello world'
+    let {id,title,author,description,icon} = ctx.request.fields
+    test(id,'id')
+    if(!title || title == '') throw 'title is required'
+    if(!author || author == '') throw 'author is required'
+
+    if(icon){
+        //移动图片
+        await moveImage(icon[0])
+        //删除原来的
+        let {icon:old} = await ctx.db.getById(id,'novels',['icon'])
+        console.log(old)
+        await remove(path.resolve(imagePath,old))
+        //将icon改为文件名
+        let {name:filename} = path.parse(icon[0].path)
+        icon = filename
+    }
+
+    let fields = {id,title,author,description,icon}
+    let arr = []
+    for(let key in fields) {
+        if(!fields[key]) continue
+        arr.push(key+'='+`"${fields[key]}"`)
+    }
+    let sql = `update novels set ${arr.join(',')} where id = ${id}`
+    // console.log(sql)
+    await ctx.db.query(sql)
+    ctx.body={ok:true}
+
 })
 module.exports = router.routes()

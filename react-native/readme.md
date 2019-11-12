@@ -60,6 +60,12 @@ export function calc(size){
 }
 
 利用calc来适应宽：
+import {Dimensions} from 'react-native'
+const BASE_WIDTH = 750
+exportfunction calc(size){
+    Dimensions.get('window') // 获取应用宽度
+    return width/BASE_WIDTH * size
+}
 width:calc(300)
 
 flex布局
@@ -94,3 +100,95 @@ sum.toFixed(2) 保留两位小数
 
 模拟器刷新：rr
 
+<View style={styles.bg}>
+StyleSheet:StyleSheet.creat({
+    bg:{backgroundColor:'#...'}
+})
+
+跳转：
+yarn add react-native-router-flux   简称rnrf
+能够把所有的整合到一个路由表里面跳转
+import {Router,Scene}
+路由逻辑都包在Router里面，Scene：容器
+所有Router里必须只有一个Scene
+<Router>
+    <Scene key="root">
+        <Scene key="startup" component={} initial={true} >
+    </>
+</Router>
+Router
+    Scene key initial={true} 开始就加载的页面 hideNavBar={true}隐藏默认导航
+        Scene key
+
+Actions from 'react-native-router-flux'
+Actions.push('这里放key',{放props})
+
+图片：
+Image source={require()}
+
+import {FlatList} from 'react-native'
+用来做循环，性能高
+是一个单标签
+state={records={数据}}
+<FlatList
+    data={this.state.records}
+    keyExtractor={item=>item.ID+''}  加key:将字符串里面的东西转化成key
+    renderItem={({item,index})=>(<Text>{item.catalog}</Text>)}
+/>
+Alert.alert('标题','message',[{text:'ok'}])
+
+const {catalog,incoem,...} = ctx.query;
+const time=Math.floor(Date.now()/1000)
+select * from table orderby id desc
+
+<Button color="#2d7afc" title="记一笔" onPress{this.showAddDialog.bind(this)}>
+showAddDialog(){
+    Actions.push()
+}
+
+import {Lightbox} from 'react-native-router-flux'
+下面的第一个子节点会认为是Scene,其他的都会当做Dialog来用
+<Lightbox>
+    <Scene key>
+</>
+<Picker 
+    selectedValue={this.state.income}
+    onValueChange={(value,index)=>this.setState({income:value})}
+></>
+<Picker.Item label="支出" value={0}>
+<Picker.Item label="收入" value={1}>
+
+
+<TextInput
+    placeholder="备注"
+    onChangeText={text=>setState({comment:text})}
+    keyboardType="number-pad"  //数字键盘
+/>
+<View>
+    <View><Button></>
+    <View>button</>  取消 Actions.pop()
+</View>
+
+utils  common.js
+export function joinQuery(data){
+    let arr = []
+    for(let name in data){
+        arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]))
+    }
+    return arr.join('&')
+}
+submit(){
+    let res = await fetch(BASE+'/add?'+joinQuery({}))
+
+}
+totalIncome(){
+    this.state.record.forEach(({income,amount})=>{
+        if(income){
+            sum+=amount
+        }
+    })
+    return sum.toFixed(2)
+}
+
+页面
+AddDialog,List,StartUp

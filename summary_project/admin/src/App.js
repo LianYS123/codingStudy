@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import Pagination from './components/Pagination'
-import {BrowserRouter as Router,Route,withRouter} from 'react-router-dom'
+import {withRouter,BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom'
 import PagPages from './pages/PagPages'
 import {SET_COUNT,SET_CURR} from './actions'
 import datalib from './libs/datalibs'
 import {connect} from 'react-redux'
+import Modify from './pages/Modify' 
+import Add from './pages/Add'
 
 class App extends Component {
   async componentDidMount(){
@@ -34,8 +36,15 @@ class App extends Component {
     return (
       <div style={{position:'relative'}}>
         <Router key={curr}>
-          <Route path={`/page/:curr`} component={PagPages} exact></Route>
-          <Route path={`/`} component={PagPages} exact></Route>
+          <Link to='/add'>
+              <button className="btn btn-primary">添加一本书</button>
+          </Link>
+          <Route path='/add' component={Add}></Route>
+          <Route path='/page/:curr/modify/:id' component={Modify}></Route>
+          <Switch>
+            <Route path='/page/:curr' component={PagPages}></Route>
+            <Route path='/' component={PagPages}></Route>
+          </Switch>
           <Pagination options={pageOptions} key={curr}></Pagination>
         </Router>
       </div>
@@ -43,7 +52,7 @@ class App extends Component {
   }
 }
 
-export default connect(
+export default withRouter(connect(
   function(state,props){
     return {
       ...state,
@@ -63,4 +72,4 @@ export default connect(
       }
     }
   }
-)(withRouter(App));
+)(App));

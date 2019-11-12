@@ -255,4 +255,6 @@ webpack.config.js
 
     BASE为空
 
+koa-better-body 中的对象RowDataPacket { icon: 'a33e9c163f74.jpg' }不能通过 点 取值，只能用过解构赋值取值
+
 

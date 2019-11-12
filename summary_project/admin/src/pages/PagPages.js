@@ -3,31 +3,23 @@ import Table from '../components/Table'
 import datalib from '../libs/datalibs';
 import {connect} from 'react-redux'
 import {SET_DATA, SET_CURR, SET_COUNT} from '../actions'
-import {withRouter,BrowserRouter as Router,Route,Link} from 'react-router-dom'
-import Add from './Add'
-import Modify from './Modify' 
+import {withRouter} from 'react-router-dom'
+import loadData from '../utils/loadData'
 import Dialog from '../components/Dialog'
 class PagPages extends Component {
     state = {show : false}
     async componentDidMount(){
-        await this.loadData()
-    }
-    async loadData(size=10){
         let page = this.props.match.params.curr || 1
         if(page !== this.props.curr) {
           this.props.setCurr(page)
         }
-        console.log(`load data on page ${page}`);
-        try{
-            let data =  await datalib.get(`api/booklist/${page}/${size}`)
-            this.props.setData(data)
-        }
-        catch(err) {
-          alert('数据加载出错')
-          console.error(err)
-        }
+        
+        let data = await loadData(page)
+        if(data) this.props.setData(data)
     }
     render(){
+        console.log('test')
+        let curr = this.props.match.params.curr || 1
         let self = this
         let fields = [
           {name:'id',text:'ID'},
@@ -40,8 +32,8 @@ class PagPages extends Component {
         let btns = [
           {
             text:'修改',
-            callback(id){
-              self.props.history.push('/modify/'+id)
+            async callback(id){
+              self.props.history.push(`/page/${curr}/modify/${id}`)
             },
             classList:['btn btn-primary']
           },
@@ -73,13 +65,6 @@ class PagPages extends Component {
         }
         return (
             <div>
-                <Router>
-                    <Link to='/add'>
-                        <button className="btn btn-primary">添加一本书</button>
-                    </Link>
-                    <Route path='/add' component={Add}></Route>
-                    <Route path='/modify/:id' component={Modify}></Route>
-                </Router>
                 <Table fields={fields} btns={btns} datas={datas}></Table>
                 {this.state.show?
                     <div className="shadow-box">
@@ -90,7 +75,7 @@ class PagPages extends Component {
         )
     }
 }
-export default connect(
+export default withRouter(connect(
     function(state,props){
       return {
         ...state,
@@ -116,4 +101,4 @@ export default connect(
         }
       }
     }
-  )(withRouter(PagPages));
+  )(PagPages));
