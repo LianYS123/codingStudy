@@ -19,7 +19,7 @@ react-native-cli
 npm i -g react-native-cli
 react-native init name
 运行：
-react-native run android/ios
+react-native run-android/ios
 
 目录：
 adnroid：原生java 文件
@@ -192,3 +192,31 @@ totalIncome(){
 
 页面
 AddDialog,List,StartUp
+
+npm run start 报错：
+Invalid regular expression: /(.*\\__fixtures__\\.*|node_modules[\
+解决
+You can correctly terminate the regular expression in you case by changing the file located a:
+\node_modules\metro-config\src\defaults\blacklist.js
+From:
+var sharedBlacklist = [
+  /node_modules[/\\]react[/\\]dist[/\\].*/,
+  /website\/node_modules\/.*/,
+  /heapCapture\/bundle\.js/,
+  /.*\/__tests__\/.*/
+];
+To:
+ var sharedBlacklist = [
+  /node_modules[\/\\]react[\/\\]dist[\/\\].*/,
+  /website\/node_modules\/.*/,
+  /heapCapture\/bundle\.js/,
+  /.*\/__tests__\/.*/
+];
+注意：当执行yarn add xxx 后，可能会把这个正则内容该回到原来的状态，再次报这个错，改回来就行了
+
+
+无法在模拟器上面运行的问题：模拟器的问题，该有真机测试就没有问题了
+
+真机测试如何刷新？控制台如何调出？摇一摇
+
+给Button直接加样式没有用，要把它包在一个View中
