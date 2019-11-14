@@ -1,19 +1,31 @@
 import React,{Component} from 'react'
-import {View,Text,StyleSheet,FlatList,Button} from 'react-native'
+import {View,Text,StyleSheet,FlatList,Button,Alert} from 'react-native'
 import {calc} from '../utils/common'
 import { Actions } from 'react-native-router-flux'
+import datalib from '../utils/datalib'
 class List extends Component{
   state = {
-    records:[
-      {id:1,account:10000,info:'工资',time:'2019-11-11',income:1},
-      {id:2,account:8000,info:'老王还钱',time:'2019-11-8',income:1},
-      {id:4,account:100,info:'吃饭',time:'2019-10-13',income:0},
-      {id:6,account:100000,info:'买车',time:'2019-9-13',income:0},
-    ]
+    records:[]
   }
   constructor(props){
     super(props)
   }
+  async componentDidMount(){
+    let records = await datalib.get('items/list')
+    console.log(records)
+    if(records) this.setState({records})
+  }
+
+  async componentDidUpdate(){
+    let records = await datalib.get('items/list')
+    console.log(records)
+    if(records) this.setState({records})
+  }
+  shouldComponentUpdate(nextProps,nextState){
+    return JSON.stringify(this.state) != JSON.stringify(nextState) ||
+     JSON.stringify(this.props) != JSON.stringify(nextProps)   
+  }
+
   handlePress = ()=>{
     Actions.push('adddialog',{})
   }
@@ -61,7 +73,7 @@ class List extends Component{
 let style = StyleSheet.create({
   bg:{width:calc(750),backgroundColor:'white',height:'100%',backgroundColor:'#CCC'},
   header:{backgroundColor:'skyblue',height:'20%',flexDirection:'column',justifyContent:'center'},
-  name:{height:calc(80),textAlign:'center',flex:1,lineHeight:calc(80),fontSize:calc(30)},
+  name:{height:calc(80),textAlign:'center',lineHeight:calc(80),fontSize:calc(30)},
   pay:{flexDirection:"row",flex:2,alignItems:"center"},
   detail:{flex:1},
   num:{height:calc(40),fontSize:calc(30),textAlign:'center',lineHeight:calc(40)},

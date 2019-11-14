@@ -154,9 +154,11 @@ import {Lightbox} from 'react-native-router-flux'
 <Picker 
     selectedValue={this.state.income}
     onValueChange={(value,index)=>this.setState({income:value})}
-></>
-<Picker.Item label="支出" value={0}>
-<Picker.Item label="收入" value={1}>
+>
+    <Picker.Item label="支出" value={0}>
+    <Picker.Item label="收入" value={1}>
+</Picker>
+
 
 
 <TextInput
@@ -220,3 +222,7 @@ To:
 真机测试如何刷新？控制台如何调出？摇一摇
 
 给Button直接加样式没有用，要把它包在一个View中
+
+加载数据失败：手机与电脑要在同一局域网内
+
+路由失效？全部重启就好了
