@@ -9,7 +9,6 @@ let db = mysql.createPool({
     user:'lian',
     password:'tb1766318380'
 })
-// let db = co(conn)
 function link2queue(links,encoding,jQuery=true,parser,processor){  
     let queues = []
     links.forEach(({uri,name}) => {
@@ -65,13 +64,6 @@ function dataProcessor({items,icons}){  //数据处理
     db.query(sql,[],err=>{
         if(err) console.error(err)
     })
-
-    // items.forEach(({title,author,icon,description,mark_score}) => 
-    //     db.query('INSERT INTO novels (title,author,icon,description,mark_score) values(?,?,?,?,?)'
-    //     ,[title,author,icon,description,mark_score],err=>{
-    //         if(err)console.error(err)
-    //     })
-    // )
     iconSpider(icons,data=>data,iconProcessor)
 }
 //图片操作

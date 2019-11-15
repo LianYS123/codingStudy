@@ -181,7 +181,6 @@ export function joinQuery(data){
 }
 submit(){
     let res = await fetch(BASE+'/add?'+joinQuery({}))
-
 }
 totalIncome(){
     this.state.record.forEach(({income,amount})=>{
@@ -226,3 +225,5 @@ To:
 加载数据失败：手机与电脑要在同一局域网内
 
 路由失效？全部重启就好了
+
+react-native无法使用node原生模块
