@@ -1,23 +1,18 @@
 const {cra} = require('./utils')
 const {base} = require('./config')
 const Detail = require('./Detail')
+const db = require('./database')
 
 module.exports = class Index {
     constructor($){
         this.$ = $
     }
-    async spider(){
-        return this.$
+    getPageCount(){
+        return parseInt( this.$('#pagelink').find('.last').text() )
     }
-    async getPageCount(){
-        let $ = await this.spider()
-        let count = parseInt( $('#pagelink').find('.last').text() )
-        return count
-    }
-    async parser(){
-        let $ = await this.spider()
+    parser(){
+        let $ = this.$, arr = []
         let items = $('#content .zuixin ul li')
-        let arr = []
         items.each( (index,li) => {
             if(index == 0) return
             let category = $(li).find('.lei').text()
@@ -29,26 +24,30 @@ module.exports = class Index {
             let res = {category,name,href,latestChapter,author,uptime}
             arr.push(res)
         })
-
         return arr
     }
     async processor(){
-        let arr = await this.parser()
+        let arr = this.parser()
         let queues = []
         console.log('----------------------href----------------------')
-        arr.forEach(({category,name,href,latestChapter,author,uptime}) => {
+        arr.forEach(({href}) => {
             href = base + href
-            console.log(href)
             queues.push({url:href})
         })
-        console.log('---------------------detail-----------------------')
-
-        cra(queues,async function($){
-            let detail = new Detail($)
-            let res = await detail.processor()
-            console.log(res)
+        arr.forEach(async ({category,name,href,latestChapter,author,uptime}) => {
+            href = base + href
+            await db.query(`insert into novel2 
+                (category,name,href,latest_chapter,author,uptime) 
+                values(?,?,?,?,?,?)`,[category,name,href,latestChapter,author,uptime])
         })
         
+        console.log(queues)
+        console.log('---------------------detail-----------------------')
+        cra(queues,async function($){
+            let detail = new Detail($)
+            await detail.processor()
+            // console.log(res)
+        })
         console.log('----------------------end----------------------')
     }
 }

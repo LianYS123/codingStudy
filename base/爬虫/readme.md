@@ -108,4 +108,4 @@ cnpm i gbk
 gbk.toString('utf-8',body)
 
 
-//crawler : 一个可以用的库
+//crawler : 一个爬虫库
