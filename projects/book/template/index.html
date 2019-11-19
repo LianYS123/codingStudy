@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<title>彼岸咖啡</title>
+		<link rel="icon" href="img/coffeeLogo.png" sizes="35x35">
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/init.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ann.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mode.css"/>
+		<link rel="stylesheet" type="text/css" href="css/video-js.css"/>
+		<link rel="stylesheet" type="text/css" href="css/totalMedia.css"/>
+		<script type="text/javascript" src="js/video.js"></script>
+		<script type="text/javascript" src="js/bw.js"></script>
+		<script type="text/javascript" src="js/news.js"></script>
+	</head>
+	<body>
+		<div class="Page">
+			
+			<div class="header">
+				<div class="nav">
+					
+					<div class="navLeft">
+						<ul>
+							<li>
+								<i class="fa fa-bars" @click="ls"></i>
+							</li>
+							<li>
+								彼岸咖啡
+							</li>
+						</ul>
+					</div>
+					
+					<div class="navRight">
+						<ul>
+							<li id="homeLink"><a href="#">首页</a></li>
+							<li id="aboutLink"><a href="about.html">关于我们</a></li>
+							<li id="newsLink"><a href="news.html">新闻中心</a></li>
+							<li id="contactLink"><a href="#contactInfo">联系方式</a></li>
+							
+							<li>
+								<ul>
+									<li v-on:click="searchShow"><i class="fa fa-search"></i></li>
+									<li><i class="fa fa-exchange" @click="changeMode"></i></li>
+								</ul>
+								
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			<transition 
+				enter-active-class='animated slideInDown' 
+				leave-active-class='animated slideOutUp'
+				>	
+				
+				<div v-if="show" class="searchDiv">
+					<div class="searchContent">
+						
+						<div class="backDiv" @click="show=false">
+							<i class="fa fa-angle-left" ></i>
+						</div>
+						
+						<div class="inputDiv">
+							<input type="text" placeholder="Enter what you want"/>
+						</div>
+						
+					</div>
+				</div>
+			</transition>
+				
+			</div>
+			
+			<div class="content" id="items" @click="contentClick">
+			
+			<div class="slideImages gray">
+				<span class="label"><a href="#">如何去品尝一杯香醇的咖啡</a></span>
+				<img src="img/coffee/adult-back-view-beautiful-241558.jpg"/>
+			</div>
+			
+			<ul>
+				<li class="title">
+					<div class="label">
+						享受最美好的时光!
+					</div>
+				</li>
+				
+				<li class="cateName">
+					<i class="fa fa-coffee coffeeIcon"></i>  现磨咖啡
+				</li>
+				<li class="c1 item" id="c1"></li>
+				<li class="cateName"><i class="fa fa-coffee coffeeIcon"></i>  速溶咖啡</li>
+				<li class="c2 item" id="c2"></li>
+				<li class="cateName"><i class="fa fa-coffee coffeeIcon"></i>  进口咖啡</li>
+				<li class="c3 item" id="c3"></li>
+			</ul>
+			
+		</div>
+			<div class="footer" id="contactInfo">
+			<ul>
+				<li>
+					<div>电话：</div>
+					<div>12345678910</div>
+				</li>
+				<li>
+					<div>传真：</div>
+					<div>12345678910</div>
+				</li>
+				<li>
+					<div>E-mail：</div>
+					<div>123456@web.com</div>
+				</li>
+				<li>
+					<div>公司地址:</div>
+					<div>北京市海定区上定信息路22号实创大厦</div>
+				</li>
+			</ul>
+		</div>
+		
+			<transition
+			enter-active-class='animated slideInLeft' 
+			leave-active-class='animated slideOutLeft'>
+		<div class="more" v-if="leftShow">
+			<div class="leftOptions">
+				<div class="leftHeader" @click="leftShow=false">
+					<i class="fa fa-bars"></i>	
+					
+				</div>
+				<ul class="leftItems">
+					<li>
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="index.html">首页</a>
+						</div>
+					</li>
+					<li @click="show1">
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="about.html" id="aboutLeftLink">关于我们</a>
+						</div>
+					</li>
+					<li @click="show2">
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="news.html" id="newsLeftLink">新闻中心</a>
+						</div>
+					</li>
+					<li @click="show3">
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="#contactInfo" id="contactLeftLink">联系方式</a>
+						</div>
+					</li>
+					<li @click="changeMode">
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="#" id="modeChangeLeftLink">模式切换</a>
+						</div>
+					</li>
+				</ul>
+			</div>	
+		</div>
+		</transition>
+		
+		<transition
+			enter-active-class='animated zoomIn' 
+			leave-active-class='animated zoomOut'>
+			<div class="detailDiv" id="coffeeDetail" style="display: none;">
+				<div class="cancelDetail" id="detailClose">
+					<i class="fa fa-close"></i>
+				</div>
+				<div class="coffeeDetail">
+					<div class="options">
+						<ul>
+							<li>
+								<div class="leftDetail">
+									<div class="name">拿铁咖啡</div>
+									<div class="price">￥88</div>
+								</div>
+								<div class="rightDetail">
+									<i class="fa fa-heart"></i>
+								</div>
+							</li>
+							<li class="decription ">Decription decription decription decription decription decription decription decription </li>
+						</ul>
+					</div>					
+					<div class="coffeeImage">
+						<img src="img/coffee/antique-beverage-caffeine-1254655.jpg"/>
+					</div>
+
+				</div>
+			</div>
+		</transition>
+		<div class="videoDiv" id="bgVideoDiv" style="display: none;">
+			<video autoplay="autoplay" loop="loop" id="bgVideo">
+				<source src="video/Ballet - 373.mp4" type="video/mp4"></source>
+			</video>
+		</div>	
+		</div>
+		<div id="templates">
+			<div class="movie hide" id="movieTempl">
+				<div class="movieImage">
+					<img src="#"/>
+				</div>
+				
+				<div class="movieInfo">
+					<ul>
+						<li>info1</li>
+						<li>info2</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/init.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/aboutStyle.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mode.css"/>
+		<link rel="stylesheet" type="text/css" href="css/video-js.css"/>
+		<link rel="stylesheet" type="text/css" href="css/totalMedia.css"/>
+		<script type="text/javascript" src="js/video.js"></script>
+		<script type="text/javascript" src="js/news.js"></script>
+		<script type="text/javascript" src="js/about.js"></script>
+		<title>关于我们</title>
+		<link rel="icon" href="img/coffeeLogo.png" sizes="35x35">
+	</head>
+	<body>
+		<div class="Page">
+		<!--这是导航栏-->
+			
+			<div class="header">
+				<div class="nav">
+					
+					<div class="navLeft">
+						<ul>
+							<li>
+								<i class="fa fa-bars" @click="ls"></i>
+							</li>
+							<li>
+								彼岸咖啡
+							</li>
+						</ul>
+					</div>
+					
+					<div class="navRight">
+						<ul>
+							<li id="homeLink"><a href="index.html">首页</a></li>
+							<li id="aboutLink"><a href="about.html">关于我们</a></li>
+							<li id="newsLink"><a href="news.html">新闻中心</a></li>
+							<li id="contactLink"><a href="#contactInfo">联系方式</a></li>
+							
+							<li>
+								<ul>
+									<li v-on:click="searchShow"><i class="fa fa-search"></i></li>
+									<li><i class="fa fa-exchange" @click="changeMode"></i></li>
+								</ul>
+								
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			<transition 
+				enter-active-class='animated slideInDown' 
+				leave-active-class='animated slideOutUp'
+				>	
+				
+				<div v-if="show" class="searchDiv">
+					<div class="searchContent">
+						
+						<div class="backDiv" @click="show=false">
+							<i class="fa fa-angle-left" ></i>
+						</div>
+						
+						<div class="inputDiv">
+							<input type="text" placeholder="Enter what you want"/>
+						</div>
+						
+					</div>
+				</div>
+			</transition>
+				
+			</div>
+			
+			<!--内容写在这-->
+			
+			<div class="content" id="content" @click="leftShow=false">
+				<div class="aboutDiv">
+					<div class="aboutDesc aboutItem">
+						<div class="descTitle" id="title">
+							tilte
+						</div>
+						<div class="descContent" id="desc">
+							
+						</div>
+					</div>
+					<div class="message aboutItem">
+						<div>
+							<textarea placeholder="欢迎留言评论..."></textarea>
+						</div>
+					</div>
+					<div class="submit">
+						<button class="submitBtn">提交评论</button>
+						<button class="login">匿名评论</button>
+					</div>
+					<div class="comments aboutItem">
+						<ul>
+							<li>
+								<div class="face">
+									<img src="img/coffee/adult-back-view-beautiful-241558.jpg"/>
+								</div>
+								<div class="commentInfo">
+									<div class="userInfo">
+										<span class="userName">张三</span>
+										<span class="commentTime">2天前</span>
+									</div>
+									<div class="commentText">
+										你可真牛逼
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="face">
+									<img src="img/coffee/adult-back-view-beautiful-241558.jpg"/>
+								</div>
+								<div class="commentInfo">
+									<div class="userInfo">
+										<span class="userName">李四</span>
+										<span class="commentTime">2天前</span>
+									</div>
+									<div class="commentText">
+										你可真牛逼
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="face">
+									<img src="img/coffee/adult-back-view-beautiful-241558.jpg"/>
+								</div>
+								<div class="commentInfo">
+									<div class="userInfo">
+										<span class="userName">王五</span>
+										<span class="commentTime">2天前</span>
+									</div>
+									<div class="commentText">
+										你可真牛逼
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="face">
+									<img src="img/coffee/adult-back-view-beautiful-241558.jpg"/>
+								</div>
+								<div class="commentInfo">
+									<div class="userInfo">
+										<span class="userName">赵六</span>
+										<span class="commentTime">2天前</span>
+									</div>
+									<div class="commentText">
+										你可真牛逼
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<!--这是联系信息-->
+			<div class="footer" id="contactInfo">
+				<ul>
+					<li>
+						<div>电话：</div>
+						<div>12345678910</div>
+					</li>
+					<li>
+						<div>传真：</div>
+						<div>12345678910</div>
+					</li>
+					<li>
+						<div>E-mail：</div>
+						<div>123456@web.com</div>
+					</li>
+					<li>
+						<div>公司地址:</div>
+						<div>北京市海定区上定信息路22号实创大厦</div>
+					</li>
+				</ul>
+			</div>
+			
+			
+			<!--这是左边选项-->
+		
+		<transition
+			enter-active-class='animated slideInLeft' 
+			leave-active-class='animated slideOutLeft'>
+		<div class="more" v-if="leftShow">
+			<div class="leftOptions">
+				<div class="leftHeader" @click="leftShow=false">
+					<i class="fa fa-bars"></i>	
+					
+				</div>
+				<ul class="leftItems">
+					<li>
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="index.html">首页</a>
+						</div>
+					</li>
+					<li @click="show1">
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="about.html" id="aboutLeftLink">关于我们</a>
+						</div>
+					</li>
+					<li @click="show2">
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="news.html" id="newsLeftLink">新闻中心</a>
+						</div>
+					</li>
+					<li @click="show3">
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="#contactInfo" id="contactLeftLink">联系方式</a>
+						</div>
+					</li>
+					<li @click="changeMode">
+						<div class="itemIcon">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="itemName">
+							<a href="#" id="modeChangeLeftLink">模式切换</a>
+						</div>
+					</li>
+				</ul>
+			</div>	
+		</div>
+		</transition>
+		<div class="videoDiv" id="bgVideoDiv" style="display: none;">
+			<video autoplay="autoplay" loop="loop" id="bgVideo">
+				<source src="video/Ballet - 373.mp4" type="video/mp4"></source>
+			</video>
+		</div>
+			
+		</div>
+	</body>
+</html>

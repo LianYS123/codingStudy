@@ -1,0 +1,284 @@
+@media only screen and (max-width: 767px) {
+	.content .slideImages{
+		display: none !important;
+	}
+	.content ul>li.title{
+		display: none !important;
+	}
+	.content ul>li.item{
+		justify-content: center !important;
+	}
+	.cancelDetail{
+		display: none !important;
+	}
+	.detailDiv .coffeeDetail{
+		width: 80% !important;
+	}
+	.detailDiv .coffeeDetail .coffeeImage{
+		height: 350px !important;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.content ul>li.item{
+		justify-content: center !important;
+	}
+	.cancelDetail{
+		right: 10px !important;
+		top: 10px !important;
+	}
+		.Page .content .rightItems .RCDiv{
+		height: 200px !important;
+	}
+}
+
+
+
+
+
+.Page .content{
+	min-height: 100%;
+	height: auto;
+	flex: 1;
+	text-shadow: 1px 1px 3px black;
+}
+.content ul{
+	position: relative;
+	left: 0;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+}
+.content ul>li.item{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 97%;	
+}
+.content ul>li.item .movie{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 300px;
+	padding: 10px;
+	margin: 10px;
+}.content ul>li.item .movie{
+	cursor: pointer;
+}
+.content ul>li.item .movie .movieImage{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 300px;
+	height: 130px;
+	overflow: hidden;
+	position: relative;
+}
+.content ul>li.item .movie .movieImage>img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	transition: filter 0.2s linear;
+	width: 300px;
+}
+.content ul>li.item.item .movie .movieInfo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 40px;
+	background: rgb(100,80,80);
+}
+.content ul>li.item .movie .movieInfo>ul{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	height: 35px;
+}
+.content ul>li.item .movie .movieInfo>ul>li{
+	
+	width: 260px;
+}
+.content ul>li.item .movie .movieInfo>ul>li:nth-child(1){
+	font-family: "微软雅黑";
+	font-size: 14px;
+	letter-spacing: 3px;
+	color: rgb(240,240,240);
+}
+.content ul>li.item .movie .movieInfo>ul>li:nth-child(2){
+	font-size: 14px;
+	font-family: "方正舒体";
+	color: rgb(235,235,235);
+}
+.content ul>li.title{
+	margin:20px 0;
+	width: 94%;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid;
+	
+}
+.content ul>li.cateName{
+	margin:20px 0;
+	width: 94%;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid;
+	
+}
+.content ul>li.cateName .coffeeIcon{
+	margin-right: 5px;
+	
+}
+.content ul>li.title .label{
+	height: 40px;
+	float: left;
+	line-height: 50px;
+	font-size: 18px;
+	font-family: "方正舒体";
+}
+
+.content .slideImages{
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	text-align: center;
+	margin-top: 50px;
+	transition: all 1s;
+	position: relative;
+}
+.content .slideImages img{
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%) scale(0.8);
+	cursor: pointer;
+}
+.content .slideImages span.label{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	margin: auto;
+	z-index: 1;
+	cursor: pointer;
+	font-size: 22px;
+	font-family: "方正舒体";
+	width: 280px;
+	text-shadow: 1px 1px 1px white;
+}
+.content .slideImages span.label:hover{
+	text-decoration: underline;
+}
+
+.detailDiv{
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	animation-duration: 0s !important;
+}
+.cancelDetail{
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	width: 50px;
+	height: 50px;
+	font-size: 30px;
+	line-height: 50px;
+	text-align: center;
+	color: darkgray;
+}
+.cancelDetail:hover{
+	color: gainsboro;
+	cursor: pointer;
+}
+.detailDiv .coffeeDetail{
+	position: fixed;
+	
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 60%;
+	max-height: 90%;
+	background: rgb(73,49,49);
+	border-radius: 8px;
+	box-shadow: 0 0 5px 5px rgb(10,10,10);
+	animation-duration: 300ms;
+	overflow: scroll;
+}
+.detailDiv .coffeeDetail::-webkit-scrollbar{
+	display: none;
+}
+.detailDiv .coffeeDetail .coffeeImage{
+	width: 92%;
+	height: 500px;
+	margin: 10px auto 20px;
+	overflow:hidden;
+	flex: 1;
+	position: relative;
+}
+.detailDiv .coffeeDetail .coffeeImage img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+}
+.detailDiv .coffeeDetail .options{
+	height: auto;
+}
+.detailDiv .coffeeDetail .options ul{
+	width: 100%;
+	min-height: 100px;
+	height: auto;
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+.detailDiv .coffeeDetail .options ul li:nth-child(1){
+	width: 92%;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.detailDiv .coffeeDetail .options ul li:nth-child(1) .leftDetail{
+	display: flex;
+}
+.detailDiv .coffeeDetail .options ul li:nth-child(1) .leftDetail div{
+	padding-right: 20px;
+}
+.detailDiv .coffeeDetail .options ul li:nth-child(1) .rightDetail{
+	font-size: 25px;
+	color: rgb(180,180,180);
+}
+.detailDiv .coffeeDetail .options ul li:nth-child(1) .rightDetail:hover{
+	color: red;
+	cursor: pointer;
+}
+.detailDiv .coffeeDetail .options ul li{
+	margin: 0 20px;
+}
+.news{
+	display: none;
+	height: 500px;
+	background: white;
+}
+

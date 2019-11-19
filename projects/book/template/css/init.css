@@ -1,0 +1,35 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	/*文字不可被选中*/
+	-webkit-user-select: none;
+	-moz-user-select: none;	
+}
+ul{
+	list-style: none;
+}
+input{
+	outline: none;
+	border: none;
+}
+button,input[type=submit],input[type=reset]{
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+.hide{
+	display: none !important;
+}
+.clickAble:hover{
+	cursor: pointer;
+}
+.clickAbleText:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}

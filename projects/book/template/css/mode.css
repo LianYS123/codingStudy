@@ -1,0 +1,39 @@
+.darkMode{
+	text-shadow: 1px 1px 3px black !important;
+	background-color: rgba(0,0,0,0.8) !important;
+}
+.darkHover:hover{
+	background:rgba(50,50,50,0.6) !important;
+}
+.imgOp{
+	opacity: 0.8 !important;
+}
+.filter_0px{
+	filter: blur(0px) !important;
+}
+.bigVideo{
+	width: 100% !important;
+}
+.videoDiv{
+	overflow: hidden;
+	z-index: -99;
+	height: 100%;
+	width: 100%;
+	filter: blur(8px);
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.videoDiv video{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	margin: auto;
+	z-index: -100;
+	filter: grayscale(50%);
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+}

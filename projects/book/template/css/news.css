@@ -1,0 +1,145 @@
+@media only screen and (max-width: 767px) {
+	.content .slideImages{
+		display: none !important;
+	}
+	.content ul>li.title{
+		display: none !important;
+	}
+	.content ul>li.item{
+		justify-content: center !important;
+	}
+	.Page .content .rightItems .RCDiv{
+		height: 200px !important;
+	}
+	.Page .content .leftItems{
+		display: none !important;
+	}
+	.RotationChart{
+		width:300px !important;
+		height: 180px !important;
+		border: none !important;
+	}
+	.RotationChart div.rcContent ul>li div.imgDiv>img{
+		width: 300px !important;
+		height: 180px !important;
+	}
+	.Page .rightItems .guidance{
+		display: none !important;
+	}
+	.RotationChart div.navDot ul>li{
+		width: 10px !important;
+		height: 10px !important;
+	}
+	.RotationChart div.navDot{
+		width: 100px !important;
+		right: 10px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.Page .content .rightItems .RCDiv{
+		height: 200px;
+	}
+	.Page .rightItems{
+		display: none !important;
+	}
+	.Page .leftItems{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.Page .item{
+		margin-right: 0;
+	}
+}
+
+
+.Page .content{
+	display: flex;
+	justify-content: space-between;
+	padding:0 50px;
+}
+.Page .leftItems{
+	flex: 1;
+	padding-right: 5px;
+	/*overflow: hidden;*/
+}
+.Page .leftItems .guidance,.Page .rightItems .guidance{
+	width: 100%;
+	padding: 30px 0 20px;
+}
+.Page .item{
+	width: 100%;
+	margin: 0 0 20px;
+	border: 1px solid;
+	border-radius: 20px;
+}
+.Page .leftItems .item{
+	display: flex;
+	justify-content: flex-start;
+	padding: 30px 20px;
+	width: 85%;
+	min-width: 500px;
+}
+.Page .leftItems .item .itemImage{
+	width: 200px;
+	height: 250px;
+	overflow: hidden;
+	/*display: flex;
+	justify-content: center;
+	align-items: center;*/
+}
+.Page .leftItems .item .itemImage img{
+	width: 200px;
+	height: 150px;
+}
+.Page .leftItems .item .itemImage .imgInfo{
+	width: 200px;
+	height: 80px;
+	margin: 10px 0;
+	font-size: 13px;
+	text-overflow: ellipsis;
+}
+.Page .leftItems .item ul.itemInfo{
+	/*width: 300px;*/
+	flex: 1;
+	margin-left: 40px;
+	list-style: disc;
+}
+.Page .leftItems .item ul.itemInfo li{
+	text-overflow: ellipsis;
+}
+.Page .item ul li:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+.Page .leftItems .item ul.itemInfo li.itemTitle{
+	font-weight: bold;
+	padding: 5px 0;
+}
+.Page .leftItems .item ul.itemInfo li:not(:nth-child(1)){
+	padding: 2px 0;
+}
+.Page .rightItems{
+	width: 520px;
+	padding-left: 5px;
+}
+.Page .rightItems .item{
+	padding: 20px;
+	width: 90%;
+}
+.Page .rightItems .item .itemName{
+	font-weight: bold;
+	padding: 5px 0;
+}
+.Page .rightItems .item ul.itemInfo{
+	list-style: disc;
+	padding-left: 20px;
+}
+.Page .content .rightItems .RCDiv{
+	position: relative;
+	width: 100%;
+	height: 320px;
+	margin-bottom: 20px;
+}

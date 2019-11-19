@@ -1,0 +1,91 @@
+.RotationChart{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	
+	overflow: hidden;
+	height: 300px;
+	width: 500px;
+	border: 10px solid mistyrose;
+	border-radius: 10px;
+}
+.RotationChart div.navDot{
+	position: absolute;
+	z-index: 2;
+	right: 20px;
+	bottom: 20px;
+	margin: auto;
+	
+	display: flex;
+	justify-content: center;
+	width: 130px;
+}
+
+.RotationChart div.navDot ul{
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+}
+
+.RotationChart div.navDot ul>li{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: gray;
+}
+.RotationChart div.navDot ul>li:hover{
+	cursor: pointer;
+	background: white;
+}
+.navDotSelected{
+	background: white !important;
+}
+.RotationChart div.rcContent{
+	width: 500px;
+	height: 100%;
+	overflow: hidden;
+	
+	position: relative;
+}
+.RotationChart div.rcContent ul{
+	position: absolute;
+	left: 0;
+	width: 10000px;
+	overflow: hidden;
+}
+.RotationChart div.rcContent ul>li{
+	float: left;
+	overflow: hidden;
+}
+.RotationChart div.rcContent ul>li div.imgDiv{
+	overflow: hidden;
+	position: relative;
+}
+.RotationChart div.rcContent ul>li div.imgDiv>img{
+	width: 500px;
+	height: 300px;
+}
+.RotationChart .imgInfo{
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	margin: auto;
+	width: 500px;
+	z-index: 1;
+}
+.RotationChart .imgInfo .text{
+	width: 50%;
+	height: 100%;
+	color: white;
+	font-size: 14px;
+	text-shadow: 2px 2px 5px black;
+	letter-spacing: 3px;
+}
+.RotationChart .imgInfo .text:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+

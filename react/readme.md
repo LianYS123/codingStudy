@@ -20,6 +20,7 @@ ReactDOM.render(
 </script>
 
 jsx 创建元素：let div = <div title='aaa'>aaa</div>
+jsx创建的其实是组件
 必须包裹在一个div标签里面
 jsx注意：
 class -> className
@@ -367,3 +368,23 @@ var timestamp = new Date().getTime();//返回数值单位是毫秒；
 
 this.setState({}) 是一个异步函数，可以跟在await后面
 
+怎么看文档：？
+看Git，看test，看源码。
+
+node里面的模块都是单例模式的(CMD规范)
+
+在public里面放文件是静态文件，可以直接访问
+
+React Router 相当于把路由表写在页面里面
+<Route exact path='/'> 精确匹配,只匹配 /
+
+<Switch>
+<Route>
+<Switch>
+
+使用store对象：store.dispatch({type:xxx})  dispatch传一个action
+let store = createStore(function(state,action){
+
+})
+
+store里面的订阅：store.subscribe(fn) store里面的东西变了会执行里面的函数

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/init.css"/>
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="css/news.css"/>
+		<link rel="stylesheet" type="text/css" href="css/rotationChart.css"/>
+		<link rel="stylesheet" type="text/css" href="css/ann.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mode.css"/>
+		<link rel="stylesheet" type="text/css" href="css/video-js.css"/>
+		<link rel="stylesheet" type="text/css" href="css/totalMedia.css"/>
+		<script type="text/javascript" src="js/video.js"></script>
+		<script type="text/javascript" src="js/rc3.js"></script>
+		<script type="text/javascript" src="js/news.js"></script>	
+		<title>新闻中心</title>
+		<link rel="icon" href="img/coffeeLogo.png" sizes="35x35">
+	</head>
+	<body>
+		<div class="Page">
+			<!--这是导航栏-->
+			
+			<div class="header">
+				<div class="nav">
+					
+					<div class="navLeft">
+						<ul>
+							<li>
+								<i class="fa fa-bars" @click="ls"></i>
+							</li>
+							<li>
+								彼岸咖啡
+							</li>
+						</ul>
+					</div>
+					
+					<div class="navRight">
+						<ul>
+							<li id="homeLink"><a href="index.html">首页</a></li>
+							<li id="aboutLink"><a href="about.html">关于我们</a></li>
+							<li id="newsLink"><a href="news.html">新闻中心</a></li>
+							<li id="contactLink"><a href="#contactInfo">联系方式</a></li>
+							
+							<li>
+								<ul>
+									<li v-on:click="searchShow"><i class="fa fa-search"></i></li>
+									<li><i class="fa fa-exchange" @click="changeMode"></i></li>
+								</ul>
+								
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+			<transition 
+				enter-active-class='animated slideInDown' 
+				leave-active-class='animated slideOutUp'
+				>	
+				
+				<div v-if="show" class="searchDiv">
+					<div class="searchContent">
+						
+						<div class="backDiv" @click="show=false">
+							<i class="fa fa-angle-left" ></i>
+						</div>
+						
+						<div class="inputDiv">
+							<input type="text" placeholder="Enter what you want"/>
+						</div>
+						
+					</div>
+				</div>
+			</transition>
+				
+			</div>
+			
+			<!--内容写在这-->
+			
+			<div class="content" id="content" @click="leftShow=false">
+				
+				<div class="leftItems">
+					<div class="guidance">
+						News
+					</div>
+					<div class="item">
+						<div class="itemImage clickAble">
+							<img src="img/coffee/adult-beverage-black-coffee-374592.jpg"/>
+							<div class="imgInfo clickAbleText">
+								这样一个高速增长的四万亿大市场里，却很难掘到金，美团报告显示，2这样一个高速增长的四万亿大市场里
+							</div>
+						</div>
+						<ul class="itemInfo">
+							<li class="itemTitle">前百胜高管入局餐饮自动化，「Ratio」用机器人调制鸡尾酒和咖啡</li>
+							<li><a href="#">
+									国家统计局数据显示，2018 年我国餐饮收入约为 4.27 万亿元，比上年增长 9.5%。
+							</a></li>
+							
+							<li><a href="#">
+									这样一个高速增长的四万亿大市场里，却很难掘到金，美团报告显示，2017 年餐饮门店关店数是开店数的 91.6%。传统门店经营“三高一低”——高房租、高人工、高原材料、低毛利，快速扩张时也面临着标准化难题。
+							</a></li>
+							
+							<li><a href="#">
+									在36氪最近接触到的“Ratio”创始人兼 CEO Gavin Pathross 看来，餐饮业已经在逐渐转型新零售，用“自动化”手段来改善经营结构一定是接下来 5-10 年的大趋势。
+							</a></li>
+							
+						</ul>
+					</div>
+					
+					<div class="item">
+						<div class="itemImage clickAble">
+							<img src="img/coffee/beans-beverage-black-coffee-373888.jpg"/>
+							<div class="imgInfo clickAbleText">
+								这样一个高速增长的四万亿大市场里，却很难掘到金，美团报告显示，2这样一个高速增长的四万亿大市场里
+							</div>
+						</div>
+						<ul class="itemInfo">
+							<li class="itemTitle">前百胜高管入局餐饮自动化，「Ratio」用机器人调制鸡尾酒和咖啡</li>
+							<li><a href="#">
+									国家统计局数据显示，2018 年我国餐饮收入约为 4.27 万亿元，比上年增长 9.5%。
+							</a></li>
+							
+							<li><a href="#">
+									这样一个高速增长的四万亿大市场里，却很难掘到金，美团报告显示，2017 年餐饮门店关店数是开店数的 91.6%。传统门店经营“三高一低”——高房租、高人工、高原材料、低毛利，快速扩张时也面临着标准化难题。
+							</a></li>
+							
+							<li><a href="#">
+									在36氪最近接触到的“Ratio”创始人兼 CEO Gavin Pathross 看来，餐饮业已经在逐渐转型新零售，用“自动化”手段来改善经营结构一定是接下来 5-10 年的大趋势。
+							</a></li>
+							
+						</ul>
+					</div>
+					
+					<div class="item">
+						<div class="itemImage clickAble">
+							<img src="img/coffee/art-blur-cappuccino-302899.jpg"/>
+							<div class="imgInfo clickAbleText">
+								这样一个高速增长的四万亿大市场里，却很难掘到金，美团报告显示，2这样一个高速增长的四万亿大市场里
+							</div>
+						</div>
+						<ul class="itemInfo">
+							<li class="itemTitle">前百胜高管入局餐饮自动化，「Ratio」用机器人调制鸡尾酒和咖啡</li>
+							<li><a href="#">
+									国家统计局数据显示，2018 年我国餐饮收入约为 4.27 万亿元，比上年增长 9.5%。
+							</a></li>
+							
+							<li><a href="#">
+									这样一个高速增长的四万亿大市场里，却很难掘到金，美团报告显示，2017 年餐饮门店关店数是开店数的 91.6%。传统门店经营“三高一低”——高房租、高人工、高原材料、低毛利，快速扩张时也面临着标准化难题。
+							</a></li>
+							
+							<li><a href="#">
+									在36氪最近接触到的“Ratio”创始人兼 CEO Gavin Pathross 看来，餐饮业已经在逐渐转型新零售，用“自动化”手段来改善经营结构一定是接下来 5-10 年的大趋势。
+							</a></li>
+							
+						</ul>
+					</div>
+					
+					
+				</div>
+				
+				<div class="rightItems">
+					<div class="guidance">
+						更多资讯
+					</div>
+					<div class="RCDiv">	
+						
+						<div class="RotationChart">
+							<div class="navDot">
+								<ul>
+									<li class="navDotSelected"></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
+							<div class="imgInfo">
+								<div class="text">
+									picture1
+								</div>
+							</div>
+							<div class="rcContent">
+								<ul style="left: 0;">
+									<li>
+										<div class="imgDiv">
+											
+											<img src="img/coffee/airport-coffee-cup-1684151.jpg"/>
+										</div>
+									</li>
+									<li>
+										<div class="imgDiv">
+											<img src="img/coffee/arabica-aromatic-beans-1695052.jpg"/>
+										</div>
+									</li>
+									<li>
+										<div class="imgDiv">
+											<img src="img/coffee/aroma-aromatic-bean-261463.jpg"/>
+										</div>
+									</li>
+									<li>
+										<div class="imgDiv">
+											<img src="img/coffee/aromatic-blur-caffeine-977876.jpg"/>
+										</div>
+									</li>
+									<li>
+										<div class="imgDiv">
+											<img src="img/coffee/blonde-coffee-cup-5186.jpg"/>
+										</div>
+									</li>
+									<li>
+										<div class="imgDiv">
+											<img src="img/coffee/airport-coffee-cup-1684151.jpg"/>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					
+					</div>
+					
+					<div class="item">
+						<div class="itemName">
+							今日聚焦
+						</div>
+						<ul class="itemInfo">
+							<li>18个月上市背后,彼岸咖啡的快与慢</li>
+							<li>彼岸咖啡2亿元成立烘焙公司,早期员工陈敏担任法人</li>
+							<li>中国咖啡百年起伏录:惨败者无数,上岛兄弟阋墙,瑞幸上市后破发</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+						</ul>
+					</div>
+					<div class="item">
+						<div class="itemName">
+							咖啡小知识
+						</div>
+						<ul class="itemInfo">
+							<li>18个月上市背后,彼岸咖啡的快与慢</li>
+							<li>彼岸咖啡2亿元成立烘焙公司,早期员工陈敏担任法人</li>
+							<li>中国咖啡百年起伏录:惨败者无数,上岛兄弟阋墙,瑞幸上市后破发</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+						</ul>
+					</div>
+					<div class="item">
+						<div class="itemName">
+							时下热点
+						</div>
+						<ul class="itemInfo">
+							<li>18个月上市背后,彼岸咖啡的快与慢</li>
+							<li>彼岸咖啡2亿元成立烘焙公司,早期员工陈敏担任法人</li>
+							<li>中国咖啡百年起伏录:惨败者无数,上岛兄弟阋墙,瑞幸上市后破发</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+							<li>日本推出迷你猪咖啡店,网友:可爱!看多了都不舍得吃猪肉</li>
+						</ul>
+					</div>
+				</div>
+				
+				
+			
+			</div>
+			
+			<!--这是联系信息-->
+			<div class="footer" id="contactInfo">
+				<ul>
+					<li>
+						<div>电话：</div>
+						<div>12345678910</div>
+					</li>
+					<li>
+						<div>传真：</div>
+						<div>12345678910</div>
+					</li>
+					<li>
+						<div>E-mail：</div>
+						<div>123456@web.com</div>
+					</li>
+					<li>
+						<div>公司地址:</div>
+						<div>北京市海定区上定信息路22号实创大厦</div>
+					</li>
+				</ul>
+			</div>
+			
+			
+			<!--这是右边选项-->
+		
+			<transition
+			enter-active-class='animated slideInLeft' 
+			leave-active-class='animated slideOutLeft'>
+			<div class="more" v-if="leftShow">
+				<div class="leftOptions">
+					<div class="leftHeader" @click="leftShow=false">
+						<i class="fa fa-bars"></i>	
+						
+					</div>
+					<ul class="leftItems">
+						<li>
+							<div class="itemIcon">
+								<i class="fa fa-home"></i>
+							</div>
+							<div class="itemName">
+								<a href="index.html">首页</a>
+							</div>
+						</li>
+						<li @click="show1">
+							<div class="itemIcon">
+								<i class="fa fa-home"></i>
+							</div>
+							<div class="itemName">
+								<a href="about.html" id="aboutLeftLink">关于我们</a>
+							</div>
+						</li>
+						<li @click="show2">
+							<div class="itemIcon">
+								<i class="fa fa-home"></i>
+							</div>
+							<div class="itemName">
+								<a href="news.html" id="newsLeftLink">新闻中心</a>
+							</div>
+						</li>
+						<li @click="show3">
+							<div class="itemIcon">
+								<i class="fa fa-home"></i>
+							</div>
+							<div class="itemName">
+								<a href="#contactInfo" id="contactLeftLink">联系方式</a>
+							</div>
+						</li>
+						<li @click="changeMode">
+							<div class="itemIcon">
+								<i class="fa fa-home"></i>
+							</div>
+							<div class="itemName">
+								<a href="#" id="modeChangeLeftLink">模式切换</a>
+							</div>
+						</li>
+					</ul>
+				</div>	
+			</div>
+			</transition>
+			
+			<div class="videoDiv" id="bgVideoDiv" style="display: none;">
+				<video autoplay="autoplay" loop="loop" id="bgVideo">
+					<source src="video/Ballet - 373.mp4" type="video/mp4"></source>
+				</video>
+			</div>	
+		</div>
+	</body>
+</html>
