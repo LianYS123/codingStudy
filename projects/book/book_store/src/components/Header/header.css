@@ -1,0 +1,80 @@
+.holder{
+	height: 60px;
+	width: 100%;
+}
+.header{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+	box-shadow: 0 0.01em 5px gray;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background: white;
+	z-index: 1;
+}
+.header .nav{
+	display: flex;
+	justify-content: space-between;
+	width: 98%;
+}
+.header .nav ul{
+	margin: auto;
+	color: black;
+}
+.header .nav a{
+	color: black;
+}
+
+.header .nav .navLeft{
+	min-width: 125px;
+	display: flex;
+}
+.header>.nav .navLeft>ul{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header .nav .navLeft ul li{
+	margin: 0 10px;
+	padding: 5px 0;
+}
+.header .nav .navLeft ul li:first-child{
+	font-size: 22px;
+}
+
+.header .nav .navRight{
+	min-width: 450px;
+	display: flex;
+}
+.header .nav .navRight ul{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header .nav .navRight ul li{
+	margin: 0 10px;
+	padding: 5px 0;
+}
+.header .nav .navRight ul li:nth-child(5){
+	margin: 0 10px;
+	padding: 5px 0 5px 5px;
+	
+	font-size: 20px;
+}
+.header .nav .navRight ul li:nth-child(5)>ul{
+	display: flex;
+	justify-content: space-between;
+	width: 100px;
+}
+.header .nav .navRight ul li:nth-child(5)>ul>li:hover{
+	cursor: pointer;
+}
+.header .nav .navLeft ul li:first-child:hover{
+	cursor: pointer;
+}
+.header .nav .navRight>ul>li:not(:last-child):hover{
+	cursor: pointer;
+	border-bottom: 3px solid gray;
+}

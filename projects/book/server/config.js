@@ -1,7 +1,4 @@
 const path = require('path')
-function resolve(name){
-    path.resolve(__dirname,name)
-}
 module.exports = {
     db_user:'lian',
     db_password:'123456',
@@ -9,8 +6,8 @@ module.exports = {
     db_name:'test',
     db_host:'localhost',
 
-    path_upload:resolve('upload'),
-    path_static:resolve('static'),
-    path_key:resolve('.keys'),
-    part: 8080
+    path_upload: path.resolve(__dirname,'upload'),
+    path_static: path.resolve(__dirname,'static'),
+    path_key: path.resolve(__dirname,'.keys'),
+    port: 8080
 }

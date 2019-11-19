@@ -1,0 +1,58 @@
+.movie{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 300px;
+	padding: 10px;
+	margin: 10px;
+}
+.movie:hover{
+	cursor: pointer;
+}
+.movie .movieImage{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 300px;
+	height: 130px;
+	overflow: hidden;
+	position: relative;
+}
+.movie .movieImage>img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	transition: filter 0.2s linear;
+	width: 300px;
+}
+.movie .movieInfo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 40px;
+	background: rgb(100,80,80);
+}
+.movie .movieInfo>ul{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	height: 35px;
+}
+.movie .movieInfo>ul>li{
+	width: 260px;
+}
+.movie .movieInfo>ul>li:nth-child(1){
+	font-family: "微软雅黑";
+	font-size: 14px;
+	letter-spacing: 3px;
+	color: rgb(240,240,240);
+}
+.movie .movieInfo>ul>li:nth-child(2){
+	font-size: 14px;
+	font-family: "方正舒体";
+	color: rgb(235,235,235);
+}

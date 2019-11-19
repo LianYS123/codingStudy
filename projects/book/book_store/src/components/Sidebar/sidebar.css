@@ -1,0 +1,54 @@
+.more{
+	text-shadow: 1px 1px 3px black;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding-left: 10px;
+	background: rgb(73,49,49);
+	display: flex;
+	width: 250px;
+	height: 100%;
+	justify-content: center;
+	box-shadow: 1px 0 3px darkgray;
+	z-index: 2;
+}
+.more .leftOptions{
+	display: flex;
+	width: 100%;
+	
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.more .leftOptions .leftHeader{
+	background: rgb(73,49,49);
+	padding: 10px;
+	border-bottom: 1px solid lightgray;
+	font-size: 22px;
+	width: 90%;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.more .leftOptions .leftItems{
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+.more .leftOptions .leftItems li{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center; 	
+	width: 100%;
+	height: 50px;
+	margin-bottom: 10px;
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+}
+.more .leftOptions .leftItems li:hover{
+	background: gray;
+	cursor: pointer;
+}
+.more .leftOptions .leftItems li>div.itemIcon{
+	font-size: 20px;
+	padding:0 10px 0 20px;
+}
