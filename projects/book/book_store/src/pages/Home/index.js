@@ -11,27 +11,24 @@ class Footer extends React.Component {
         <div className="slideImages gray">
             <Carousel autoplay>
                 <div>
-                    <div style={{width:'100%',height:'300px',overflow:'hidden',position:'relative'}}>
+                    <div className='img-wrapper'>
                         <img alt="example" 
-                            style={{maxWidth:'100%'}}
-                            src="https://cdn.pixabay.com/photo/2019/10/30/16/19/fox-4589927__340.jpg" />
+                            src="https://cdn.pixabay.com/photo/2019/11/17/19/30/egypt-4633257_1280.jpg" />
                         <span className="label"><a href="#">超牛逼的小说网站1</a></span>
                     </div>
                 </div>
                 <div>
-                    <div style={{width:'100%',height:'300px',overflow:'hidden',position:'relative'}}>
+                    <div className='img-wrapper'>
                         <img alt="example" 
-                            style={{maxWidth:'100%'}}
-                            src="https://cdn.pixabay.com/photo/2019/11/02/20/18/fog-4597348__340.jpg" />
-                        <span className="label"><a href="#">超牛逼的小说网站2</a></span>
+                            src="https://cdn.pixabay.com/photo/2015/06/22/08/38/siblings-817369_1280.jpg" />
+                        <span className="label"><a href="#">超牛逼的小说网站1</a></span>
                     </div>
                 </div>
                 <div>
-                    <div style={{width:'100%',height:'300px',overflow:'hidden',position:'relative'}}>
+                    <div className='img-wrapper'>
                         <img alt="example" 
-                            style={{maxWidth:'100%'}}
-                            src="https://cdn.pixabay.com/photo/2019/10/22/02/37/nature-4567502__340.jpg" />
-                        <span className="label"><a href="#">超牛逼的小说网站3</a></span>
+                            src="https://cdn.pixabay.com/photo/2017/09/04/09/38/cross-2713356_1280.jpg" />
+                        <span className="label"><a href="#">超牛逼的小说网站1</a></span>
                     </div>
                 </div>
             </Carousel>
@@ -40,7 +37,7 @@ class Footer extends React.Component {
         <ul>
             <li className="title">
                 <div className="label">
-                    啊啊啊啊啊!
+                    热门分类
                 </div>
             </li>
             

@@ -1,10 +1,21 @@
 import React from 'react'
-import {Icon} from 'antd'
+import {Icon,Avatar,Badge,Menu, Dropdown} from 'antd'
 import {Link} from 'react-router-dom'
 import './header.css'
-
 class Header extends React.Component {
     render(){
+        let userMenu = (  <Menu>
+            <Menu.Item>
+              <a target="_blank" rel="noopener noreferrer" href="#">
+                登录
+              </a>
+            </Menu.Item>
+            <Menu.Item>
+              <a target="_blank" rel="noopener noreferrer" href="#">
+                注册
+              </a>
+            </Menu.Item>
+          </Menu>)
         return (
             <div>
                 <div className='holder'></div>
@@ -25,14 +36,23 @@ class Header extends React.Component {
                     <div className="navRight">
                         <ul>
                             <li><Link to='/home'>首页</Link></li>
-                            <li><Link to='/news'>新闻中心</Link></li>
-                            <li><Link to='/about'>关于我们</Link></li>
-                            <li><Link to='#'>联系方式</Link></li>
+                            <li><Link to='/news'>书城</Link></li>
+                            <li><Link to='/about'>分类</Link></li>
+                            <li><Link to='#'>排行</Link></li>
                             
                             <li>
                                 <ul>
                                     <li><Icon type="search" /></li>
-                                    <li><Icon type="user" /></li>
+                                    <li>
+                                    <Dropdown overlay={userMenu}>
+                                    <Badge count={0}>
+                                        <Avatar shape='square' 
+                                        icon={<Icon type="user" />}
+                                        // src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" 
+                                        />
+                                    </Badge>
+                                    </Dropdown>
+                                    </li>
                                 </ul>
                                 
                             </li>

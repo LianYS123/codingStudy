@@ -76,5 +76,5 @@
 }
 .header .nav .navRight>ul>li:not(:last-child):hover{
 	cursor: pointer;
-	border-bottom: 3px solid gray;
+	font-weight: 1000;
 }

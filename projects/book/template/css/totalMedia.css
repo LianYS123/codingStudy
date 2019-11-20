@@ -89,9 +89,6 @@ body{
 	justify-content: space-between;
 	width: 100px;
 }
-.header .nav .navRight ul li:nth-child(5)>ul>li:nth-child(2){
-	/*font-size: 28px;*/
-}
 .header .nav .navRight ul li:nth-child(5)>ul>li:hover{
 	cursor: pointer;
 }
@@ -133,9 +130,6 @@ body{
 	line-height: 50px;
 	font-size: 25px;
 	cursor: pointer;
-	
-}
-.header .searchContent .backDiv i{
 	
 }
 .header .searchContent .inputDiv{
