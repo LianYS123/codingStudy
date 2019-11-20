@@ -4,8 +4,8 @@
 }
 body{
 	/*文字不可被选中*/
-	-webkit-user-select: none;
-	-moz-user-select: none;	
+	/* -webkit-user-select: none;
+	-moz-user-select: none;	 */
 }
 ul{
 	list-style: none;

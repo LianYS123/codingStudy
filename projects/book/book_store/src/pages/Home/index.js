@@ -1,15 +1,14 @@
 import React from 'react'
-// import Card from '@/components/Card'
+import Book from '@/components/Book'
 import {Carousel,Card} from 'antd'
 import './home.css'
-const {Meta} = Card
 class Footer extends React.Component {
     render(){
        return (
         <div className="content" id="items">
 			
         <div className="slideImages gray">
-            <Carousel autoplay>
+            <Carousel autoplay effect='fade'>
                 <div>
                     <div className='img-wrapper'>
                         <img alt="example" 
@@ -42,26 +41,35 @@ class Footer extends React.Component {
             </li>
             
             <li className="cateName"><i className="fa fa-coffee coffeeIcon"></i>  玄幻小说</li>
-            <li className="c1 item" id="c1">
-                <Card
-                    hoverable
-                    style={{ width: 240 }}
-                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-                >
-                    <Meta title="Europe Street beat" description="www.instagram.com" />
-                </Card>
-                <Card
-                    hoverable
-                    style={{ width: 240 }}
-                    cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-                >
-                    <Meta title="Europe Street beat" description="www.instagram.com" />
-                </Card>
+            <li className="c1 item">
+                {[1,2,3,4].map(num=>(
+                <Book key={num} title={'无限统御'} style={{margin:20}}
+                img_src={'http://static.zongheng.com/upload/cover/92/90/92903e5b9e1a7d59e39f9a2702c62b23.jpeg'}
+                intro={'一场红色的烟雾之后.超过百分之九十九的人变成了丧尸。在这满是丧尸的世界里，恶毒，友善，冷漠，勇敢，脆弱，无畏，倔强'}
+                author={'木有下限'}
+                ></Book>
+                ))}
             </li>
-            <li className="cateName"><i className="fa fa-coffee coffeeIcon"></i>  武侠小说</li>
-            <li className="c2 item" id="c2"></li>
-            <li className="cateName"><i className="fa fa-coffee coffeeIcon"></i>  言情小说</li>
-            <li className="c3 item" id="c3"></li>
+            <li className="cateName"><i className="fa fa-coffee coffeeIcon"></i>  玄幻小说</li>
+            <li className="c1 item">
+                {[1,2,3,4].map(num=>(
+                <Book key={num} title={'无限统御'} style={{margin:20}}
+                img_src={'http://static.zongheng.com/upload/cover/92/90/92903e5b9e1a7d59e39f9a2702c62b23.jpeg'}
+                intro={'一场红色的烟雾之后.超过百分之九十九的人变成了丧尸。在这满是丧尸的世界里，恶毒，友善，冷漠，勇敢，脆弱，无畏，倔强'}
+                author={'木有下限'}
+                ></Book>
+                ))}
+            </li>
+            <li className="cateName"><i className="fa fa-coffee coffeeIcon"></i>  玄幻小说</li>
+            <li className="c1 item">
+                {[1,2,3,4].map(num=>(
+                <Book key={num} title={'无限统御'} style={{margin:20}}
+                img_src={'http://static.zongheng.com/upload/cover/92/90/92903e5b9e1a7d59e39f9a2702c62b23.jpeg'}
+                intro={'一场红色的烟雾之后.超过百分之九十九的人变成了丧尸。在这满是丧尸的世界里，恶毒，友善，冷漠，勇敢，脆弱，无畏，倔强'}
+                author={'木有下限'}
+                ></Book>
+                ))}
+            </li>
         </ul>
         
         </div>

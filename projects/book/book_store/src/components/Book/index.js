@@ -1,25 +1,23 @@
 import React from 'react'
-import './card.css'
+import {Card} from 'antd'
+import './book.css'
 
-class Card extends React.Component {
+class Book extends React.Component {
     render(){
-        let {info1,info2} = this.props
+		let {author,title,intro,img_src,style} = this.props
         return (
-            <div className="movie">
-				<div className="movieImage">
-					<img src="#"/>
+            <div className="book" style={style} >
+				<div className="imgWrapper pointer">
+				<img src={img_src} />
 				</div>
-				
-				<div className="movieInfo">
-					<ul>
-						<li>{info1}</li>
-						<li>{info2}</li>
-					</ul>
+				<div className="book-info">
+					<div className="title text-pointer">{title}</div>
+					<div className="intro">{intro}</div>
+					<div className="author text-pointer">{author}</div>
 				</div>
-				
 			</div>
         )
     }
 }
 
-export default Card
+export default Book
