@@ -20,8 +20,8 @@ server.keys = fs.readFileSync(key_file).toString().split(',')
 server.use(session({
     maxAge: 20 * 60 * 1000,
     renew: true,
-    signed:true,
-    httpOnly:true
+    signed:true
+    // httpOnly:true
 },server))
 
 server.use(async (ctx,next)=>{

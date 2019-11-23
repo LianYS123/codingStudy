@@ -1,8 +1,8 @@
 const Router = require('koa-router')
-const {test} = require('../libs/validator')
-const {path_static} = require('../config')
-const {unlink,exist,rename} = require('../libs/fs')
-const notice = require('../libs/notice')
+const {test} = require('../../libs/validator')
+const {path_static} = require('../../config')
+const {unlink,exist,rename} = require('../../libs/fs')
+const notice = require('../../libs/notice')
 const path = require('path')
 
 let router = new Router()

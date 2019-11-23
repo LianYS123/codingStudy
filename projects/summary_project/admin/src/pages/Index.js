@@ -1,22 +1,26 @@
 import React,{Component} from 'react';
-import Pagination from './components/Pagination'
 import {withRouter,BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom'
-import PagPages from './pages/PagPages'
-import {SET_COUNT,SET_CURR} from './actions'
-import datalib from './libs/datalibs'
 import {connect} from 'react-redux'
-import Modify from './pages/Modify' 
-import Add from './pages/Add'
+import PagPages from './PagPages'
+import Pagination from '../components/Pagination'
+import {SET_COUNT,SET_CURR} from '../actions'
+import datalib from '../libs/datalibs'
+import Modify from './Modify' 
+import Add from './Add'
 
-class App extends Component {
+class Index extends Component {
   async componentDidMount(){
     this.setState({curr:this.props.curr})
     try{
-      let count = await datalib.get('api/pagecount/10')
+      let count = await datalib.get('admin/api/pagecount/10')
       this.props.setCount(count)
     } catch(e){
-      alert('error')
-      console.log(e)
+      if(e == 'login') {
+          this.props.history.push('/login')
+      } else {
+          alert('error')
+          console.log(e)
+      }
     }
   }
   render(){
@@ -72,4 +76,4 @@ export default withRouter(connect(
       }
     }
   }
-)(App));
+)(Index));

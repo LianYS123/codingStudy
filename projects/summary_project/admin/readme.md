@@ -31,3 +31,8 @@ return
 
 formData对象不能被console.log()输出
 formData输出为空 console.log(formData):  formData：是不能转换为字符串的,虽然输出为空，但实际上是有数据的
+
+
+React 解决fetch跨域请求时session失效
+
+

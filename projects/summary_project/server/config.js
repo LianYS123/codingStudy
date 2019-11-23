@@ -11,5 +11,7 @@ module.exports = {
     path_upload: path.resolve(__dirname,'upload'),
     path_static: path.resolve(__dirname,'static'),
     key_file: path.resolve(__dirname,'.keys'),
-    path_notice: path.resolve(__dirname,'notice.txt')
+    path_notice: path.resolve(__dirname,'notice.txt'),
+
+    suffix:'aasfdsflksdfkdsf'
 }

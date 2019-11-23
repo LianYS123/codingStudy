@@ -3,7 +3,9 @@ let BASE = `http://${host}:${port}`
 
 export default {
     async get(url){
-        let result = await fetch(`${BASE}/${url}`)
+        let result = await fetch(`${BASE}/${url}`,{
+          // credentials: 'include',
+        })
         let res =  await result.json()
         return new Promise((resolve,reject)=>{
             if(res.ok){
@@ -15,7 +17,9 @@ export default {
         })
     },
     async del(url){
-        let result = await fetch(`${BASE}/${url}`,{method:'DEL'})
+        let result = await fetch(`${BASE}/${url}`,{method:'DEL'},{
+          // credentials: 'include',
+        })
         let res =  await result.json()
         return new Promise((resolve,reject)=>{
             if(res.ok){
@@ -29,7 +33,8 @@ export default {
     async post(url,form){
         let result = await fetch(`${BASE}/${url}`,{
           method:'POST',
-          body:form
+          body:form,
+          // credentials:'include'
         })
         let res =  await result.json()
         return new Promise((resolve,reject)=>{
