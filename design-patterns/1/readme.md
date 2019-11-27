@@ -144,3 +144,14 @@ protected 同一个包或不同包的子类中能使用
 in = new ByteArrayInputStream(bb)
 
 创建对象的四种方式：构造器、反射、序列化、克隆
+
+JAVA的动态代理：运行时生成字节码
+Proxy.newProxyInstance()
+第一个参数：类加载器(目标对象使用的类加载器) App.class.getClassLoader();
+第二个参数：类字节码数组 new Class[]{}
+第三个参数：事件处理，执行目标方法时，会触发事件处理器
+InvocationHandler(是一个接口) 每次对代理对象任何方法的调用，都不会进入真正的实现方法中，而是进入第三个参数的invoke方法中
+
+静态代理：
+动态代理：
+Cglib代理
