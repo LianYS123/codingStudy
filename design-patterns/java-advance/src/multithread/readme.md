@@ -35,4 +35,13 @@ sleep和wait的异同点：
 - 不同点：
     1)声明位置不同：Thread中声明sleep(),Object声明wait()
     2)调用要求不同：sleep() 可以在任何场景调用，wait()必须在同步代码块中
-    3）sleep()不会释放锁，wait()会        
+    3）sleep()不会释放锁，wait()会  
+jdk5.0创建线程的方式：
+实现Callable接口，实现call方法，创建FutureTask传入callable实例，创建Thread传入FutureTask
+使用线程池：好处
+1. 提高响应速度
+2. 降低资源消耗
+3. 便于资源管理
+
+接口的属性都是常量
+线程被挂起(suspend),不会释放锁
