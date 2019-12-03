@@ -101,6 +101,14 @@ DateTimeFormatter.ISO_LOCAL_DATE_TIME
 formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
 formatter.format(LocalDateTime.now())
 
+排序：
+自然排序：实现comparable
+定制排序：java.util.Comparator
+Arrays.sort(arr,new Comparator(){...})
+
+其他常用类：BigInteger、BigDecimal、Math、System
+
+
 
 
 
