@@ -32,7 +32,7 @@ ArrayList:线程不安全的，效率高，底层用Object[]数组存储
         set(index,obj)更改(设置)指定索引的元素
         subList(int fromIndex,int toIndex)返回从fromIndex到toIndex的子集合
     
-LinkList:底层使用双向链表：对于频繁的插入和删除操作，使用此类效率高
+LinkedList:底层使用双向链表：对于频繁的插入和删除操作，使用此类效率高
 Vector:古老的实现类，不怎么用：线程安全的，效率低，底层用Object[]数组存储
 
 Set:
