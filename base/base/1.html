@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生成磁力</title>
+</head>
+<body>
+    <textarea id="area" cols="60" rows="20"></textarea> <br>
+    <button id="btn">convert</button>
+    <p id="output"></p>
+</body>
+<script>
+    let oArea = document.getElementById("area")
+    let btn = document.getElementById("btn")
+    let output = document.getElementById("output")
+    btn.onclick = function(){
+        let m = "magnet:?xt=urn:btih:" + oArea.value;
+        output.innerHTML = m;
+    }
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            box-sizing: border-box;
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            margin: 20px auto;
+            border: 1px solid skyblue;
+            line-height: 40px;
+            position: relative;
+        }
+        .box .detail{
+            position: absolute;
+            left: -1px;
+            display: none;
+            top: 38px;
+            box-sizing: border-box;
+            width: 500px;
+            height: 100px;
+            z-index: -1;
+            line-height: 100;
+            text-align: center;
+            border: 1px solid skyblue;
+        }
+        .box:hover{
+            border-bottom-color: #fff;
+        }
+        .box:hover .detail{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 基于css实现，需要将详情放在按钮里面 -->
+    <div class="box">
+        <span>购物车</span>
+        <div class="detail">
+            购物车相关信息
+        </div>
+    </div>
+</body>
+<script>
+    /* 如果没有把样式写在行内，那么通过Element.style.xxx不能获取样式 */
+</script>
+</html>
