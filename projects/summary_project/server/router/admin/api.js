@@ -41,7 +41,7 @@ router.get('/pagecount/:size',async ctx=>{  //获取页数
     ctx.body = {ok:true,data}
 })
 router.get('/booklist/:page/:size', async ctx => {  //获取一页的内容
-    let {size,page} = ctx.params
+    let {size, page} = ctx.params
     test(page,'page')
     page = parseInt(page)
     size = parseInt(size)

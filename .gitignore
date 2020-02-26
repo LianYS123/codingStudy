@@ -81,6 +81,7 @@ typings/
 
 # 图片就不上传了...
 img/
+imgs/
 
 ### Java
 *.class
