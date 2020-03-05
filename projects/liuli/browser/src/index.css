@@ -1,0 +1,7 @@
+body.custom-background {
+    background-image: url("https://www.liuli.se/wp/wp-content/uploads/2016/06/camouflage.png");
+    background-position: left top;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
