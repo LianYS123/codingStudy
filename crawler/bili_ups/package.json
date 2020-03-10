@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "crawler": "^1.2.1",
+    "jsdom": "^16.2.0"
+  }
+}

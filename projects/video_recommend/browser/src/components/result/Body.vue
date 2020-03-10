@@ -20,7 +20,7 @@
               class="left-img"
             >
               <div class="lazy-img">
-                <img alt :src="`http://localhost:8080/imgs/${item.img_name}`" />
+                <img alt :src="`${baseURL}/imgs/${item.img_name}`" />
               </div>
               <!---->
             </a>

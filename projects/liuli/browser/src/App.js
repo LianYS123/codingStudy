@@ -3,7 +3,8 @@ import Article from './Article';
 import Paging from './Paging';
 import Header from './Header';
 import qs from 'querystring';
-import { BrowserRouter as Router, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import Footer from './Footer';
 class App extends React.Component {
   page_size = 10;
   lastUrl = '';
@@ -12,47 +13,56 @@ class App extends React.Component {
     let orders = {
       time: '按时间排序',
       rating_score: '按评分排序',
-      rating_score: '按热度排序',
+      rating_count: '按热度排序',
       common: '综合排序'
     };
     this.state = { data: null, orders };
-    // this.pageChange = this.pageChange.bind(this);
-    // this.cateChange = this.cateChange.bind(this);
   }
   componentDidMount() {
     this.loadData();
   }
-  async loadData({ page, cate } = {}) {
-    page = page || this.props.match.params.page || 1;
-    page = parseInt(page);
-    cate = cate || this.props.match.params.cate || 'common';
-    console.log(page, cate);
+  getOpt({page,order,tags,keyword,clear}={}){
+    let lastQuery = qs.parse(this.props.location.search.substring(1));
+    if(!clear){
+      order = order || lastQuery.order || 'common';
+      page = page || lastQuery.page || 1;
+      tags = tags || lastQuery.tags;
+      keyword = keyword || lastQuery.keyword;
+    } else {
+      page = page || 1;
+      order = order || 'common';
+    }
     let page_size = this.page_size;
-    let opt = { page_size, page, order: cate };
-    let url = `http://localhost:8080/api?${qs.stringify(opt)}`;
+    let opt = { page_size, page, order, tags,keyword };
+    return opt;
+  }
+  async loadData(params) {
+    let query = qs.stringify(this.getOpt(params));
+    let url = `http://localhost:8080/api?${query}`;
     if (url === this.lastUrl) { return };
     let res = await (await fetch(url)).json();
     this.setState({ data: res.data, total: res.total });
-    this.props.history.push(`/${cate}/${page}`);
+    this.props.history.push(`/?${query}`);
     this.lastUrl = url;
   }
   render() {
-    let { data, cate } = this.state;
-    let cur = this.props.match.params.page;
-    cur = cur ? parseInt(cur) : 1;
+    let { data } = this.state;
+    let {order,page,tags} = this.getOpt();
+    let cur = parseInt(page);
     return (
       <section id="page" className="hfeed">
-        <Header orders={this.state.orders} curCate={cate} cb={cate => { this.loadData({ cate }) }}></Header>
+        <Header orders={this.state.orders} curCate={order} search={keyword=>{this.loadData({keyword,clear:true})}} cb={order => { this.loadData({ order,clear:true }) }}></Header>
         <div id="primary">
           {
             this.state.data ?
               <div id="content">
-                {data.rows.map(item => <Article item={item} key={item.id}></Article>)}
+                {data.rows.map(item => <Article item={item} tagChange={tags => this.loadData({tags,clear:true})} key={item.id}></Article>)}
                 <Paging cur={cur} total={data.total} onChange={page => { this.loadData({ page }) }}></Paging>
               </div>
               : ''
           }
         </div>
+        <Footer></Footer>
       </section>
     );
   }

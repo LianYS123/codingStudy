@@ -32,10 +32,10 @@
 		},
 		methods: {
 			async login(user) {
-				let res = (await this.$axios.post('http://localhost:8080/user/login',user)).data;
+				let res = (await this.$axios.post('user/login',user)).data;
 				if(res.ok){
 					alert('登录成功');
-					let res = (await this.$axios.get('http://localhost:8080/space/test',user)).data;
+					let res = (await this.$axios.get('space/test',user)).data;
 					if(res.ok){
 						alert('token 校验成功');
 					} else {
@@ -47,7 +47,7 @@
 
 			},
 			async register(user) {
-				let res = (await this.$axios.post('http://localhost:8080/user/reg',user)).data;
+				let res = (await this.$axios.post('user/reg',user)).data;
 				if(res.ok){
 					// console.log('注册成功')
 					alert('注册成功');

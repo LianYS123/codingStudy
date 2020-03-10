@@ -4,7 +4,7 @@
 			<div class="bangumi-info-blurbg-wrapper">
 				<div
 					class="bangumi-info-blurbg blur"
-					:style="`background-image:url(http://localhost:8080/imgs/${data.img_name});`"
+					:style="`background-image:url(${baseURL}/imgs/${data.img_name});`"
 				></div>
 			</div>
 			<!---->
@@ -13,7 +13,7 @@
 			<div class="media-info-inner clearfix">
 				<div class="media-preview">
 					<div class="common-lazy-img">
-						<img alt :src="`http://localhost:8080/imgs/${data.img_name}`" lazy="loaded" />
+						<img alt :src="`${baseURL}/imgs/${data.img_name}`" lazy="loaded" />
 					</div>
 					<!-- <div class="tag-exclusive"></div> -->
 				</div>
@@ -112,7 +112,7 @@
 		},
 		props: ["media_id"],
 		async mounted() {
-			let res = (await this.$axios.get(`video/${this.media_id}`)).data;
+			let res = (await this.$axios.get(`api/video/${this.media_id}`)).data;
 			if (res.ok) {
 				this.data = res.data.mediaInfo;
 			}

@@ -1,6 +1,6 @@
 import React from 'react';
 export default function (props) {
-  let {item} = props;
+  let {item,tagChange} = props;
   let date = new Date(item.time);
   let time = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
   return (
@@ -60,7 +60,10 @@ export default function (props) {
                 {item.tags && item
                   .tags
                   .split('|')
-                  .map((tag, i) => <a key={i} href="#" rel="tag">{tag},</a>)}
+                  .map((tag, i) => <a key={i} onClick={e => {
+                    e.preventDefault();
+                    tagChange(tag);
+                  }} href="#" rel="tag">{tag},</a>)}
               </span>
               <span className="sep">
                 |

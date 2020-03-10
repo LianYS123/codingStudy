@@ -12,8 +12,8 @@ module.exports = {
     SERVER_PORT: 8080,
 
     //path
-    PATH_STATIC: path.resolve(__dirname, ''),
-    PATH_UPLOAD: path.resolve(__dirname, 'uploastaticd'),
+    PATH_STATIC: path.resolve(__dirname, 'static'),
+    PATH_UPLOAD: path.resolve(__dirname, 'upload'),
     PATH_NOTICE: path.resolve(__dirname, 'log/notice.log'),
 
     suffix:'aasfdsflksdfkdsf'

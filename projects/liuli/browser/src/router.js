@@ -4,8 +4,6 @@ import App from './App';
 export default function(){
     return (
         <Switch>
-            <Route path='/:cate/:page' component={App}></Route>
-            <Route path='/:page' component={App}></Route>
             <Route path='/' component={App}></Route>
         </Switch>
     )

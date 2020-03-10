@@ -1,4 +1,4 @@
-import getAxios from '../libs/datalib'
+import axios from '../libs/datalib'
 let lastUrl = '';
 export default {
     state: {
@@ -18,11 +18,10 @@ export default {
     actions: {
         async loadResult({ commit,state }, {page, keyword}) { 
             commit("setParams", page);
-            let url = `video/search/${state.page}/10?keyword=${keyword}`;
+            let url = `api/video/search/${state.page}/10?keyword=${keyword}`;
             if (lastUrl !== url) {
                 console.log(url);
-                let datalib = await getAxios();
-                let res = (await datalib.get(url)).data;
+                let res = (await axios.get(url)).data;
                 if (res.ok) {
                     commit('setResult', res.data);
                 }

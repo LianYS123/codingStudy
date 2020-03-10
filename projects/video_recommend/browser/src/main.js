@@ -5,11 +5,10 @@ import App from './App'
 import router from './router'
 import './libs/datalib'
 import store from './store'
-import getAxios from './libs/datalib'
-
-(async () => {
-  Vue.prototype.$axios = await getAxios();
-})();
+import axios from './libs/datalib'
+import {baseURL} from './config'
+Vue.prototype.$axios = axios;
+Vue.prototype.baseURL = baseURL;
 Vue.config.productionTip = false
 
 new Vue({

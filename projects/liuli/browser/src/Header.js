@@ -1,10 +1,7 @@
 import React from 'react';
 export default class Header extends React.Component {
-    // constructor() {
-    //     let { orders, curCate, cb } = this.props;
-    // }
     render() {
-        let { orders, curCate, cb } = this.props;
+        let { orders, curCate, cb, search } = this.props;
         return (
             <header id="branding" role="banner">
                 <hgroup>
@@ -22,15 +19,12 @@ export default class Header extends React.Component {
                         height={360}
                         alt="琉璃神社 ★ HACG.me" />
                 </a>
-                <form method="get" id="searchform" action="https://www.liuli.se/wp/">
+                <form method="get" id="searchform" onSubmit={e=>{
+                    e.preventDefault();
+                    search(this.refs.search.value);
+                    }}>
                     <label htmlFor="s" className="assistive-text">搜索</label>
-                    <input type="text" className="field" name="s" id="s" placeholder="搜索" />
-                    <input
-                        type="submit"
-                        className="submit"
-                        name="submit"
-                        id="searchsubmit"
-                        defaultValue="搜索" />
+                    <input type="text" className="field" name="s" ref='search' id="s" placeholder="搜索" />
                 </form>
                 <nav id="access" role="navigation">
                     <h3 className="assistive-text">主页</h3>

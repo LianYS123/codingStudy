@@ -19,7 +19,7 @@
 						<div class="img">
 							<a href="javascript:">
 								<div class="lazy-img cover">
-									<img :alt="item.title" :src="`http://localhost:8080/imgs/${item.img_name}`" />
+									<img :alt="item.title" :src="`${baseURL}/imgs/${item.img_name}`" />
 								</div>
 							</a>
 							<!---->
@@ -60,7 +60,7 @@
 		async created() {
 			let type = this.$route.query.type || '';
 			let res = (
-				await this.$axios.get(`/video/1/50?type=${type}&sort=ranking&desc=desc`)
+				await this.$axios.get(`api/video/1/50?type=${type}&sort=ranking&desc=desc`)
 			).data;
 			if (res.ok) {
 				this.rankItems = res.data.list.sort(

@@ -1,12 +1,13 @@
 import axios from 'axios';
-
-const baseURL = 'http://localhost:8080/api/';
+import { baseURL } from '../config';
 const timeout = 1000 * 60;
-let instance = null;
-
+let instance = axios.create({
+  baseURL,
+  timeout
+});
 
 let loadToken = async () => {
-  let res = (await axios.get('http://localhost:8080/user/token/')).data;
+  let res = (await axios.get(`${baseURL}/user/token/`)).data;
   if (res.ok) {
     let token = res.token;
     localStorage.setItem('token', token);
@@ -24,8 +25,7 @@ let getToken = async () => {
   return token;
 }
 
-async function getAxios() {
-  if (instance) return instance;
+async function initToken() {
   let token = await getToken();
   instance = axios.create({
     baseURL,
@@ -34,10 +34,10 @@ async function getAxios() {
       'x-token': token
     }
   });
-
-  return instance;
 }
-export async function resetToken(){
+initToken();
+
+export async function resetToken() {
   let token = await loadToken();
   instance = axios.create({
     baseURL,
@@ -48,4 +48,5 @@ export async function resetToken(){
   });
 }
 
-export default getAxios;
+// export default getAxios;
+export default instance;
