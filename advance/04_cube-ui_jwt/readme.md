@@ -129,6 +129,7 @@ configureWebpack:{
                     res.json({code:1,token:'tokenstr'})
                 } else{
                     res.status(401).json({code:0,message:'用户名或密码错误'}) //登录失败
+                    //如果直接返回状态：res.sendStatus(401)
                 }
             })
         }
@@ -140,7 +141,7 @@ configureWebpack:{
             }
         }
         app.get('/api/userinfo',auth,(req,res) => {
-            res.json({code:1data:{name:'jerry}})
+            res.json({code:1,data:{name:'jerry}})
         })
     }
 }
@@ -218,3 +219,5 @@ configureWebpack{
     }
 }
 反解数据：jwt.io
+
+待会完善一下...

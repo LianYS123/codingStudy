@@ -21,6 +21,11 @@ export default {
                     return false;
                 }
             })
+        },
+        //退出登录
+        logout({commit}){
+            commit('setLogin',false);
+            localStorage.removeItem('token');  
         }
     }
 }

@@ -2,7 +2,8 @@
 
 import Vue from 'vue';
 import axios from "axios";
-
+import vm from "@/main"
+// const AUTH_TOKEN = 'Bearer '+localStorage.getItem('token')
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || '';
 // axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
@@ -17,29 +18,35 @@ let config = {
 const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
-  function(config) {
-    // Do something before request is sent
+  function (config) {
+    let token = localStorage.getItem('token')
+    if (token) {
+      config.headers.Authorization = 'Bearer ' + token;
+    }
     return config;
   },
-  function(error) {
-    // Do something with request error
+  function (error) {
     return Promise.reject(error);
   }
 );
 
-// Add a response interceptor
 _axios.interceptors.response.use(
-  function(response) {
-    // Do something with response data
+  function (response) {
     return response;
   },
-  function(error) {
-    // Do something with response error
+  function (error) {
+    //如果失败的状态码为401
+    console.log(error);
+    if(error.status === 401){
+      vm.$store.dispatch('logout');  //退出登录
+      vm.$router.push('/login'); //去登录页重新登录 
+    }
+
     return Promise.reject(error);
   }
 );
 
-Plugin.install = function(Vue) {
+Plugin.install = function (Vue) {
   Vue.axios = _axios;
   window.axios = _axios;
   Object.defineProperties(Vue.prototype, {

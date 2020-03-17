@@ -1,8 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import store from '../store'
+import History from '@/utils/history';
+
+Vue.use(History)
 Vue.use(VueRouter)
+
+VueRouter.prototype.goBack = function(){
+  this.back();//  执行原操作
+  this.isBack = true;  //标记一下进行了回退操作
+}
 
 const routes = [
   {
@@ -30,14 +37,22 @@ const router = new VueRouter({
 })
 router.beforeEach((to, from, next) => {
   if (to.meta && to.meta.auth) {
-    console.log(store);
     if (localStorage.getItem('token')) {
       next();
     } else {
-      next('login', { redirect: to.path });
+      next({ path: 'login', query: { redirect: to.path } });
     }
   } else {
     next();
+  }
+})
+router.afterEach((to) => {
+  if(router.isBack){
+    //通过回退操作来到的路由
+    router.isBack = false;
+    History.pop();
+  } else {
+    History.push(to.path);
   }
 })
 
