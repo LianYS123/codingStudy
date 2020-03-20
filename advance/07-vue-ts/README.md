@@ -9,6 +9,7 @@ tslint
 ts都是开发时依赖
 
 声明组件
+cnpm i -D vue-property-decorator
 import {Component,Prop,Vue} from 'vue-property-decorator';
 @Component
 export default class Hello extends Vue {
@@ -23,7 +24,7 @@ export default class Hello extends Vue {
     //派发事件
     //事件名为add-feature，如果要指定：@Emit('eventname')
     @Emit()
-    private addFeature(event){   //若唯有返回值行惨作为事件参数
+    private addFeature(event){   //若没有返回值形参作为事件参数
         return feature;  //返回值会作为事件参数
     }
     //@add-feature="..."
