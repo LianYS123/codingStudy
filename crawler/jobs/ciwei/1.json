@@ -1,0 +1,27 @@
+{
+    "code": 1,
+    "msg": "OK",
+    "data": {
+        "list": [
+            {
+                "jobid": 143680,
+                "title": "WEB前端",
+                "scale": "11~50人",
+                "comfullname": "杭州梦虎网络科技有限公司",
+                "comname": "梦虎网络",
+                "jobClassString": "实习",
+                "salary": "2-4K/月",
+                "cityName": "杭州",
+                "job_type_string": "IT研发",
+                "education": "本科",
+                "fulltime_type_string": "至少3天",
+                "work_time_string": "长期",
+                "baomingendtime": "2020-01-01",
+                "company_id": 23926,
+                "addtime": "2019-11-15 09:45",
+                "label": [],
+                "jobCount": 1
+            }
+        ]
+    }
+}

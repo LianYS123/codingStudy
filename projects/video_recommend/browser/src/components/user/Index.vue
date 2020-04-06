@@ -1,5 +1,5 @@
 <template>
-	<div v-if="type" class="user-login">
+	<!-- <div v-if="type" class="user-login">
 		<header>
 			<ul class="nav">
 				<li :class="type==='login'?'login active':'login'" @click="toLogin">登录</li>
@@ -8,14 +8,17 @@
 		</header>
 		<main>
 			<Login @submit="login" v-if="type==='login'"></Login>
+			
 			<Register @submit="register" v-if="type==='register'"></Register>
 		</main>
-	</div>
+	</div> -->
+	<Login2 />
 </template>
 
 <script>
 	import Login from "./Login";
 	import Register from "./Register";
+	import Login2 from "./Login2";
 	export default {
 		data() {
 			return {
@@ -27,7 +30,7 @@
 			this.type = type;
 		},
 		components: {
-			Login,
+			Login2,
 			Register
 		},
 		methods: {
@@ -71,7 +74,7 @@
 </script>
 
 <style scoped>
-    .user-login{
+    /* .user-login{
         min-height: 100%;
     }
     .nav{
@@ -101,5 +104,5 @@
         justify-content: center;   
         align-items: center;
         min-height: 500px;
-    }
+    } */
 </style>

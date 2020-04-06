@@ -10,7 +10,7 @@ ssr:
 快速体验：
 nuxt.js框架
 安装
-npx create -nuxt-app [project]  这个命令每次都会下载最新脚手架的版本然后创建项目
+npx create-nuxt-app [project]  这个命令每次都会下载最新脚手架的版本然后创建项目
 
 启动项目
 npm run dev 

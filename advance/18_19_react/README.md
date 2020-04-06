@@ -62,7 +62,10 @@ render(){
 方式1.
 this.setState(state => {
     console.log(state.count);
-    return state.count;
+    return state;
+})
+this.setState({},state => {
+    console.log(state.count);
 })
 方式2.
 settimeout(()=>{

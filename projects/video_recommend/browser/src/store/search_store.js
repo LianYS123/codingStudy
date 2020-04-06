@@ -1,4 +1,4 @@
-import axios from '../libs/datalib'
+import axios from 'axios'
 let lastUrl = '';
 export default {
     state: {

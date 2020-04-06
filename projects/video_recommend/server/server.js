@@ -9,7 +9,8 @@ server.context.db = require('./libs/database');
 server.use(async (ctx,next) => {
     ctx.set({
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*"
+        "Access-Control-Allow-Headers": "*",
+        "Access-Control-Allow-Credentials":"*"
     })
     await next();
 })

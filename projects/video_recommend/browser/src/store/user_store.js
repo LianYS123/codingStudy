@@ -1,6 +1,6 @@
 
 export default {
-    state:{
-        isLogin:false
+    state: {
+        isLogin: false
     }
 }

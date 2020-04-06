@@ -1,0 +1,17 @@
+POST /oem/fanghu/action/getSearch.php HTTP/1.1
+Host: 2019ncov.gsdata.cn
+Proxy-Connection: keep-alive
+Content-Length: 48
+Accept: application/json, text/javascript, */*; q=0.01
+Origin: http://2019ncov.gsdata.cn
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://2019ncov.gsdata.cn/oem/fanghu/index.php?sign=fe6780da15c93ed8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en;q=0.9,zh-CN;q=0.8,zh;q=0.7,en-US;q=0.6
+Cookie: PHPSESSID=eahiplmvpehh1a538i932q67o0; Hm_lvt_293b2731d4897253b117bb45d9bb7023=1585530717; Hm_lpvt_293b2731d4897253b117bb45d9bb7023=1585531063
+
+----------------
+
+fe6780da15c93ed8

@@ -1,0 +1,49 @@
+{
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+        "mid": 161419374,
+        "name": "山药视频",
+        "sex": "保密",
+        "face": "http://i1.hdslb.com/bfs/face/357b015de3b9f4c04527d4fefb844460397ac8b0.jpg",
+        "sign": "一个武侠浪子的美食日记，专注户外美食短视频，有酒有肉有故事。\n合作请联系vx：18612593611",
+        "rank": 10000,
+        "level": 6,
+        "jointime": 0,
+        "moral": 0,
+        "silence": 0,
+        "birthday": "",
+        "coins": 0,
+        "fans_badge": true,
+        "official": {
+            "role": 1,
+            "title": "bilibili 2018百大UP主、 知名美食UP主",
+            "desc": "",
+            "type": 0
+        },
+        "vip": {
+            "type": 2,
+            "status": 1,
+            "theme_type": 0
+        },
+        "pendant": {
+            "pid": 0,
+            "name": "",
+            "image": "",
+            "expire": 0
+        },
+        "nameplate": {
+            "nid": 76,
+            "name": "2018百大UP主",
+            "image": "http://i0.hdslb.com/bfs/face/948d7b4c70e20cc060188c0908e1083798951aab.png",
+            "image_small": "http://i0.hdslb.com/bfs/face/45d56689317d5b4a9d2f3de4816b11f731afb3bc.png",
+            "level": "稀有勋章",
+            "condition": "经过创作力、影响力、口碑力三个指标官方评定后，在2018年名列前茅的100位UP主"
+        },
+        "is_followed": false,
+        "top_photo": "http://i2.hdslb.com/bfs/space/23c5b01616188b18f4b8563ef680ae40c9d7e0ca.png",
+        "theme": {},
+        "sys_notice": {}
+    }
+}

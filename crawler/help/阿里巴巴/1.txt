@@ -1,0 +1,84 @@
+
+detail page info
+
+公司名称:
+.company-name>span
+
+评级
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-top.common-merchant > div > div.company > h1 > a.icon.icon-credit
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-top.strength-merchant > div > div.company > h1 > a.icon.icon-credit-pm
+
+诚信
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-top.common-merchant > div > div.company > h1 > a.icon.icon-chengxintong
+
+固话
+#J_COMMON_CompanyInfoTelShow > span.tip-info.phone-num
+
+手机
+#J_COMMON_CompanyInfoPhoneShow > span.tip-info.phone-num
+
+认证报告地址
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-top.common-merchant > div > div:nth-child(3) > div > a
+
+介绍信息
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-bottom > div.info-box.info-left
+
+成立时间
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-bottom > div.info-box.info-right > table > tbody > tr:nth-child(1) > td.tb-info.tb-value > p > span.tb-value-data
+
+注册资本
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-bottom > div.info-box.info-right > table > tbody > tr:nth-child(2) > td.tb-info.tb-value > p > span.tb-value-data
+
+经营范围
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-bottom > div.info-box.info-right > table > tbody > tr:nth-child(3) > td.tb-info.tb-value > p > span.tb-value-data
+
+注册地址
+#site_content > div > div > div > div.m-content > div > div:nth-child(3) > div > div.info-bottom > div.info-box.info-right > table > tbody > tr:nth-child(4) > td.tb-info.tb-value > p > span
+
+经营店铺数量
+#root > div > div > div.next-col.next-col-13.second-col > div.statistics-info > div > div:nth-child(1) > a > div.status
+
+失信信息
+#root > div > div > div.next-col.next-col-13.second-col > div.statistics-info > div > div:nth-child(2) > a > div.status
+
+工商变更：
+#root > div > div > div.next-col.next-col-13.second-col > div.statistics-info > div > div:nth-child(3) > a > div.status
+
+累计成交笔数：
+#J_CompanyTradeCreditRecord > ul > li:nth-child(1) > p.record-num
+
+累计买家数：
+#J_CompanyTradeCreditRecord > ul > li:nth-child(2) > p.record-num
+
+重复采购率：
+#J_CompanyTradeCreditRecord > ul > li:nth-child(3) > p.record-num
+
+近90天退款率
+#J_CompanyTradeCreditRecord > ul > li:nth-child(4) > p.record-num
+
+近90天客服介入率
+#J_CompanyTradeCreditRecord > ul > li:nth-child(5) > p.record-num
+
+回头率：
+#J_DynamicScoreListMain > ul > li.normal.last > p.score-num
+
+可能没有的数据项：
+品牌资质：
+#J_FCA_DepthInspectionTab_qualification
+进出口
+#J_FCA_DepthInspectionTab_import
+品牌进出口：
+#J_MCA_DepthInspectionTab_qualification
+
+
+------------------------------列表页----------------------------
+
+所有item选择器
+div.wrap > div.list-item-detail
+
+经营模式
+find("div.detail-right > div:nth-child(1) > b")
+
+员工数量
+find("div.detail-left > div:nth-child(3) > a")
+
