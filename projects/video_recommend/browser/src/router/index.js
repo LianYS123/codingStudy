@@ -8,6 +8,7 @@ let router = new Router({
   routes: [
     {
       path:'/home',
+      
       component: Home,
       children:homeRouter
     },

@@ -77,7 +77,7 @@
 				</ul>
 			</div>
 			<a id="logo" style="background-image: none;width:auto;height:auto;">
-				<img src="http://localhost:8080/web_img/movie_logo.svg" alt style="width:40px;" />
+				<img src="@/assets/web_img/movie_logo.svg" alt style="width:40px;" />
 			</a>
 			<div id="media_type_menu" class="hide-xs hide-sm hide-md">
 				<a href="javascript:" @click.prevent="toHome()">首页</a>
@@ -143,6 +143,6 @@
 		font-size: 16px;
 	}
 	.icon_menu_bars {
-		background-image: url(http://localhost:8080/imgs/sprites.svg), none;
+		background-image: url(../../assets/sprites.svg), none;
 	}
 </style>

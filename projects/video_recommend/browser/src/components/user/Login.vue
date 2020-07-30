@@ -3,7 +3,7 @@
 		<p>Login:</p>
 		<form
 			@submit.prevent="handlerSubmit"
-			action="http://localhost:8080/user/login"
+			action="/user/login"
 			method="post"
 			ref="form"
 		>

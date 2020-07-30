@@ -14,26 +14,21 @@
           @click="toDetail(item.media_id)"
         >
           <div class="bangumi-item-wrap">
-            <a
-              :href="`http://localhost:8081/#/single/media/${item.media_id}`"
-              :title="item.title"
-              class="left-img"
-            >
+            <router-link :to="`/single/media/${item.media_id}`" :title="item.title" class="left-img">
               <div class="lazy-img">
                 <img alt :src="`${baseURL}/imgs/${item.img_name}`" />
               </div>
-              <!---->
-            </a>
+            </router-link>
             <div class="right-info">
               <div class="headline">
                 <!---->
                 <span class="bangumi-label" v-html="getSub(item.type_name)"></span>
-                <a
-                  :href="`http://localhost:8081/#/single/media/${item.media_id}`"
+                <router-link 
+                  :to="`/single/media/${item.media_id}`"
                   title="item.title"
                   class="title"
                   v-html="getSub(item.title)"
-                ></a>
+                ></router-link>
               </div>
               <div class="intros">
                 <div class="line clearfix">

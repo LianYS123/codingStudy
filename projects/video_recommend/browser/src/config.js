@@ -1,4 +1,4 @@
-export const HOST = 'localhost';
+export const HOST = '47.94.197.151';
 export const PORT = 8080;
 export const baseURL = `http://${HOST}:${PORT}`;
 export const categroy =

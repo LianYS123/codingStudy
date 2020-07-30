@@ -12,6 +12,7 @@
   "devDependencies": {
     "crawler": "^1.2.1",
     "mysql2": "^2.1.0",
+    "superagent": "^5.2.2",
     "uuid": "^7.0.2"
   }
 }

@@ -97,7 +97,7 @@
 		.filter-body
 		.bangumi-list
 		.no-data-wrapper {
-		background-image: url(http://localhost:8080/web_img/sorry2.jpg);
+		background-image: url(/web_img/sorry2.jpg);
 	}
 	.bangumi-index-wrapper .bangumi-index-body .filter-body .bangumi-list {
 		height: 100%;
