@@ -1,0 +1,307 @@
+{
+  "keys": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\config\\config.default.js",
+  "middleware": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\config\\config.default.js",
+  "security": {
+    "csrf": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\config\\config.default.js",
+      "type": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "ignoreJSON": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "useSession": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "cookieName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "sessionName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "headerName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "bodyName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "queryName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "refererWhiteList": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "domainWhiteList": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+    "protocolWhiteList": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+    "defaultMiddleware": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+    "xframe": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "value": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "hsts": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.local.js",
+      "maxAge": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "includeSubdomains": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "dta": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "methodnoallow": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "noopen": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "nosniff": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "referrerPolicy": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "value": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "xssProtection": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "value": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "csp": {
+      "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "policy": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    },
+    "ssrf": {
+      "ipBlackList": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js",
+      "checkAddress": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+    }
+  },
+  "sequelize": {
+    "dialect": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\config\\config.default.js",
+    "host": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\config\\config.default.js",
+    "password": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\config\\config.default.js",
+    "port": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\config\\config.default.js",
+    "database": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\config\\config.default.js",
+    "username": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-sequelize@6.0.0@egg-sequelize\\config\\config.default.js"
+  },
+  "session": {
+    "maxAge": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-session@3.2.0@egg-session\\config\\config.default.js",
+    "key": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-session@3.2.0@egg-session\\config\\config.default.js",
+    "httpOnly": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-session@3.2.0@egg-session\\config\\config.default.js",
+    "encrypt": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-session@3.2.0@egg-session\\config\\config.default.js"
+  },
+  "helper": {
+    "shtml": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-security@2.8.0@egg-security\\config\\config.default.js"
+  },
+  "jsonp": {
+    "limit": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js",
+    "callback": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js",
+    "csrf": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-jsonp@2.0.0@egg-jsonp\\config\\config.default.js"
+  },
+  "onerror": {
+    "errorPageUrl": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js",
+    "appErrorFilter": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js",
+    "templatePath": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-onerror@2.1.0@egg-onerror\\config\\config.default.js"
+  },
+  "i18n": {
+    "defaultLocale": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "dirs": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "queryField": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieField": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieDomain": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js",
+    "cookieMaxAge": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-i18n@2.1.1@egg-i18n\\config\\config.default.js"
+  },
+  "watcher": {
+    "type": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-watcher@3.1.1@egg-watcher\\config\\config.local.js",
+    "eventSources": {
+      "default": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-watcher@3.1.1@egg-watcher\\config\\config.default.js",
+      "development": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-watcher@3.1.1@egg-watcher\\config\\config.default.js"
+    }
+  },
+  "customLogger": {
+    "scheduleLogger": {
+      "consoleLevel": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-schedule@3.6.5@egg-schedule\\config\\config.default.js",
+      "file": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-schedule@3.6.5@egg-schedule\\config\\config.default.js"
+    }
+  },
+  "schedule": {
+    "directory": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-schedule@3.6.5@egg-schedule\\config\\config.default.js"
+  },
+  "multipart": {
+    "mode": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "autoFields": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "defaultCharset": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "fieldNameSize": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "fieldSize": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "fields": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "fileSize": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "files": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "fileExtensions": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "whitelist": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "tmpdir": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js",
+    "cleanSchedule": {
+      "cron": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-multipart@2.10.3@egg-multipart\\config\\config.default.js"
+    }
+  },
+  "development": {
+    "watchDirs": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-development@2.7.0@egg-development\\config\\config.default.js",
+    "ignoreDirs": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-development@2.7.0@egg-development\\config\\config.default.js",
+    "fastReady": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-development@2.7.0@egg-development\\config\\config.default.js",
+    "reloadOnDebug": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-development@2.7.0@egg-development\\config\\config.default.js",
+    "overrideDefault": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-development@2.7.0@egg-development\\config\\config.default.js",
+    "overrideIgnore": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-development@2.7.0@egg-development\\config\\config.default.js"
+  },
+  "logrotator": {
+    "filesRotateByHour": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "hourDelimiter": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "filesRotateBySize": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxFileSize": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxFiles": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "rotateDuration": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js",
+    "maxDays": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-logrotator@3.1.0@egg-logrotator\\config\\config.default.js"
+  },
+  "static": {
+    "prefix": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "dir": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "dynamic": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "preload": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "buffer": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js",
+    "maxFiles": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-static@2.2.0@egg-static\\config\\config.default.js"
+  },
+  "view": {
+    "root": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
+    "cache": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.local.js",
+    "defaultExtension": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
+    "defaultViewEngine": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js",
+    "mapping": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg-view@2.1.2@egg-view\\config\\config.default.js"
+  },
+  "env": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "name": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "cookies": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "proxy": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "maxIpsCount": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "maxProxyCount": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "protocolHeaders": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "ipHeaders": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "hostHeaders": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "pkg": {
+    "name": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "version": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "description": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "private": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "egg": {
+      "declarations": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "dependencies": {
+      "egg": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "egg-scripts": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "egg-sequelize": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "jsonwebtoken": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "koa-jwt": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "mysql2": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "devDependencies": {
+      "autod": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "autod-egg": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "egg-bin": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "egg-ci": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "egg-mock": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "eslint": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "eslint-config-egg": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "sequelize-cli": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "engines": {
+      "node": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "scripts": {
+      "start": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "stop": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "dev": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "debug": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "test": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "test-local": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "cov": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "lint": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "ci": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "autod": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "ci": {
+      "version": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "repository": {
+      "type": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "url": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "author": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "license": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "baseDir": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "HOME": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "rundir": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "dump": {
+    "ignore": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "confusedConfigurations": {
+    "bodyparser": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "notFound": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "sitefile": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "middlewares": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "httpClient": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "notfound": {
+    "pageUrl": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "siteFile": {
+    "/favicon.ico": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "bodyParser": {
+    "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "encoding": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "formLimit": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "jsonLimit": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "textLimit": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "strict": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "queryString": {
+      "arrayLimit": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "depth": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "parameterLimit": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "onerror": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "logger": {
+    "dir": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "encoding": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "env": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "level": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "consoleLevel": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "disableConsoleAfterReady": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "outputJSON": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "buffer": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "appLogName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "coreLogName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "agentLogName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "errorLogName": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "coreLogger": {
+      "consoleLevel": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.local.js"
+    },
+    "allowDebugAtProd": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "httpclient": {
+    "enableDNSCache": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "dnsCacheLookupInterval": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "dnsCacheMaxLength": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "request": {
+      "timeout": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "httpAgent": {
+      "keepAlive": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "freeSocketTimeout": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "maxSockets": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "maxFreeSockets": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    },
+    "httpsAgent": {
+      "keepAlive": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "freeSocketTimeout": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "maxSockets": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "maxFreeSockets": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    }
+  },
+  "meta": {
+    "enable": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "logging": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "coreMiddleware": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "workerStartTimeout": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "serverTimeout": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+  "cluster": {
+    "listen": {
+      "path": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "port": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+      "hostname": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+    }
+  },
+  "clusterClient": {
+    "maxWaitTime": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js",
+    "responseTimeout": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+  },
+  "onClientError": "D:\\FrontEndWorkspace\\myWorkSpace\\projects\\liuli\\myServer\\node_modules\\_egg@2.28.0@egg\\config\\config.default.js"
+}
