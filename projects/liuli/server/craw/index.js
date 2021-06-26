@@ -2,9 +2,14 @@ const { notice, fetchFile, getUids } = require("./tools");
 const db = require("./db");
 const moment = require("moment");
 const { load } = require("cheerio");
-const xFetch = require("./xFetch");
-const createPool = require("./createPool");
+// const fetch = require("./xFetch");
+const fetch = require("./fetchUtils/createProxyFetch")(
+  "http://localhost:10809"
+);
+const xFetch = require("./fetchUtils/createPoolProxy")(20).addMethod(fetch);
+
 const parseDetail = ($, listData, uri) => {
+  console.log(`fetching ${uri}`);
   let title = $(".entry-title").text();
   let rating_count = $(".post-ratings strong")
     .eq(0)
@@ -20,12 +25,15 @@ const parseDetail = ($, listData, uri) => {
     uid: uids.join("|"),
     ...listData,
   };
-  let logerr = (err) =>
+  let logerr = (err) => {
+    console.error(err);
     notice("./crawler_err.log", err + " : " + uri);
+  };
   db.select("article", ["id"], `href=${db.valueFilter(data.href)}`)
     .then((rows) => {
       if (rows.length === 0) {
         db.insert("article", data).catch(logerr);
+        console.log(JSON.stringify(data));
       }
       // else {
       //     db.update('article', data, `id=${rows[0].id}`).catch(logerr)
@@ -59,20 +67,29 @@ const parseList = ($) => {
   });
   return hrefs;
 };
-const proxyXFetch = createPool(xFetch);
 const fetchLinks = (links) => {
-    links.forEach(link => proxyXFetch(link).then(parseList).then(hrefs => {
+  links.forEach((link) =>
+    xFetch(link)
+      .then((res) => res.text())
+      .then((text) => load(text))
+      .then(parseList)
+      .then((hrefs) => {
         hrefs.forEach(({ uri, data }) => {
-            proxyXFetch(uri).then($ => parseDetail($, data, uri));
-        })
-    }).catch(console.log));
-}
+          xFetch(uri)
+            .then((res) => res.text())
+            .then((text) => load(text))
+            .then(($) => parseDetail($, data, uri));
+        });
+      })
+      .catch(console.log)
+  );
+};
 
 //抓取从start到end页的数据
 function createLinks(start, end) {
   let links = [];
   for (let i = start; i <= end; i++) {
-    links.push(`https://www.liuli.se/wp/anime.html/page/${i}`);
+    links.push(`https://llss.pl/wp/category/all/anime/page/${i}`);
   }
   return links;
 }
@@ -86,4 +103,4 @@ if (arg.length === 0) {
 } else {
   links = createLinks(parseInt(arg[0]), parseInt(arg[1]));
 }
-fetchLinks(links)
+fetchLinks(links);

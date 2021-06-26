@@ -15,10 +15,9 @@ router.get('/', async ctx => {
         common: 'pow(rating_score, 3) * sqrt(rating_count)'
     };
     let sql = `select * from article where ${tags} and ${q} order by ${orders[order]} ${desc} limit ?,?`;
-    console.log(sql);
     let rows = await ctx.db.query(sql, [(page - 1) * page_size, page_size]);
     let count = await ctx.db.getCount('article', `${tags} and ${q}`);
-    ctx.body = { ok: true, data: { rows, total: parseInt(count / page_size) } };
+    ctx.body = { ok: true, data: { rows, total: count } };
 })
 
 module.exports = router.routes();

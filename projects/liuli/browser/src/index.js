@@ -1,8 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import {BrowserRouter as Router} from 'react-router-dom';
-import Routes from './router'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Router from "./router";
+import zhCN from "antd/es/locale/zh_CN";
+import { ConfigProvider } from "antd";
 
-ReactDOM.render(<Router><Routes></Routes></Router>, document.getElementById('root'));
-
+ReactDOM.render(
+  <ConfigProvider locale={zhCN}>
+    <Router/>
+  </ConfigProvider>,
+  document.getElementById("root")
+);
